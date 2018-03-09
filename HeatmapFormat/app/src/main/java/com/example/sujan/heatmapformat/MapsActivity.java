@@ -8,11 +8,13 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.PolygonOptions;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
@@ -46,7 +48,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         // Add a marker in New York and move the camera
         LatLng newyork = new LatLng(40.7484, -73.9857);
-        mMap.addMarker(new MarkerOptions().position(newyork).title("Marker in New York"));
+        mMap.addMarker(new MarkerOptions().position(newyork).title("Marker in New York")
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(newyork, 15));
 
         ArrayList<LatLng> shape = new ArrayList<>();
@@ -58,11 +61,14 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     }
 
     public void drawPolygon(ArrayList<LatLng> shape) {
+        Random random = new Random();
+        int colourShift = random.nextInt(0x88) * 0x100;
+
         shape.add(shape.get(0));
         mMap.addPolygon(new PolygonOptions()
                 .addAll(shape)
-                .fillColor(Color.BLUE - ALPHA_ADJUSTMENT)
-                .strokeColor(Color.BLUE)
+                .fillColor(Color.RED - ALPHA_ADJUSTMENT + colourShift)
+                .strokeColor(Color.RED + colourShift)
                 .strokeWidth(5));
     }
 }
