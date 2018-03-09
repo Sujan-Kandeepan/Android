@@ -53,11 +53,16 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(newyork, 15));
 
         ArrayList<LatLng> shape = new ArrayList<>();
-        shape.add(new LatLng(newyork.latitude - 0.001,newyork.longitude - 0.001));
-        shape.add(new LatLng(newyork.latitude + 0.001,newyork.longitude - 0.001));
-        shape.add(new LatLng(newyork.latitude + 0.001,newyork.longitude + 0.001));
-        shape.add(new LatLng(newyork.latitude - 0.001,newyork.longitude + 0.001));
+        shape.add(new LatLng(newyork.latitude - 0.005,newyork.longitude - 0.004));
+        shape.add(new LatLng(newyork.latitude + 0.005,newyork.longitude + 0.006));
+        shape.add(new LatLng(newyork.latitude - 0.005,newyork.longitude + 0.006));
         drawPolygon(shape);
+
+        ArrayList<LatLng> shape2 = new ArrayList<>();
+        shape2.add(new LatLng(newyork.latitude - 0.005,newyork.longitude - 0.006));
+        shape2.add(new LatLng(newyork.latitude + 0.005,newyork.longitude - 0.006));
+        shape2.add(new LatLng(newyork.latitude + 0.005,newyork.longitude + 0.004));
+        drawPolygon(shape2);
     }
 
     public void drawPolygon(ArrayList<LatLng> shape) {
