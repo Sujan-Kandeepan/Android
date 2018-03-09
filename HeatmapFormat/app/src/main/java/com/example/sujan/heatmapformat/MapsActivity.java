@@ -50,12 +50,15 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(newyork, 15));
 
         ArrayList<LatLng> shape = new ArrayList<>();
-        shape.add(new LatLng(newyork.latitude - 0.001,newyork.longitude - 0.001));  // Should match last point
+        shape.add(new LatLng(newyork.latitude - 0.001,newyork.longitude - 0.001));
         shape.add(new LatLng(newyork.latitude + 0.001,newyork.longitude - 0.001));
         shape.add(new LatLng(newyork.latitude + 0.001,newyork.longitude + 0.001));
         shape.add(new LatLng(newyork.latitude - 0.001,newyork.longitude + 0.001));
-        shape.add(new LatLng(newyork.latitude - 0.001,newyork.longitude - 0.001));  // Should match first point
+        drawPolygon(shape);
+    }
 
+    public void drawPolygon(ArrayList<LatLng> shape) {
+        shape.add(shape.get(0));
         mMap.addPolygon(new PolygonOptions()
                 .addAll(shape)
                 .fillColor(Color.BLUE - ALPHA_ADJUSTMENT)
