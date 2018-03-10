@@ -102,6 +102,24 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     }
 
     public void navigate(View view) {
-        Toast.makeText(this, "Navigate!", Toast.LENGTH_SHORT).show();
+        String startPoint = startEditText.getText().toString();
+        String endPoint = endEditText.getText().toString();
+        double startLat, startLng, endLat, endLng;
+        try {
+            startLat = Double.parseDouble(startPoint.split(",")[0]);
+            startLng = Double.parseDouble(startPoint.split(",")[1]);
+            endLat = Double.parseDouble(endPoint.split(",")[0]);
+            endLng = Double.parseDouble(endPoint.split(",")[1]);
+            Toast.makeText(this, "Navigate!", Toast.LENGTH_SHORT).show();
+        } catch (Exception e) {
+            if (startPoint.equals("") || endPoint.equals("")) {
+                Toast.makeText(this, "One or both text fields empty",
+                        Toast.LENGTH_SHORT).show();
+            }
+            else {
+                Toast.makeText(this, "Enter start/end points with format: lat,lng",
+                        Toast.LENGTH_LONG).show();
+            }
+        }
     }
 }
