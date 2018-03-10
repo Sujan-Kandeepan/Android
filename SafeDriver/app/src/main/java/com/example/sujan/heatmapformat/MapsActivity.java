@@ -110,7 +110,26 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             startLng = Double.parseDouble(startPoint.split(",")[1]);
             endLat = Double.parseDouble(endPoint.split(",")[0]);
             endLng = Double.parseDouble(endPoint.split(",")[1]);
-            Toast.makeText(this, "Navigate!", Toast.LENGTH_SHORT).show();
+
+            boolean inRange = true;
+            for (double pt : new double[] {startLat, endLat}) {
+                if (pt < -90 || pt > 90) {
+                    inRange = false;
+                }
+            }
+            for (double pt : new double[] {startLng, endLng}) {
+                if (pt < -180 || pt > 180) {
+                    inRange = false;
+                }
+            }
+
+            if (inRange) {
+                Toast.makeText(this, "Navigate!", Toast.LENGTH_SHORT).show();
+            }
+            else {
+                Toast.makeText(this, "Location coordinates out of range",
+                        Toast.LENGTH_SHORT).show();
+            }
         } catch (Exception e) {
             if (startPoint.equals("") || endPoint.equals("")) {
                 Toast.makeText(this, "One or both text fields empty",
