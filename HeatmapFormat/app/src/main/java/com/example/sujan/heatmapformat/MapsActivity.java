@@ -1,8 +1,15 @@
 package com.example.sujan.heatmapformat;
 
+import android.content.res.Resources;
 import android.graphics.Color;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -18,6 +25,11 @@ import java.util.Random;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
+    LinearLayout linearLayout;
+    EditText startEditText;
+    EditText endEditText;
+    Button navigateButton;
+
     private GoogleMap mMap;
 
     private final static int ALPHA_ADJUSTMENT = 0x77000000;
@@ -30,6 +42,18 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+    }
+
+    @Override
+    public void onWindowFocusChanged(boolean hasFocus) {
+        linearLayout = findViewById(R.id.linearLayout);
+        startEditText = findViewById(R.id.startEditText);
+        endEditText = findViewById(R.id.endEditText);
+        navigateButton = findViewById(R.id.navigateButton);
+        Log.i("Button width", Integer.toString(navigateButton.getMeasuredWidth()));
+        startEditText.setWidth((Resources.getSystem().getDisplayMetrics().widthPixels
+                - navigateButton.getWidth()) / 2);
+        endEditText.setWidth(startEditText.getWidth());
     }
 
 
@@ -75,5 +99,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 .fillColor(Color.RED - ALPHA_ADJUSTMENT + colourShift)
                 .strokeColor(Color.RED + colourShift)
                 .strokeWidth(5));
+    }
+
+    public void navigate(View view) {
+        Toast.makeText(this, "Navigate!", Toast.LENGTH_SHORT).show();
     }
 }
