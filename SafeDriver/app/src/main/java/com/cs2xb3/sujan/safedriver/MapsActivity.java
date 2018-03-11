@@ -1,4 +1,4 @@
-package com.example.sujan.heatmapformat;
+package com.cs2xb3.sujan.safedriver;
 
 import android.content.res.Resources;
 import android.graphics.Color;
@@ -21,7 +21,6 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.PolygonOptions;
 
 import java.util.ArrayList;
-import java.util.Random;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
