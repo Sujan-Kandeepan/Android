@@ -76,22 +76,29 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(newyork, 15));
 
-        ArrayList<LatLng> shape = new ArrayList<>();
-        shape.add(new LatLng(newyork.latitude - 0.005,newyork.longitude - 0.004));
-        shape.add(new LatLng(newyork.latitude + 0.005,newyork.longitude + 0.006));
-        shape.add(new LatLng(newyork.latitude - 0.005,newyork.longitude + 0.006));
-        drawPolygon(shape);
-
-        ArrayList<LatLng> shape2 = new ArrayList<>();
-        shape2.add(new LatLng(newyork.latitude - 0.005,newyork.longitude - 0.006));
-        shape2.add(new LatLng(newyork.latitude + 0.005,newyork.longitude - 0.006));
-        shape2.add(new LatLng(newyork.latitude + 0.005,newyork.longitude + 0.004));
-        drawPolygon(shape2);
+        for (int i = -1; i <= 1; i++) {
+            for (int j = -1; j <= 1; j++) {
+                LatLng point = new LatLng(newyork.latitude + i * 0.002,
+                        newyork.longitude + j * 0.002);
+                ArrayList<LatLng> shape = new ArrayList<>();
+                shape.add(new LatLng(point.latitude - 0.001, point.longitude - 0.001));
+                shape.add(new LatLng(point.latitude + 0.001, point.longitude - 0.001));
+                shape.add(new LatLng(point.latitude + 0.001, point.longitude + 0.001));
+                shape.add(new LatLng(point.latitude - 0.001, point.longitude + 0.001));
+                drawPolygon(shape, (i+1)*3 + (j+1));
+            }
+        }
     }
 
-    public void drawPolygon(ArrayList<LatLng> shape) {
-        Random random = new Random();
-        int colourShift = random.nextInt(0x88) * 0x100;
+    public void drawPolygon(ArrayList<LatLng> shape, int intensity) {
+        int colourShift = intensity * 0x1100; // Varying intensity between 0-8 collision points
+        if (colourShift > 0x8800) {
+            colourShift = 0x8800;
+        }
+        colourShift = 0x8800 - colourShift;
+
+        Log.i("Intensity", Integer.toString(intensity));
+        Log.i("Colour shift", Integer.toString(colourShift));
 
         shape.add(shape.get(0));
         mMap.addPolygon(new PolygonOptions()
