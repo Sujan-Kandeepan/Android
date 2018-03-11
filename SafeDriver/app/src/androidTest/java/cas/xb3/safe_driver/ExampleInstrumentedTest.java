@@ -1,4 +1,4 @@
-package com.example.sujan.heatmapformat;
+package cas.xb3.safe_driver;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.example.sujan.heatmapformat", appContext.getPackageName());
+        assertEquals("cas.xb3.heatmapformat", appContext.getPackageName());
     }
 }

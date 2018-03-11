@@ -1,4 +1,4 @@
-package com.example.sujan.heatmapformat;
+package cas.xb3.safe_driver;
 
 import org.junit.Test;
 

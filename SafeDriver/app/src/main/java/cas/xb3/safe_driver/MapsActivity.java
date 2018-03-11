@@ -1,4 +1,4 @@
-package com.cs2xb3.sujan.safedriver;
+package cas.xb3.safe_driver;
 
 import android.content.res.Resources;
 import android.graphics.Color;
@@ -137,7 +137,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                         Toast.LENGTH_SHORT).show();
             }
         } catch (Exception e) {
-            if (startPoint.equals("") || endPoint.equals("")) {
+            if (startPoint.isEmpty() || endPoint.equals("")) {
                 Toast.makeText(this, "One or both text fields empty",
                         Toast.LENGTH_SHORT).show();
             }
