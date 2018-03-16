@@ -5,6 +5,7 @@ import android.graphics.Color;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -44,6 +45,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     EditText endEditText;
     Button navigateButton;
 
+    // Boolean to prevent repetitive resizing
+    boolean appLaunched = false;
+
     // Map instance variable
     private GoogleMap mMap;
 
@@ -54,7 +58,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     double startLat, startLng, endLat, endLng;
 
     //Map bounds JSON object
-    JSONObject mapBoundsObject;
+    JSONObject mapBounds;
 
     // Define behaviour on app startup
     @Override
@@ -74,10 +78,55 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         startEditText = findViewById(R.id.startEditText);
         endEditText = findViewById(R.id.endEditText);
         navigateButton = findViewById(R.id.navigateButton);
-        Log.i("Button width", Integer.toString(navigateButton.getMeasuredWidth()));
-        startEditText.setWidth((Resources.getSystem().getDisplayMetrics().widthPixels
-                - navigateButton.getWidth()) / 2);
-        endEditText.setWidth(startEditText.getWidth());
+
+        if (appLaunched) {
+            Log.i("Button width", Integer.toString(navigateButton.getMeasuredWidth()));
+            startEditText.setWidth((Resources.getSystem().getDisplayMetrics().widthPixels
+                    - navigateButton.getWidth()) / 2);
+            endEditText.setWidth(startEditText.getWidth());
+
+            appLaunched = true;
+        }
+
+        startEditText.setOnKeyListener(new View.OnKeyListener()
+        {
+            public boolean onKey(View v, int keyCode, KeyEvent event)
+            {
+                if (event.getAction() == KeyEvent.ACTION_DOWN)
+                {
+                    switch (keyCode)
+                    {
+                        case KeyEvent.KEYCODE_DPAD_CENTER:
+                        case KeyEvent.KEYCODE_ENTER:
+                            navigate(navigateButton);
+                            return true;
+                        default:
+                            break;
+                    }
+                }
+                return false;
+            }
+        });
+
+        endEditText.setOnKeyListener(new View.OnKeyListener()
+        {
+            public boolean onKey(View v, int keyCode, KeyEvent event)
+            {
+                if (event.getAction() == KeyEvent.ACTION_DOWN)
+                {
+                    switch (keyCode)
+                    {
+                        case KeyEvent.KEYCODE_DPAD_CENTER:
+                        case KeyEvent.KEYCODE_ENTER:
+                            navigate(navigateButton);
+                            return true;
+                        default:
+                            break;
+                    }
+                }
+                return false;
+            }
+        });
     }
 
     // Define behaviour once map is fetched and ready
@@ -162,6 +211,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             if (inRange) {
                 Toast.makeText(this, "Navigate!", Toast.LENGTH_SHORT).show();
                 generateJSON();
+                apiCall();
             }
 
             // Show error message if coordinates out of bounds
@@ -195,7 +245,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         double boxbottom = Math.min(startLng, endLng) - boxheight * 0.1;
         double boxtop = Math.max(startLng, endLng) + boxheight * 0.1;
 
-        mapBoundsObject = new JSONObject();
+        mapBounds = new JSONObject();
         JSONArray jsonArray = new JSONArray();
         for (int i = 0; i < 4; i++) {
             JSONObject cornerObject = new JSONObject();
@@ -210,8 +260,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             jsonArray.put(cornerObject);
         }
         try {
-            mapBoundsObject.put("map_boundaries", jsonArray);
-            Log.i("JSON string", mapBoundsObject.toString());
+            mapBounds.put("map_boundaries", jsonArray);
+            Log.i("JSON string", mapBounds.toString());
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -225,7 +275,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         String url ="http://localhost:8000/api/v1/route";
 
         // Send POST request to server, receive a response
-        JsonObjectRequest postRequest = new JsonObjectRequest( Request.Method.POST, url, mapBoundsObject,
+        JsonObjectRequest postRequest = new JsonObjectRequest(Request.Method.POST, url, mapBounds,
 
                 // Listening for response with workable polygon information
                 new Response.Listener<JSONObject>() {
@@ -241,7 +291,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         // Handle Error
-                        Log.i("Error",error.toString());
+                        Log.i("Error response",error.toString());
                     }
                 }) {
 
