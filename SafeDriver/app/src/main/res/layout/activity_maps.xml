@@ -55,6 +55,8 @@
             android:layout_alignParentRight="true"
             android:layout_alignParentTop="true"
             android:layout_column="2"
+            android:layout_marginLeft="2pt"
+            android:layout_marginRight="2pt"
             android:layout_row="0"
             android:layout_toEndOf="@+id/gridLayout"
             android:layout_toRightOf="@+id/gridLayout"
@@ -62,6 +64,7 @@
             android:gravity="right|fill_vertical"
             android:onClick="navigate"
             android:text="Navigate"
+            android:textAlignment="center"
             android:textColor="@color/colorAccent"
             tools:layout_editor_absoluteX="384dp" />
     </LinearLayout>

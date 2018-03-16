@@ -11,6 +11,14 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.DefaultRetryPolicy;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -20,7 +28,13 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.PolygonOptions;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
@@ -35,6 +49,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     // Colour adjustment constant
     private final static int ALPHA_ADJUSTMENT = 0x77000000;
+
+    // Bounding box coordinate variables
+    double startLat, startLng, endLat, endLng;
+
+    //Map bounds JSON object
+    JSONObject mapBoundsObject;
 
     // Define behaviour on app startup
     @Override
@@ -114,7 +134,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         // Extract coordinate information from text fields
         String startPoint = startEditText.getText().toString();
         String endPoint = endEditText.getText().toString();
-        double startLat, startLng, endLat, endLng;
 
         // Attempt to start navigation with given data
         try {
@@ -142,6 +161,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             // Navigate if coordinates are within map bounds
             if (inRange) {
                 Toast.makeText(this, "Navigate!", Toast.LENGTH_SHORT).show();
+                generateJSON();
             }
 
             // Show error message if coordinates out of bounds
@@ -165,5 +185,86 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                         Toast.LENGTH_LONG).show();
             }
         }
+    }
+
+    public void generateJSON() {
+        String[] cornerlabels = new String[] {"TL", "TR", "BL", "BR"};
+        double boxwidth = Math.abs(startLat - endLat), boxheight = Math.abs(startLng - endLng);
+        double boxleft = Math.min(startLat, endLat) - boxwidth * 0.1;
+        double boxright = Math.max(startLat, endLat) + boxwidth * 0.1;
+        double boxbottom = Math.min(startLng, endLng) - boxheight * 0.1;
+        double boxtop = Math.max(startLng, endLng) + boxheight * 0.1;
+
+        mapBoundsObject = new JSONObject();
+        JSONArray jsonArray = new JSONArray();
+        for (int i = 0; i < 4; i++) {
+            JSONObject cornerObject = new JSONObject();
+            try {
+                cornerObject.put("vertex", cornerlabels[i]);
+                cornerObject.put("latitude", i % 2 == 0 ? boxleft : boxright);
+                cornerObject.put("longitude", (int)(i / 2) == 0 ? boxtop : boxbottom);
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+            Log.i("Corner JSON", cornerObject.toString());
+            jsonArray.put(cornerObject);
+        }
+        try {
+            mapBoundsObject.put("map_boundaries", jsonArray);
+            Log.i("JSON string", mapBoundsObject.toString());
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
+
+    // Make POST request to server
+    public void apiCall() {
+
+        // Instantiate the RequestQueue.
+        RequestQueue queue = Volley.newRequestQueue(this);
+        String url ="http://localhost:8000/api/v1/route";
+
+        // Send POST request to server, receive a response
+        JsonObjectRequest postRequest = new JsonObjectRequest( Request.Method.POST, url, mapBoundsObject,
+
+                // Listening for response with workable polygon information
+                new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        // Interpreting base64 as bitmap image
+                        Log.d("Returned JSON", response.toString());
+                    }
+                },
+
+                // Listening for response if errors occur
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        // Handle Error
+                        Log.i("Error",error.toString());
+                    }
+                }) {
+
+            // Add headers to POST request as needed
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                HashMap<String, String> headers = new HashMap<String,String>();
+                headers.put("Content-Type", "application/json; charset=utf-8");
+                return headers;
+            }
+
+            // Specify information about data being sent
+            @Override
+            public String getBodyContentType() {
+                return "application/json";
+            }
+        };
+
+        // Set timeout to 30 seconds
+        postRequest.setRetryPolicy(new DefaultRetryPolicy(
+                30000,
+                DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+                DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+        queue.add(postRequest);
     }
 }
