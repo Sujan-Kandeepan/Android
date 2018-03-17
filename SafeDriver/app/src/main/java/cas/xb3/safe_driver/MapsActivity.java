@@ -1,5 +1,6 @@
 package cas.xb3.safe_driver;
 
+import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Color;
 import android.support.v4.app.FragmentActivity;
@@ -7,6 +8,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -20,12 +22,14 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.PolygonOptions;
 
@@ -213,7 +217,27 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             if (inRange) {
                 Toast.makeText(this, "Navigate!", Toast.LENGTH_SHORT).show();
                 generateJSON();
-                apiCall();
+                //apiCall();
+
+                try {
+                    JSONObject mockresponse = new JSONObject("{\"clusters\":[{\"id\":1," +
+                            "\"polygon\":[{\"latitude\":40.7867127,\"longitude\":-73.9765953}," +
+                            "{\"latitude\":40.785994625,\"longitude\":-73.9512014}," +
+                            "{\"latitude\":40.7838404,\"longitude\":-73.9584568}," +
+                            "{\"latitude\":40.7752235,\"longitude\":-73.9548291}]," +
+                            "\"num_data_points\":10}]}");
+                    processResponse(mockresponse);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+                // Check if no view has focus:
+                View thisview = this.getCurrentFocus();
+                if (thisview != null) {
+                    InputMethodManager imm =
+                            (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+                    imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+                }
             }
 
             // Show error message if coordinates out of bounds
@@ -269,6 +293,38 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         }
     }
 
+    public void processResponse(JSONObject response) {
+        try {
+            JSONArray clusters = response.getJSONArray("clusters");
+            for (int i = 0; i < clusters.length(); i++) {
+                JSONObject cluster = clusters.getJSONObject(i);
+                ArrayList<LatLng> polygon = new ArrayList<>();
+                JSONArray points = cluster.getJSONArray("polygon");
+                LatLngBounds.Builder builder = new LatLngBounds.Builder();
+                for (int j = 0; j < points.length(); j++) {
+                    JSONObject point = points.getJSONObject(j);
+                    double latitude = point.getDouble("latitude");
+                    double longitude = point.getDouble("longitude");
+
+                    LatLng latLng = new LatLng(latitude, longitude);
+                    polygon.add(latLng);
+                    builder.include(latLng);
+                    Log.i("Polygon point", latLng.toString());
+
+                }
+                int numdatapoints = cluster.getInt("num_data_points");
+                drawPolygon(polygon, numdatapoints);
+
+                LatLngBounds bounds = builder.build();
+                int padding = 100; // offset from edges of the map in pixels
+                CameraUpdate cu = CameraUpdateFactory.newLatLngBounds(bounds, padding);
+                mMap.animateCamera(cu);
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
+
     // Make POST request to server
     public void apiCall() {
 
@@ -286,6 +342,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     public void onResponse(JSONObject response) {
                         // Interpreting base64 as bitmap image
                         Log.d("Returned JSON", response.toString());
+                        processResponse(response);
                     }
                 },
 
