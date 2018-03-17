@@ -98,7 +98,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     {
                         case KeyEvent.KEYCODE_DPAD_CENTER:
                         case KeyEvent.KEYCODE_ENTER:
-                            navigate(navigateButton);
+                            startEditText.clearFocus();
+                            endEditText.requestFocus();
+                            endEditText.setCursorVisible(true);
                             return true;
                         default:
                             break;
@@ -272,7 +274,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         // Instantiate the RequestQueue.
         RequestQueue queue = Volley.newRequestQueue(this);
-        String ip = "172.17.103.204", port = "8000";
+        String ip = "192.168.0.23", port = "8000";
         String url = "http://" + ip + ":" + port + "/api/v1/route";
 
         // Send POST request to server, receive a response
