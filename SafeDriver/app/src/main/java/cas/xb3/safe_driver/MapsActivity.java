@@ -178,14 +178,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         } catch (JSONException e) {
             e.printStackTrace();
         }
-
-        // Check if no view has focus:
-        View thisview = this.getCurrentFocus();
-        if (thisview != null) {
-            InputMethodManager imm =
-                    (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
-            imm.hideSoftInputFromWindow(thisview.getWindowToken(), 0);
-        }
     }
 
     // Draw collision cluster polygon, given perimeter points and intensity
@@ -247,6 +239,14 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 //apiCall();
 
                 mockCluster();
+
+                // Close soft keyboard during transition
+                View thisview = this.getCurrentFocus();
+                if (thisview != null) {
+                    InputMethodManager imm =
+                            (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+                    imm.hideSoftInputFromWindow(thisview.getWindowToken(), 0);
+                }
             }
 
             // Show error message if coordinates out of bounds
