@@ -161,7 +161,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 shape.add(new LatLng(point.latitude + 0.001, point.longitude - 0.001));
                 shape.add(new LatLng(point.latitude + 0.001, point.longitude + 0.001));
                 shape.add(new LatLng(point.latitude - 0.001, point.longitude + 0.001));
-                drawPolygon(shape, (i+1)*3 + (j+1));
+                drawPolygon(shape, (i+1)*6 + (j+1)*2);
             }
         }
     }
@@ -191,6 +191,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     // Draw collision cluster polygon, given perimeter points and intensity
     public void drawPolygon(ArrayList<LatLng> shape, int intensity) {
         // Set colour by intensity, more red given higher value
+        intensity = (int) intensity / 2;
         int colourShift = intensity * 0x1100; // Varying intensity between 0-8 collision points
         if (colourShift > 0x8800) {
             colourShift = 0x8800;
