@@ -66,11 +66,14 @@
             android:layout_toRightOf="@+id/gridLayout"
             android:layout_weight="1"
             android:gravity="right|fill_vertical"
+            android:includeFontPadding="true"
+            android:minWidth="0pt"
             android:onClick="navigate"
+            android:paddingHorizontal="0pt"
+            android:paddingVertical="0pt"
             android:text="Navigate"
             android:textAlignment="center"
-            android:textColor="@color/colorAccent"
-            tools:layout_editor_absoluteX="384dp" />
+            android:textColor="@color/colorAccent" />
     </LinearLayout>
 
 </RelativeLayout>

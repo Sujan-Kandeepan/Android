@@ -272,7 +272,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         // Instantiate the RequestQueue.
         RequestQueue queue = Volley.newRequestQueue(this);
-        String url ="http://localhost:8000/api/v1/route";
+        String ip = "172.17.103.204", port = "8000";
+        String url = "http://" + ip + ":" + port + "/api/v1/route";
 
         // Send POST request to server, receive a response
         JsonObjectRequest postRequest = new JsonObjectRequest(Request.Method.POST, url, mapBounds,
