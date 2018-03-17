@@ -318,6 +318,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 30000,
                 DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
                 DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+
+        // Add POST request to request queue
         queue.add(postRequest);
     }
 }
