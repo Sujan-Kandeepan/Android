@@ -141,6 +141,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         // Fetch and initialize map
         mMap = googleMap;
 
+        mockShapes();
+    }
+
+    public void mockShapes() {
         // Add a marker in New York and move the camera
         LatLng newyork = new LatLng(40.7484, -73.9857);
         mMap.addMarker(new MarkerOptions().position(newyork).title("Marker in New York")
@@ -159,6 +163,28 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 shape.add(new LatLng(point.latitude - 0.001, point.longitude + 0.001));
                 drawPolygon(shape, (i+1)*3 + (j+1));
             }
+        }
+    }
+
+    public void mockCluster() {
+        try {
+            JSONObject mockresponse = new JSONObject("{\"clusters\":[{\"id\":1," +
+                    "\"polygon\":[{\"latitude\":40.7867127,\"longitude\":-73.9765953}," +
+                    "{\"latitude\":40.785994625,\"longitude\":-73.9512014}," +
+                    "{\"latitude\":40.7838404,\"longitude\":-73.9584568}," +
+                    "{\"latitude\":40.7752235,\"longitude\":-73.9548291}]," +
+                    "\"num_data_points\":10}]}");
+            processResponse(mockresponse);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        // Check if no view has focus:
+        View thisview = this.getCurrentFocus();
+        if (thisview != null) {
+            InputMethodManager imm =
+                    (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(thisview.getWindowToken(), 0);
         }
     }
 
@@ -219,25 +245,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 generateJSON();
                 //apiCall();
 
-                try {
-                    JSONObject mockresponse = new JSONObject("{\"clusters\":[{\"id\":1," +
-                            "\"polygon\":[{\"latitude\":40.7867127,\"longitude\":-73.9765953}," +
-                            "{\"latitude\":40.785994625,\"longitude\":-73.9512014}," +
-                            "{\"latitude\":40.7838404,\"longitude\":-73.9584568}," +
-                            "{\"latitude\":40.7752235,\"longitude\":-73.9548291}]," +
-                            "\"num_data_points\":10}]}");
-                    processResponse(mockresponse);
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-
-                // Check if no view has focus:
-                View thisview = this.getCurrentFocus();
-                if (thisview != null) {
-                    InputMethodManager imm =
-                            (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
-                    imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
-                }
+                mockCluster();
             }
 
             // Show error message if coordinates out of bounds
