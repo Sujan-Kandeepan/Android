@@ -78,11 +78,13 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     // Define and adjust UI elements upon display
     @Override
     public void onWindowFocusChanged(boolean hasFocus) {
+        // Instantiate view variables
         linearLayout = findViewById(R.id.linearLayout);
         startEditText = findViewById(R.id.startEditText);
         endEditText = findViewById(R.id.endEditText);
         navigateButton = findViewById(R.id.navigateButton);
 
+        // Resize UI elements in header
         if (appLaunched) {
             Log.i("Button width", Integer.toString(navigateButton.getMeasuredWidth()));
             startEditText.setWidth((Resources.getSystem().getDisplayMetrics().widthPixels
@@ -92,6 +94,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             appLaunched = true;
         }
 
+        // Change focus to end location after start location entered
         startEditText.setOnKeyListener(new View.OnKeyListener()
         {
             public boolean onKey(View v, int keyCode, KeyEvent event)
@@ -114,6 +117,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             }
         });
 
+        // Trigger navigation button function after end location entered
         endEditText.setOnKeyListener(new View.OnKeyListener()
         {
             public boolean onKey(View v, int keyCode, KeyEvent event)
@@ -141,9 +145,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         // Fetch and initialize map
         mMap = googleMap;
 
+        // Display mock shapes on startup
         mockShapes();
     }
 
+    // Random display of shapes, shows colours and appearance
     public void mockShapes() {
         // Add a marker in New York and move the camera
         LatLng newyork = new LatLng(40.7484, -73.9857);
@@ -154,26 +160,35 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         // Plot nine sample shapes
         for (int i = -1; i <= 1; i++) {
             for (int j = -1; j <= 1; j++) {
+                // Find location of Empire State Building
                 LatLng point = new LatLng(newyork.latitude + i * 0.002,
                         newyork.longitude + j * 0.002);
+
+                // Generate array list of points
                 ArrayList<LatLng> shape = new ArrayList<>();
                 shape.add(new LatLng(point.latitude - 0.001, point.longitude - 0.001));
                 shape.add(new LatLng(point.latitude + 0.001, point.longitude - 0.001));
                 shape.add(new LatLng(point.latitude + 0.001, point.longitude + 0.001));
                 shape.add(new LatLng(point.latitude - 0.001, point.longitude + 0.001));
+
+                // Draw shape on map
                 drawPolygon(shape, (i+1)*6 + (j+1)*2);
             }
         }
     }
 
+    // Generate cluster using mock response
     public void mockCluster() {
         try {
+            // Initialize JSON object from response received in terminal
             JSONObject mockresponse = new JSONObject("{\"clusters\":[{\"id\":1," +
                     "\"polygon\":[{\"latitude\":40.7867127,\"longitude\":-73.9765953}," +
                     "{\"latitude\":40.785994625,\"longitude\":-73.9512014}," +
                     "{\"latitude\":40.7838404,\"longitude\":-73.9584568}," +
                     "{\"latitude\":40.7752235,\"longitude\":-73.9548291}]," +
                     "\"num_data_points\":10}]}");
+
+            // Generate cluster based on mock response
             processResponse(mockresponse);
         } catch (JSONException e) {
             e.printStackTrace();
@@ -272,28 +287,39 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         }
     }
 
+    // Create JSON object with map bounds surrounding given route
     public void generateJSON() {
+        // List of four corner labels
         String[] cornerlabels = new String[] {"TL", "TR", "BL", "BR"};
+
+        // Compute left, right, bottom and top of bounding box
         double boxwidth = Math.abs(startLat - endLat), boxheight = Math.abs(startLng - endLng);
         double boxleft = Math.min(startLat, endLat) - boxwidth * 0.1;
         double boxright = Math.max(startLat, endLat) + boxwidth * 0.1;
         double boxbottom = Math.min(startLng, endLng) - boxheight * 0.1;
         double boxtop = Math.max(startLng, endLng) + boxheight * 0.1;
 
+        // Generate JSON object to store data
         mapBounds = new JSONObject();
         JSONArray jsonArray = new JSONArray();
         for (int i = 0; i < 4; i++) {
+            // Pass data for a single polygon vertex
             JSONObject cornerObject = new JSONObject();
             try {
+                // Specify corner label and coordinates
                 cornerObject.put("vertex", cornerlabels[i]);
                 cornerObject.put("latitude", i % 2 == 0 ? boxleft : boxright);
                 cornerObject.put("longitude", (int)(i / 2) == 0 ? boxtop : boxbottom);
             } catch (JSONException e) {
                 e.printStackTrace();
             }
+
+            // Add vertex info to JSON object
             Log.i("Corner JSON", cornerObject.toString());
             jsonArray.put(cornerObject);
         }
+
+        // Finish constructing entire JSON object
         try {
             mapBounds.put("map_boundaries", jsonArray);
             Log.i("JSON string", mapBounds.toString());
@@ -302,28 +328,40 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         }
     }
 
+    // Receive JSON data and output as shapes on map
     public void processResponse(JSONObject response) {
         try {
+            // Receive array of clusters
             JSONArray clusters = response.getJSONArray("clusters");
             for (int i = 0; i < clusters.length(); i++) {
+                // Get cluster, initialize polygon, consider map bounds
                 JSONObject cluster = clusters.getJSONObject(i);
                 ArrayList<LatLng> polygon = new ArrayList<>();
                 JSONArray points = cluster.getJSONArray("polygon");
                 LatLngBounds.Builder builder = new LatLngBounds.Builder();
+
+                // Add individual points to shape
                 for (int j = 0; j < points.length(); j++) {
+                    // Receive points in shape
                     JSONObject point = points.getJSONObject(j);
                     double latitude = point.getDouble("latitude");
                     double longitude = point.getDouble("longitude");
 
+                    // Add points to shape and scope of map bounds
                     LatLng latLng = new LatLng(latitude, longitude);
                     polygon.add(latLng);
                     builder.include(latLng);
                     Log.i("Polygon point", latLng.toString());
 
                 }
-                int numdatapoints = cluster.getInt("num_data_points");
-                drawPolygon(polygon, numdatapoints);
 
+                // Get number of collisions within cluster
+                int numDataPoints = cluster.getInt("num_data_points");
+
+                // Draw collision cluster polygon on map
+                drawPolygon(polygon, numDataPoints);
+
+                // Determine map bounds around map, adjust and move camera
                 LatLngBounds bounds = builder.build();
                 int padding = 100; // offset from edges of the map in pixels
                 CameraUpdate cu = CameraUpdateFactory.newLatLngBounds(bounds, padding);
