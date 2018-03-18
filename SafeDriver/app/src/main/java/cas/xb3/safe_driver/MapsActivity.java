@@ -30,6 +30,7 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.Polygon;
 import com.google.android.gms.maps.model.PolygonOptions;
@@ -62,7 +63,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     // Bounding box coordinate variables
     double startLat, startLng, endLat, endLng;
 
-    // Array list of polygons
+    // Array lists of markers and polygons
+    ArrayList<Marker> markers = new ArrayList<>();
     ArrayList<Polygon> polygons = new ArrayList<>();
 
     //Map bounds JSON object
@@ -157,8 +159,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public void mockShapes() {
         // Add a marker in New York and move the camera
         LatLng newyork = new LatLng(40.7484, -73.9857);
-        mMap.addMarker(new MarkerOptions().position(newyork).title("Marker in New York")
+        Marker marker = mMap.addMarker(new MarkerOptions().position(newyork)
+                .title("Marker in New York")
                 .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
+        markers.add(marker);
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(newyork, 15));
 
         // Plot nine sample shapes
@@ -357,17 +361,42 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     polygon.add(latLng);
                     builder.include(latLng);
                     Log.i("Polygon point", latLng.toString());
-
                 }
+
+                // Include start and end points within map bounds
+                builder.include(new LatLng(startLat, startLng));
+                builder.include(new LatLng(endLat, endLng));
 
                 // Get number of collisions within cluster
                 int numDataPoints = cluster.getInt("num_data_points");
+
+                // Clear old markers
+                for (int j = 0; j < markers.size(); j++) {
+                    markers.get(j).remove();
+                }
+                markers.clear();
 
                 // Clear old polygons
                 for (int j = 0; j < polygons.size(); j++) {
                     polygons.get(j).remove();
                 }
                 polygons.clear();
+
+                // Add a markers for start location
+                LatLng startPoint = new LatLng(startLat, startLng);
+                Marker startMarker = mMap.addMarker(new MarkerOptions().position(startPoint)
+                        .title("Start Location")
+                        .icon(BitmapDescriptorFactory
+                                .defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
+                markers.add(startMarker);
+
+                // Add a marker for end location
+                LatLng endPoint = new LatLng(endLat, endLng);
+                Marker endMarker = mMap.addMarker(new MarkerOptions().position(endPoint)
+                        .title("End Location")
+                        .icon(BitmapDescriptorFactory
+                                .defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
+                markers.add(endMarker);
 
                 // Draw collision cluster polygon on map
                 drawPolygon(polygon, numDataPoints);
