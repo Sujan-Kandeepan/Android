@@ -21,7 +21,7 @@
         android:orientation="horizontal">
 
         <EditText
-            android:digits="0123456789.,"
+            android:digits="0123456789.,-"
             android:id="@+id/startEditText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -37,7 +37,7 @@
             android:textSize="18sp" />
 
         <EditText
-            android:digits="0123456789.,"
+            android:digits="0123456789.,-"
             android:id="@+id/endEditText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
