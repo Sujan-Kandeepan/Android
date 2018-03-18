@@ -31,6 +31,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.maps.model.Polygon;
 import com.google.android.gms.maps.model.PolygonOptions;
 
 import org.json.JSONArray;
@@ -60,6 +61,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     // Bounding box coordinate variables
     double startLat, startLng, endLat, endLng;
+
+    // Array list of polygons
+    ArrayList<Polygon> polygons = new ArrayList<>();
 
     //Map bounds JSON object
     JSONObject mapBounds;
@@ -211,11 +215,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         // Draw polygon on map
         shape.add(shape.get(0));
-        mMap.addPolygon(new PolygonOptions()
+        Polygon p = mMap.addPolygon(new PolygonOptions()
                 .addAll(shape)
                 .fillColor(Color.RED - ALPHA_ADJUSTMENT + colourShift)
                 .strokeColor(Color.RED + colourShift)
                 .strokeWidth(5));
+        polygons.add(p);
     }
 
     // Button pressed, start navigation
@@ -357,6 +362,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
                 // Get number of collisions within cluster
                 int numDataPoints = cluster.getInt("num_data_points");
+
+                // Clear old polygons
+                for (int j = 0; j < polygons.size(); j++) {
+                    polygons.get(j).remove();
+                }
+                polygons.clear();
 
                 // Draw collision cluster polygon on map
                 drawPolygon(polygon, numDataPoints);
