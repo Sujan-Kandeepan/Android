@@ -2,6 +2,8 @@ package cas.xb3.safe_driver;
 
 import android.content.Context;
 import android.content.res.Resources;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
@@ -28,18 +30,24 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.google.android.gms.maps.model.CustomCap;
+import com.google.android.gms.maps.model.Dash;
+import com.google.android.gms.maps.model.Gap;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
-import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.maps.model.PatternItem;
 import com.google.android.gms.maps.model.Polygon;
 import com.google.android.gms.maps.model.PolygonOptions;
+import com.google.android.gms.maps.model.Polyline;
+import com.google.android.gms.maps.model.PolylineOptions;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -51,21 +59,18 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     EditText endEditText;
     Button navigateButton;
 
-    // Boolean to prevent repetitive resizing
-    boolean appLaunched = false;
-
     // Map instance variable
     private GoogleMap mMap;
 
-    // Colour adjustment constant
-    private final static int ALPHA_ADJUSTMENT = 0x77000000;
+    // Boolean to prevent repetitive resizing
+    boolean appLaunched = false;
 
     // Bounding box coordinate variables
     double startLat, startLng, endLat, endLng;
 
-    // Array lists of markers and polygons
-    ArrayList<Marker> markers = new ArrayList<>();
+    // Array list of polygons, route line
     ArrayList<Polygon> polygons = new ArrayList<>();
+    Polyline routeLine;
 
     //Map bounds JSON object
     JSONObject mapBounds;
@@ -73,23 +78,25 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     // Define behaviour on app startup
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        // Initialize app, set view
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
-        // Obtain the SupportMapFragment and get notified when the map is ready to be used.
+
+        // Obtain the SupportMapFragment and get notified when the map is ready to be used
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
-    }
 
-    // Define and adjust UI elements upon display
-    @Override
-    public void onWindowFocusChanged(boolean hasFocus) {
         // Instantiate view variables
         linearLayout = findViewById(R.id.linearLayout);
         startEditText = findViewById(R.id.startEditText);
         endEditText = findViewById(R.id.endEditText);
         navigateButton = findViewById(R.id.navigateButton);
+    }
 
+    // Define and adjust UI elements upon display
+    @Override
+    public void onWindowFocusChanged(boolean hasFocus) {
         // Resize UI elements in header
         if (appLaunched) {
             Log.i("Button width", Integer.toString(navigateButton.getMeasuredWidth()));
@@ -153,16 +160,24 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         // Display mock shapes on startup
         mockShapes();
+
+        // Enter mock start and end locations
+        mockText();
+    }
+
+    // Random start and end locations quickly entered
+    public void mockText() {
+        startEditText.setText("40.79,-73.97");
+        endEditText.setText("40.77,-73.96");
     }
 
     // Random display of shapes, shows colours and appearance
     public void mockShapes() {
         // Add a marker in New York and move the camera
         LatLng newyork = new LatLng(40.7484, -73.9857);
-        Marker marker = mMap.addMarker(new MarkerOptions().position(newyork)
+        mMap.addMarker(new MarkerOptions().position(newyork)
                 .title("Marker in New York")
                 .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
-        markers.add(marker);
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(newyork, 15));
 
         // Plot nine sample shapes
@@ -206,6 +221,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     // Draw collision cluster polygon, given perimeter points and intensity
     public void drawPolygon(ArrayList<LatLng> shape, int intensity) {
         // Set colour by intensity, more red given higher value
+        final int alphaAdjustment = 0x77000000;
         intensity = (int) intensity / 2;
         int colourShift = intensity * 0x1100; // Varying intensity between 0-8 collision points
         if (colourShift > 0x8800) {
@@ -221,7 +237,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         shape.add(shape.get(0));
         Polygon p = mMap.addPolygon(new PolygonOptions()
                 .addAll(shape)
-                .fillColor(Color.RED - ALPHA_ADJUSTMENT + colourShift)
+                .fillColor(Color.RED - alphaAdjustment + colourShift)
                 .strokeColor(Color.RED + colourShift)
                 .strokeWidth(5));
         polygons.add(p);
@@ -370,33 +386,29 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 // Get number of collisions within cluster
                 int numDataPoints = cluster.getInt("num_data_points");
 
-                // Clear old markers
-                for (int j = 0; j < markers.size(); j++) {
-                    markers.get(j).remove();
-                }
-                markers.clear();
-
                 // Clear old polygons
                 for (int j = 0; j < polygons.size(); j++) {
                     polygons.get(j).remove();
                 }
                 polygons.clear();
 
-                // Add a markers for start location
+                // Draw dotted line on map
                 LatLng startPoint = new LatLng(startLat, startLng);
-                Marker startMarker = mMap.addMarker(new MarkerOptions().position(startPoint)
-                        .title("Start Location")
-                        .icon(BitmapDescriptorFactory
-                                .defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
-                markers.add(startMarker);
-
-                // Add a marker for end location
                 LatLng endPoint = new LatLng(endLat, endLng);
-                Marker endMarker = mMap.addMarker(new MarkerOptions().position(endPoint)
-                        .title("End Location")
-                        .icon(BitmapDescriptorFactory
-                                .defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
-                markers.add(endMarker);
+                Bitmap car = Bitmap.createScaledBitmap(BitmapFactory
+                        .decodeResource(getResources(), R.drawable.car),
+                        150, 150, false);
+                Bitmap finish = Bitmap.createScaledBitmap(BitmapFactory.
+                        decodeResource(getResources(), R.drawable.finish),
+                        150, 150, false);
+                if (routeLine != null) routeLine.remove();
+                routeLine = mMap.addPolyline(new PolylineOptions()
+                        .add(startPoint, endPoint)
+                        .width(15)
+                        .color(Color.DKGRAY));
+                routeLine.setPattern(Arrays.<PatternItem>asList(new Gap(20), new Dash(20)));
+                routeLine.setStartCap(new CustomCap(BitmapDescriptorFactory.fromBitmap(car)));
+                routeLine.setEndCap(new CustomCap(BitmapDescriptorFactory.fromBitmap(finish)));
 
                 // Draw collision cluster polygon on map
                 drawPolygon(polygon, numDataPoints);
