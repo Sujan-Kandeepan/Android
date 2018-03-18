@@ -5,6 +5,7 @@ import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
+import android.graphics.Matrix;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -392,15 +393,21 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 }
                 polygons.clear();
 
-                // Draw dotted line on map
+                // Determine location and appearance of route line
                 LatLng startPoint = new LatLng(startLat, startLng);
                 LatLng endPoint = new LatLng(endLat, endLng);
+                Matrix m = new Matrix();
+                m.postRotate(90);
                 Bitmap car = Bitmap.createScaledBitmap(BitmapFactory
                         .decodeResource(getResources(), R.drawable.car),
                         150, 150, false);
+                car = Bitmap.createBitmap(car , 0, 0,
+                        car.getWidth(), car.getHeight(), m, true);
                 Bitmap finish = Bitmap.createScaledBitmap(BitmapFactory.
                         decodeResource(getResources(), R.drawable.finish),
                         150, 150, false);
+
+                // Draw dotted route line on map from start to end
                 if (routeLine != null) routeLine.remove();
                 routeLine = mMap.addPolyline(new PolylineOptions()
                         .add(startPoint, endPoint)
