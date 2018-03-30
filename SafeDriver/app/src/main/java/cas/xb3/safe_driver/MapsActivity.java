@@ -277,9 +277,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             if (inRange) {
                 Toast.makeText(this, "Navigate!", Toast.LENGTH_SHORT).show();
                 generateJSON();
-                //apiCall();
+                apiCall();
 
-                mockCluster();
+                //mockCluster();
 
                 // Close soft keyboard during transition
                 View thisview = this.getCurrentFocus();
@@ -436,11 +436,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         // Instantiate the RequestQueue.
         RequestQueue queue = Volley.newRequestQueue(this);
-        String ip = "192.168.0.23", port = "8000";
-        String url = "http://" + ip + ":" + port + "/api/v1/route";
+        String ip = "172.17.79.212", port = "8000";
+        //String url = "http://" + ip + ":" + port + "/api/v1/route";
+        String url = "https://emilyhorsman.com/safe-driver/api/v1/route.json";
 
         // Send POST request to server, receive a response
-        JsonObjectRequest postRequest = new JsonObjectRequest(Request.Method.POST, url, mapBounds,
+        JsonObjectRequest postRequest = new JsonObjectRequest(Request.Method.GET, url, mapBounds,
 
                 // Listening for response with workable polygon information
                 new Response.Listener<JSONObject>() {
