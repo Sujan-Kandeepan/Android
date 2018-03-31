@@ -21,6 +21,7 @@
         android:orientation="horizontal">
 
         <EditText
+            android:digits="0123456789.,-"
             android:id="@+id/startEditText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -30,13 +31,13 @@
             android:layout_row="0"
             android:layout_weight="1"
             android:hint="Start location"
-            android:inputType="text"
-            android:textAlignment="textStart"
+            android:inputType="numberDecimal"
             android:textColor="@android:color/background_light"
             android:textColorHint="@android:color/darker_gray"
             android:textSize="18sp" />
 
         <EditText
+            android:digits="0123456789.,-"
             android:id="@+id/endEditText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -46,8 +47,7 @@
             android:layout_row="0"
             android:layout_weight="1"
             android:hint="End location"
-            android:inputType="text"
-            android:textAlignment="textStart"
+            android:inputType="numberDecimal"
             android:textColor="@android:color/background_light"
             android:textColorHint="@android:color/darker_gray"
             android:textSize="18sp"
@@ -66,10 +66,14 @@
             android:layout_toRightOf="@+id/gridLayout"
             android:layout_weight="1"
             android:gravity="right|fill_vertical"
+            android:includeFontPadding="true"
+            android:minWidth="0pt"
             android:onClick="navigate"
+            android:paddingHorizontal="0pt"
+            android:paddingVertical="0pt"
             android:text="Navigate"
-            android:textColor="@color/colorAccent"
-            tools:layout_editor_absoluteX="384dp" />
+            android:textAlignment="center"
+            android:textColor="@color/colorAccent" />
     </LinearLayout>
 
 </RelativeLayout>
