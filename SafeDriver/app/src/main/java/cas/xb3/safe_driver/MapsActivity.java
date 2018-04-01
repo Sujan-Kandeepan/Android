@@ -6,6 +6,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.Matrix;
+import android.os.AsyncTask;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -50,6 +51,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
@@ -210,7 +212,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     "\"num_data_points\":10}]}");
 
             // Generate cluster based on mock response
-            processResponse(mockresponse);
+            drawClusters(mockresponse);
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -239,6 +241,31 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 .strokeColor(Color.RED + colourShift)
                 .strokeWidth(5));
         polygons.add(p);
+    }
+
+    // Generate URL from which to obtain route line
+    private String getDirectionsUrl(LatLng origin,LatLng dest){
+
+
+        // Origin of route
+        String str_origin = "origin="+origin.latitude+","+origin.longitude;
+
+        // Destination of route
+        String str_dest = "destination="+dest.latitude+","+dest.longitude;
+
+        // Sensor enabled
+        String sensor = "sensor=false";
+
+        // Building the parameters to the web service
+        String parameters = str_origin+"&"+str_dest+"&"+sensor;
+
+        // Output format
+        String output = "json";
+
+        // Building the url to the web service
+        String url = "https://maps.googleapis.com/maps/api/directions/"+output+"?"+parameters;
+
+        return url;
     }
 
     // Button pressed, start navigation
@@ -274,9 +301,14 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             if (inRange) {
                 Toast.makeText(this, "Navigate!", Toast.LENGTH_SHORT).show();
                 generateJSON();
-                apiCall();
+                getClusters();
+                getRoute();
 
                 //mockCluster();
+
+                String directionsURL = getDirectionsUrl(new LatLng(startLat, startLng),
+                        new LatLng(endLat, endLng));
+                Log.i("Directions URL", directionsURL);
 
                 // Close soft keyboard during transition
                 View thisview = this.getCurrentFocus();
@@ -351,8 +383,35 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         }
     }
 
+    // Draw route as the crow flies
+    public void drawDottedRoute() {
+        // Determine location and appearance of route line
+        LatLng startPoint = new LatLng(startLat, startLng);
+        LatLng endPoint = new LatLng(endLat, endLng);
+        Matrix m = new Matrix();
+        m.postRotate(90);
+        Bitmap car = Bitmap.createScaledBitmap(BitmapFactory
+                        .decodeResource(getResources(), R.drawable.car),
+                150, 150, false);
+        car = Bitmap.createBitmap(car , 0, 0,
+                car.getWidth(), car.getHeight(), m, true);
+        Bitmap finish = Bitmap.createScaledBitmap(BitmapFactory.
+                        decodeResource(getResources(), R.drawable.finish),
+                150, 150, false);
+
+        // Draw dotted route line on map from start to end
+        if (routeLine != null) routeLine.remove();
+        routeLine = mMap.addPolyline(new PolylineOptions()
+                .add(startPoint, endPoint)
+                .width(15)
+                .color(Color.DKGRAY));
+        routeLine.setPattern(Arrays.<PatternItem>asList(new Gap(20), new Dash(20)));
+        routeLine.setStartCap(new CustomCap(BitmapDescriptorFactory.fromBitmap(car)));
+        routeLine.setEndCap(new CustomCap(BitmapDescriptorFactory.fromBitmap(finish)));
+    }
+
     // Receive JSON data and output as shapes on map
-    public void processResponse(JSONObject response) {
+    public void drawClusters(JSONObject response) {
         try {
             // Receive array of clusters
             JSONArray clusters = response.getJSONArray("clusters");
@@ -390,30 +449,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 }
                 polygons.clear();
 
-                // Determine location and appearance of route line
-                LatLng startPoint = new LatLng(startLat, startLng);
-                LatLng endPoint = new LatLng(endLat, endLng);
-                Matrix m = new Matrix();
-                m.postRotate(90);
-                Bitmap car = Bitmap.createScaledBitmap(BitmapFactory
-                        .decodeResource(getResources(), R.drawable.car),
-                        150, 150, false);
-                car = Bitmap.createBitmap(car , 0, 0,
-                        car.getWidth(), car.getHeight(), m, true);
-                Bitmap finish = Bitmap.createScaledBitmap(BitmapFactory.
-                        decodeResource(getResources(), R.drawable.finish),
-                        150, 150, false);
-
-                // Draw dotted route line on map from start to end
-                if (routeLine != null) routeLine.remove();
-                routeLine = mMap.addPolyline(new PolylineOptions()
-                        .add(startPoint, endPoint)
-                        .width(15)
-                        .color(Color.DKGRAY));
-                routeLine.setPattern(Arrays.<PatternItem>asList(new Gap(20), new Dash(20)));
-                routeLine.setStartCap(new CustomCap(BitmapDescriptorFactory.fromBitmap(car)));
-                routeLine.setEndCap(new CustomCap(BitmapDescriptorFactory.fromBitmap(finish)));
-
                 // Draw collision cluster polygon on map
                 drawPolygon(polygon, numDataPoints);
 
@@ -429,7 +464,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     }
 
     // Make POST request to server
-    public void apiCall() {
+    public void getClusters() {
 
         // Instantiate the RequestQueue.
         RequestQueue queue = Volley.newRequestQueue(this);
@@ -445,8 +480,56 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     @Override
                     public void onResponse(JSONObject response) {
                         // Interpreting base64 as bitmap image
-                        Log.d("Returned JSON", response.toString());
-                        processResponse(response);
+                        Log.d("Cluster JSON", response.toString());
+                        drawClusters(response);
+                    }
+                },
+
+                // Listening for response if errors occur
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        // Handle Error
+                        Log.i("Error response", error.toString());
+                    }
+                }) {
+
+            // Add headers to POST request as needed
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                HashMap<String, String> headers = new HashMap<String, String>();
+                headers.put("Content-Type", "application/json; charset=utf-8");
+                return headers;
+            }
+
+            // Specify information about data being sent
+            @Override
+            public String getBodyContentType() {
+                return "application/json";
+            }
+        };
+
+        // Add POST request to request queue
+        queue.add(postRequest);
+    }
+
+    public void getRoute() {
+
+        // Instantiate the RequestQueue.
+        RequestQueue queue = Volley.newRequestQueue(this);
+        String url = getDirectionsUrl(new LatLng(startLat, startLng), new LatLng(endLat, endLng));
+
+        // Send POST request to server, receive a response
+        JsonObjectRequest postRequest = new JsonObjectRequest(Request.Method.GET, url, mapBounds,
+
+                // Listening for response with workable polygon information
+                new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        // Interpreting base64 as bitmap image
+                        Log.d("Route JSON", response.toString());
+                        ParserTask parserTask = new ParserTask();
+                        parserTask.execute(response.toString());
                     }
                 },
 
@@ -482,5 +565,64 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         // Add POST request to request queue
         queue.add(postRequest);
+    }
+
+    /** A class to parse the Google Places in JSON format */
+    private class ParserTask extends AsyncTask<String, Integer, List<List<HashMap<String,String>>> > {
+
+        // Parsing the data in non-ui thread
+        @Override
+        protected List<List<HashMap<String, String>>> doInBackground(String... jsonData) {
+
+            JSONObject jObject;
+            List<List<HashMap<String, String>>> routes = null;
+
+            try{
+                jObject = new JSONObject(jsonData[0]);
+                DirectionsJSONParser parser = new DirectionsJSONParser();
+
+                // Starts parsing data
+                routes = parser.parse(jObject);
+            }catch(Exception e){
+                e.printStackTrace();
+            }
+            return routes;
+        }
+
+        // Executes in UI thread, after the parsing process
+        @Override
+        protected void onPostExecute(List<List<HashMap<String, String>>> result) {
+            ArrayList<LatLng> points = null;
+            PolylineOptions lineOptions = null;
+            MarkerOptions markerOptions = new MarkerOptions();
+
+            // Traversing through all the routes
+            for(int i=0;i<result.size();i++){
+                points = new ArrayList<LatLng>();
+                lineOptions = new PolylineOptions();
+
+                // Fetching i-th route
+                List<HashMap<String, String>> path = result.get(i);
+
+                // Fetching all the points in i-th route
+                for(int j=0;j<path.size();j++){
+                    HashMap<String,String> point = path.get(j);
+
+                    double lat = Double.parseDouble(point.get("lat"));
+                    double lng = Double.parseDouble(point.get("lng"));
+                    LatLng position = new LatLng(lat, lng);
+
+                    points.add(position);
+                }
+
+                // Adding all the points in the route to LineOptions
+                lineOptions.addAll(points);
+                lineOptions.width(10);
+                lineOptions.color(Color.DKGRAY);
+            }
+
+            // Drawing polyline in the Google Map for the i-th route
+            mMap.addPolyline(lineOptions);
+        }
     }
 }
