@@ -159,8 +159,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         // Fetch and initialize map
         mMap = googleMap;
 
+        // Move the camera to New York
+        LatLng newyork = new LatLng(40.7484, -73.9857);
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(newyork, 15));
+
         // Display mock shapes on startup
-        mockShapes();
+        mockShapes(newyork);
 
         // Enter mock start and end locations
         mockText();
@@ -173,14 +177,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     }
 
     // Random display of shapes, shows colours and appearance
-    public void mockShapes() {
-        // Add a marker in New York and move the camera
-        LatLng newyork = new LatLng(40.7484, -73.9857);
-        mMap.addMarker(new MarkerOptions().position(newyork)
-                .title("Marker in New York")
-                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(newyork, 15));
-
+    public void mockShapes(LatLng newyork) {
         // Plot nine sample shapes
         for (int i = -1; i <= 1; i++) {
             for (int j = -1; j <= 1; j++) {
