@@ -412,15 +412,21 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     // Receive JSON data and output as shapes on map
     public void drawClusters(JSONObject response) {
+        // Clear old polygons
+        for (int j = 0; j < polygons.size(); j++) {
+            polygons.get(j).remove();
+        }
+        polygons.clear();
+
         try {
             // Receive array of clusters
             JSONArray clusters = response.getJSONArray("clusters");
+            LatLngBounds.Builder builder = new LatLngBounds.Builder();
             for (int i = 0; i < clusters.length(); i++) {
                 // Get cluster, initialize polygon, consider map bounds
                 JSONObject cluster = clusters.getJSONObject(i);
                 ArrayList<LatLng> polygon = new ArrayList<>();
                 JSONArray points = cluster.getJSONArray("polygon");
-                LatLngBounds.Builder builder = new LatLngBounds.Builder();
 
                 // Add individual points to shape
                 for (int j = 0; j < points.length(); j++) {
@@ -436,26 +442,22 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     Log.i("Polygon point", latLng.toString());
                 }
 
-                // Include start and end points within map bounds
-                builder.include(new LatLng(startLat, startLng));
-                builder.include(new LatLng(endLat, endLng));
-
                 // Get number of collisions within cluster
                 int numDataPoints = cluster.getInt("num_data_points");
 
-                // Clear old polygons
-                for (int j = 0; j < polygons.size(); j++) {
-                    polygons.get(j).remove();
-                }
-                polygons.clear();
-
                 // Draw collision cluster polygon on map
                 drawPolygon(polygon, numDataPoints);
+            }
 
-                // Determine map bounds around map, adjust and move camera
-                LatLngBounds bounds = builder.build();
-                int padding = 100; // offset from edges of the map in pixels
-                CameraUpdate cu = CameraUpdateFactory.newLatLngBounds(bounds, padding);
+            // Include start and end points within map bounds
+            builder.include(new LatLng(startLat, startLng));
+            builder.include(new LatLng(endLat, endLng));
+
+            // Determine map bounds around map, adjust and move camera
+            LatLngBounds bounds = builder.build();
+            int padding = 100; // offset from edges of the map in pixels
+            CameraUpdate cu = CameraUpdateFactory.newLatLngBounds(bounds, padding);
+            if (!polygons.isEmpty()) {
                 mMap.animateCamera(cu);
             }
         } catch (JSONException e) {
@@ -463,17 +465,18 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         }
     }
 
-    // Make POST request to server
+    // Make POST request to server for clusters
     public void getClusters() {
 
         // Instantiate the RequestQueue.
         RequestQueue queue = Volley.newRequestQueue(this);
         String ip = "172.17.79.212", port = "8000";
         //String url = "http://" + ip + ":" + port + "/api/v1/route";
-        String url = "https://emilyhorsman.com/safe-driver/api/v1/route.json";
+        //String url = "https://emilyhorsman.com/safe-driver/api/v1/route.json";
+        String url = "http://503d85f4.ngrok.io/api/v1/route";
 
         // Send POST request to server, receive a response
-        JsonObjectRequest postRequest = new JsonObjectRequest(Request.Method.GET, url, mapBounds,
+        JsonObjectRequest postRequest = new JsonObjectRequest(Request.Method.POST, url, mapBounds,
 
                 // Listening for response with workable polygon information
                 new Response.Listener<JSONObject>() {
@@ -513,6 +516,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         queue.add(postRequest);
     }
 
+    // Make POST request to server for route line
     public void getRoute() {
 
         // Instantiate the RequestQueue.
@@ -595,6 +599,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             ArrayList<LatLng> points = null;
             PolylineOptions lineOptions = null;
             MarkerOptions markerOptions = new MarkerOptions();
+            LatLngBounds.Builder builder = new LatLngBounds.Builder();
 
             // Traversing through all the routes
             for(int i=0;i<result.size();i++){
@@ -613,6 +618,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     LatLng position = new LatLng(lat, lng);
 
                     points.add(position);
+                    builder.include(position);
                 }
 
                 // Adding all the points in the route to LineOptions
@@ -622,7 +628,30 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             }
 
             // Drawing polyline in the Google Map for the i-th route
-            mMap.addPolyline(lineOptions);
+            try {
+                if (routeLine != null) routeLine.remove();
+                routeLine = mMap.addPolyline(lineOptions);
+            } catch (NullPointerException e) {
+                Toast.makeText(MapsActivity.this, "Route could not be generated!",
+                        Toast.LENGTH_SHORT).show();
+            }
+
+            // If no clusters are found
+            if (polygons.isEmpty()) {
+                // Include start and end points within map bounds
+                builder.include(new LatLng(startLat, startLng));
+                builder.include(new LatLng(endLat, endLng));
+
+                // Display message that no clusters were found
+                Toast.makeText(MapsActivity.this, "No collision data found!",
+                        Toast.LENGTH_SHORT).show();
+
+                // Determine map bounds around map, adjust and move camera
+                LatLngBounds bounds = builder.build();
+                int padding = 200; // offset from edges of the map in pixels
+                CameraUpdate cu = CameraUpdateFactory.newLatLngBounds(bounds, padding);
+                mMap.animateCamera(cu);
+            }
         }
     }
 }
