@@ -180,12 +180,14 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     }
 
     public void setSubdomain() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this, AlertDialog.THEME_DEVICE_DEFAULT_DARK);
+        AlertDialog.Builder builder = new AlertDialog.Builder(this,
+                AlertDialog.THEME_DEVICE_DEFAULT_DARK);
         builder.setTitle("Enter the server subdomain name: \nCancel to use previous.");
 
         // Set up the input
         final EditText input = new EditText(this);
         input.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS);
+        input.setTextColor(Color.WHITE);
         builder.setView(input);
 
         // Get shared preferences where subdomain is stored
@@ -218,6 +220,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 if (subdomain.equals("")) {
                     Toast.makeText(MapsActivity.this, "No server subdomain name found!",
                             Toast.LENGTH_SHORT).show();
+                    setSubdomain();
                 }
 
                 dialog.cancel();
