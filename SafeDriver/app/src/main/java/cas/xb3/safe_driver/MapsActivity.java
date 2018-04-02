@@ -1,6 +1,9 @@
 package cas.xb3.safe_driver;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -9,17 +12,21 @@ import android.graphics.Matrix;
 import android.os.AsyncTask;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.text.InputType;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.DefaultRetryPolicy;
+import com.android.volley.NetworkResponse;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -70,6 +77,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     // Boolean to prevent repetitive resizing
     boolean appLaunched = false;
 
+    // Server subdomain name for non-static ngrok url
+    String subdomain;
+
     // Bounding box coordinate variables
     double startLat, startLng, endLat, endLng;
 
@@ -113,14 +123,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         }
 
         // Change focus to end location after start location entered
-        startEditText.setOnKeyListener(new View.OnKeyListener()
-        {
-            public boolean onKey(View v, int keyCode, KeyEvent event)
-            {
-                if (event.getAction() == KeyEvent.ACTION_DOWN)
-                {
-                    switch (keyCode)
-                    {
+        startEditText.setOnKeyListener(new View.OnKeyListener() {
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                if (event.getAction() == KeyEvent.ACTION_DOWN) {
+                    switch (keyCode) {
                         case KeyEvent.KEYCODE_DPAD_CENTER:
                         case KeyEvent.KEYCODE_ENTER:
                             startEditText.clearFocus();
@@ -136,14 +142,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         });
 
         // Trigger navigation button function after end location entered
-        endEditText.setOnKeyListener(new View.OnKeyListener()
-        {
-            public boolean onKey(View v, int keyCode, KeyEvent event)
-            {
-                if (event.getAction() == KeyEvent.ACTION_DOWN)
-                {
-                    switch (keyCode)
-                    {
+        endEditText.setOnKeyListener(new View.OnKeyListener() {
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                if (event.getAction() == KeyEvent.ACTION_DOWN) {
+                    switch (keyCode) {
                         case KeyEvent.KEYCODE_DPAD_CENTER:
                         case KeyEvent.KEYCODE_ENTER:
                             navigate(navigateButton);
@@ -172,6 +174,66 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         // Enter mock start and end locations
         mockText();
+
+        // Specify subdomain on startup
+        setSubdomain();
+    }
+
+    public void setSubdomain() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this, AlertDialog.THEME_DEVICE_DEFAULT_DARK);
+        builder.setTitle("Enter the server subdomain name: \nCancel to use previous.");
+
+        // Set up the input
+        final EditText input = new EditText(this);
+        input.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS);
+        builder.setView(input);
+
+        // Get shared preferences where subdomain is stored
+        final SharedPreferences sharedPreferences = this.getSharedPreferences(
+                "cas.xb3.safe_driver", Context.MODE_PRIVATE);
+
+        // Set up the buttons
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                subdomain = input.getText().toString();
+                sharedPreferences.edit().putString("subdomain", subdomain).apply();
+                if (input.getText().toString().isEmpty()) {
+                    Toast.makeText(MapsActivity.this, "Subdomain name cannot be empty!",
+                            Toast.LENGTH_SHORT).show();
+                    setSubdomain();
+                }
+            }
+        });
+        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                if (sharedPreferences.contains("subdomain")) {
+                    subdomain = sharedPreferences.getString("subdomain", "");
+                }
+                else {
+                    subdomain = "";
+                }
+
+                if (subdomain.equals("")) {
+                    Toast.makeText(MapsActivity.this, "No server subdomain name found!",
+                            Toast.LENGTH_SHORT).show();
+                }
+
+                dialog.cancel();
+            }
+        });
+
+        FrameLayout container = new FrameLayout(this);
+        FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        params.leftMargin = 75;
+        params.rightMargin = 75;
+        input.setLayoutParams(params);
+        container.addView(input);
+        builder.setView(container);
+
+        builder.show();
     }
 
     // Random start and end locations quickly entered
@@ -199,7 +261,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 shape.add(new LatLng(point.latitude - 0.001, point.longitude + 0.001));
 
                 // Draw shape on map
-                drawPolygon(shape, (i+1)*6 + (j+1)*2);
+                drawPolygon(shape, (i + 1) * 6 + (j + 1) * 2);
             }
         }
     }
@@ -248,26 +310,26 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     }
 
     // Generate URL from which to obtain route line
-    private String getDirectionsUrl(LatLng origin,LatLng dest){
+    private String getDirectionsUrl(LatLng origin, LatLng dest) {
 
 
         // Origin of route
-        String str_origin = "origin="+origin.latitude+","+origin.longitude;
+        String str_origin = "origin=" + origin.latitude + "," + origin.longitude;
 
         // Destination of route
-        String str_dest = "destination="+dest.latitude+","+dest.longitude;
+        String str_dest = "destination=" + dest.latitude + "," + dest.longitude;
 
         // Sensor enabled
         String sensor = "sensor=false";
 
         // Building the parameters to the web service
-        String parameters = str_origin+"&"+str_dest+"&"+sensor;
+        String parameters = str_origin + "&" + str_dest + "&" + sensor;
 
         // Output format
         String output = "json";
 
         // Building the url to the web service
-        String url = "https://maps.googleapis.com/maps/api/directions/"+output+"?"+parameters;
+        String url = "https://maps.googleapis.com/maps/api/directions/" + output + "?" + parameters;
 
         return url;
     }
@@ -288,14 +350,14 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
             // Checking if latitude in range
             boolean inRange = true;
-            for (double pt : new double[] {startLat, endLat}) {
+            for (double pt : new double[]{startLat, endLat}) {
                 if (pt < -90 || pt > 90) {
                     inRange = false;
                 }
             }
 
             // Checking if longitude in range
-            for (double pt : new double[] {startLng, endLng}) {
+            for (double pt : new double[]{startLng, endLng}) {
                 if (pt < -180 || pt > 180) {
                     inRange = false;
                 }
@@ -303,7 +365,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
             // Navigate if coordinates are within map bounds
             if (inRange) {
-                Toast.makeText(this, "Navigate!", Toast.LENGTH_SHORT).show();
                 generateJSON();
                 getClusters();
                 getRoute();
@@ -318,7 +379,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 View thisview = this.getCurrentFocus();
                 if (thisview != null) {
                     InputMethodManager imm =
-                            (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+                            (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
                     imm.hideSoftInputFromWindow(thisview.getWindowToken(), 0);
                 }
             }
@@ -349,7 +410,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     // Create JSON object with map bounds surrounding given route
     public void generateJSON() {
         // List of four corner labels
-        String[] cornerlabels = new String[] {"TL", "TR", "BL", "BR"};
+        String[] cornerlabels = new String[]{"TL", "TR", "BL", "BR"};
 
         // Compute left, right, bottom and top of bounding box
         double boxwidth = Math.abs(startLat - endLat), boxheight = Math.abs(startLng - endLng);
@@ -368,7 +429,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 // Specify corner label and coordinates
                 cornerObject.put("vertex", cornerlabels[i]);
                 cornerObject.put("latitude", i % 2 == 0 ? boxleft : boxright);
-                cornerObject.put("longitude", (int)(i / 2) == 0 ? boxtop : boxbottom);
+                cornerObject.put("longitude", (int) (i / 2) == 0 ? boxtop : boxbottom);
             } catch (JSONException e) {
                 e.printStackTrace();
             }
@@ -397,7 +458,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         Bitmap car = Bitmap.createScaledBitmap(BitmapFactory
                         .decodeResource(getResources(), R.drawable.car),
                 150, 150, false);
-        car = Bitmap.createBitmap(car , 0, 0,
+        car = Bitmap.createBitmap(car, 0, 0,
                 car.getWidth(), car.getHeight(), m, true);
         Bitmap finish = Bitmap.createScaledBitmap(BitmapFactory.
                         decodeResource(getResources(), R.drawable.finish),
@@ -477,7 +538,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         String ip = "172.17.79.212", port = "8000";
         //String url = "http://" + ip + ":" + port + "/api/v1/route";
         //String url = "https://emilyhorsman.com/safe-driver/api/v1/route.json";
-        String url = "http://503d85f4.ngrok.io/api/v1/route";
+        String url = "http://" + subdomain + ".ngrok.io/api/v1/route";
 
         // Send POST request to server, receive a response
         JsonObjectRequest postRequest = new JsonObjectRequest(Request.Method.POST, url, mapBounds,
@@ -498,6 +559,18 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     public void onErrorResponse(VolleyError error) {
                         // Handle Error
                         Log.i("Error response", error.toString());
+
+                        NetworkResponse response = error.networkResponse;
+                        if(response != null && response.data != null){
+                            switch(response.statusCode){
+                                case 404:
+                                    Toast.makeText(MapsActivity.this,
+                                            "Enter a new subdomain.",
+                                            Toast.LENGTH_SHORT).show();
+                                    setSubdomain();
+                                    break;
+                            }
+                        }
                     }
                 }) {
 
@@ -546,14 +619,14 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         // Handle Error
-                        Log.i("Error response",error.toString());
+                        Log.i("Error response", error.toString());
                     }
                 }) {
 
             // Add headers to POST request as needed
             @Override
             public Map<String, String> getHeaders() throws AuthFailureError {
-                HashMap<String, String> headers = new HashMap<String,String>();
+                HashMap<String, String> headers = new HashMap<String, String>();
                 headers.put("Content-Type", "application/json; charset=utf-8");
                 return headers;
             }
@@ -575,8 +648,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         queue.add(postRequest);
     }
 
-    /** A class to parse the Google Places in JSON format */
-    private class ParserTask extends AsyncTask<String, Integer, List<List<HashMap<String,String>>> > {
+    /**
+     * A class to parse the Google Places in JSON format
+     */
+    private class ParserTask extends AsyncTask<String, Integer,
+            List<List<HashMap<String, String>>>> {
 
         // Parsing the data in non-ui thread
         @Override
@@ -585,13 +661,13 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             JSONObject jObject;
             List<List<HashMap<String, String>>> routes = null;
 
-            try{
+            try {
                 jObject = new JSONObject(jsonData[0]);
                 DirectionsJSONParser parser = new DirectionsJSONParser();
 
                 // Starts parsing data
                 routes = parser.parse(jObject);
-            }catch(Exception e){
+            } catch (Exception e) {
                 e.printStackTrace();
             }
             return routes;
@@ -606,7 +682,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             LatLngBounds.Builder builder = new LatLngBounds.Builder();
 
             // Traversing through all the routes
-            for(int i=0;i<result.size();i++){
+            for (int i = 0; i < result.size(); i++) {
                 points = new ArrayList<LatLng>();
                 lineOptions = new PolylineOptions();
 
@@ -614,8 +690,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 List<HashMap<String, String>> path = result.get(i);
 
                 // Fetching all the points in i-th route
-                for(int j=0;j<path.size();j++){
-                    HashMap<String,String> point = path.get(j);
+                for (int j = 0; j < path.size(); j++) {
+                    HashMap<String, String> point = path.get(j);
 
                     double lat = Double.parseDouble(point.get("lat"));
                     double lng = Double.parseDouble(point.get("lng"));
