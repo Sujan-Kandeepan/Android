@@ -176,10 +176,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     // Random start and end locations quickly entered
     public void mockText() {
-        //startEditText.setText("40.79,-73.97");
-        //endEditText.setText("40.77,-73.96");
-        startEditText.setText("40.36,-73.57");
-        endEditText.setText("40.32,-75.96");
+        startEditText.setText("40.79,-73.97");
+        endEditText.setText("40.77,-73.96");
+        //startEditText.setText("40.36,-73.57");
+        //endEditText.setText("40.32,-75.96");
     }
 
     // Random display of shapes, shows colours and appearance
@@ -627,7 +627,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
                 // Adding all the points in the route to LineOptions
                 lineOptions.addAll(points);
-                lineOptions.width(10);
+                lineOptions.width(15);
                 lineOptions.color(Color.DKGRAY);
             }
 
@@ -642,7 +642,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                         40, 40, false);
 
                 // Draw dotted route line on map from start to end
-                routeLine.setPattern(Arrays.<PatternItem>asList(new Gap(20), new Dash(20)));
+                routeLine.setPattern(Arrays.<PatternItem>asList(new Gap(25), new Dash(50)));
                 routeLine.setStartCap(new RoundCap());
                 routeLine.setEndCap(new CustomCap(BitmapDescriptorFactory.fromBitmap(arrow)));
             } catch (NullPointerException e) {
