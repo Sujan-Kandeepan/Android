@@ -32,6 +32,7 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.google.android.gms.maps.model.ButtCap;
 import com.google.android.gms.maps.model.CustomCap;
 import com.google.android.gms.maps.model.Dash;
 import com.google.android.gms.maps.model.Gap;
@@ -43,6 +44,7 @@ import com.google.android.gms.maps.model.Polygon;
 import com.google.android.gms.maps.model.PolygonOptions;
 import com.google.android.gms.maps.model.Polyline;
 import com.google.android.gms.maps.model.PolylineOptions;
+import com.google.android.gms.maps.model.RoundCap;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -174,8 +176,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     // Random start and end locations quickly entered
     public void mockText() {
-        startEditText.setText("40.79,-73.97");
-        endEditText.setText("40.77,-73.96");
+        //startEditText.setText("40.79,-73.97");
+        //endEditText.setText("40.77,-73.96");
+        startEditText.setText("40.36,-73.57");
+        endEditText.setText("40.32,-75.96");
     }
 
     // Random display of shapes, shows colours and appearance
@@ -631,6 +635,16 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             try {
                 if (routeLine != null) routeLine.remove();
                 routeLine = mMap.addPolyline(lineOptions);
+
+                // Getting imagea at start and end
+                Bitmap arrow = Bitmap.createScaledBitmap(BitmapFactory.
+                                decodeResource(getResources(), R.drawable.arrow),
+                        40, 40, false);
+
+                // Draw dotted route line on map from start to end
+                routeLine.setPattern(Arrays.<PatternItem>asList(new Gap(20), new Dash(20)));
+                routeLine.setStartCap(new RoundCap());
+                routeLine.setEndCap(new CustomCap(BitmapDescriptorFactory.fromBitmap(arrow)));
             } catch (NullPointerException e) {
                 Toast.makeText(MapsActivity.this, "Route could not be generated!",
                         Toast.LENGTH_SHORT).show();
