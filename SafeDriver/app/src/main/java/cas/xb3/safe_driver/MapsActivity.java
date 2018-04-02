@@ -431,8 +431,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             try {
                 // Specify corner label and coordinates
                 cornerObject.put("vertex", cornerlabels[i]);
-                cornerObject.put("latitude", i % 2 == 0 ? boxleft : boxright);
-                cornerObject.put("longitude", (int) (i / 2) == 0 ? boxtop : boxbottom);
+                cornerObject.put("latitude", (int) (i / 2) == 0 ? boxright : boxleft);
+                cornerObject.put("longitude", i % 2 == 0 ? boxbottom : boxtop);
             } catch (JSONException e) {
                 e.printStackTrace();
             }
@@ -574,6 +574,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                                     break;
                             }
                         }
+
+                        polygons.clear();
                     }
                 }) {
 
