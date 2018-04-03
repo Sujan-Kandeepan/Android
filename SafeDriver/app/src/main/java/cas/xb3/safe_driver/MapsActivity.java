@@ -445,7 +445,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         // Finish constructing entire JSON object
         try {
             mapBounds.put("map_boundaries", jsonArray);
-            Log.i("JSON string", mapBounds.toString());
+            Log.i("Map bounds", mapBounds.toString());
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -538,10 +538,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         // Instantiate the RequestQueue.
         RequestQueue queue = Volley.newRequestQueue(this);
-        String ip = "172.17.79.212", port = "8000";
-        //String url = "http://" + ip + ":" + port + "/api/v1/route";
+        String ip = "10.0.2.2", port = "8000";
+        String url = "http://" + ip + ":" + port + "/api/v1/route";
         //String url = "https://emilyhorsman.com/safe-driver/api/v1/route.json";
-        String url = "http://" + subdomain + ".ngrok.io/api/v1/route";
+        //String url = "http://" + subdomain + ".ngrok.io/api/v1/route";
 
         // Send POST request to server, receive a response
         JsonObjectRequest postRequest = new JsonObjectRequest(Request.Method.POST, url, mapBounds,
