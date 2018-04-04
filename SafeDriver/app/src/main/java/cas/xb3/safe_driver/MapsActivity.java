@@ -169,9 +169,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         LatLng newyork = new LatLng(40.7484, -73.9857);
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(newyork, 15));
 
-        // Display mock shapes on startup
-        mockShapes(newyork);
-
         // Enter mock start and end locations
         mockText();
 
