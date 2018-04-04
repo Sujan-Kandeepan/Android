@@ -300,13 +300,15 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         Log.i("Colour shift", Integer.toString(colourShift));
 
         // Draw polygon on map
-        shape.add(shape.get(0));
-        Polygon p = mMap.addPolygon(new PolygonOptions()
-                .addAll(shape)
-                .fillColor(Color.RED - alphaAdjustment + colourShift)
-                .strokeColor(Color.RED + colourShift)
-                .strokeWidth(5));
-        polygons.add(p);
+        if (shape.size() > 0) {
+            shape.add(shape.get(0));
+            Polygon p = mMap.addPolygon(new PolygonOptions()
+                    .addAll(shape)
+                    .fillColor(Color.RED - alphaAdjustment + colourShift)
+                    .strokeColor(Color.RED + colourShift)
+                    .strokeWidth(5));
+            polygons.add(p);
+        }
     }
 
     // Generate URL from which to obtain route line
@@ -367,7 +369,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             if (inRange) {
                 generateJSON();
                 getClusters();
-                getRoute();
 
                 //mockCluster();
 
@@ -414,10 +415,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         // Compute left, right, bottom and top of bounding box
         double boxwidth = Math.abs(startLat - endLat), boxheight = Math.abs(startLng - endLng);
-        double boxleft = Math.min(startLat, endLat) - boxwidth * 0.1;
-        double boxright = Math.max(startLat, endLat) + boxwidth * 0.1;
-        double boxbottom = Math.min(startLng, endLng) - boxheight * 0.1;
-        double boxtop = Math.max(startLng, endLng) + boxheight * 0.1;
+        double boxleft = Math.min(startLat, endLat) - boxwidth * 0.25;
+        double boxright = Math.max(startLat, endLat) + boxwidth * 0.25;
+        double boxbottom = Math.min(startLng, endLng) - boxheight * 0.25;
+        double boxtop = Math.max(startLng, endLng) + boxheight * 0.25;
 
         // Generate JSON object to store data
         mapBounds = new JSONObject();
@@ -520,7 +521,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
             // Determine map bounds around map, adjust and move camera
             LatLngBounds bounds = builder.build();
-            int padding = 100; // offset from edges of the map in pixels
+            int padding = 250; // offset from edges of the map in pixels
             CameraUpdate cu = CameraUpdateFactory.newLatLngBounds(bounds, padding);
             if (!polygons.isEmpty()) {
                 mMap.animateCamera(cu);
@@ -536,9 +537,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         // Instantiate the RequestQueue.
         RequestQueue queue = Volley.newRequestQueue(this);
         String ip = "10.0.2.2", port = "8000";
-        String url = "http://" + ip + ":" + port + "/api/v1/route";
+        //String url = "http://" + ip + ":" + port + "/api/v1/route";
         //String url = "https://emilyhorsman.com/safe-driver/api/v1/route.json";
-        //String url = "http://" + subdomain + ".ngrok.io/api/v1/route";
+        String url = "http://" + subdomain + ".ngrok.io/api/v1/route";
 
         // Send POST request to server, receive a response
         JsonObjectRequest postRequest = new JsonObjectRequest(Request.Method.POST, url, mapBounds,
@@ -550,6 +551,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                         // Interpreting base64 as bitmap image
                         Log.d("Cluster JSON", response.toString());
                         drawClusters(response);
+                        getRoute();
                     }
                 },
 
@@ -740,7 +742,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
                 // Determine map bounds around map, adjust and move camera
                 LatLngBounds bounds = builder.build();
-                int padding = 200; // offset from edges of the map in pixels
+                int padding = 250; // offset from edges of the map in pixels
                 CameraUpdate cu = CameraUpdateFactory.newLatLngBounds(bounds, padding);
                 mMap.animateCamera(cu);
             }
