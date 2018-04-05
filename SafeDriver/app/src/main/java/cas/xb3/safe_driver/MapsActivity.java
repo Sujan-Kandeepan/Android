@@ -241,7 +241,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     // Random start and end locations quickly entered
     public void mockText() {
-        startEditText.setText("40.58,-74.18");
+        startEditText.setText("40.61,-74.18");
         endEditText.setText("40.63,-74.12");
         //startEditText.setText("40.36,-73.57");
         //endEditText.setText("40.32,-75.96");
