@@ -90,6 +90,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     //Map bounds JSON object
     JSONObject mapBounds;
 
+    // Builder for camera boundaries
+    LatLngBounds.Builder builder = new LatLngBounds.Builder();
+
     // Define behaviour on app startup
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -238,8 +241,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     // Random start and end locations quickly entered
     public void mockText() {
-        startEditText.setText("40.79,-73.97");
-        endEditText.setText("40.77,-73.96");
+        startEditText.setText("40.58,-74.18");
+        endEditText.setText("40.63,-74.12");
         //startEditText.setText("40.36,-73.57");
         //endEditText.setText("40.32,-75.96");
     }
@@ -487,7 +490,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         try {
             // Receive array of clusters
             JSONArray clusters = response.getJSONArray("clusters");
-            LatLngBounds.Builder builder = new LatLngBounds.Builder();
+            builder = new LatLngBounds.Builder();
             for (int i = 0; i < clusters.length(); i++) {
                 // Get cluster, initialize polygon, consider map bounds
                 JSONObject cluster = clusters.getJSONObject(i);
@@ -519,13 +522,15 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             builder.include(new LatLng(startLat, startLng));
             builder.include(new LatLng(endLat, endLng));
 
+            /*
             // Determine map bounds around map, adjust and move camera
             LatLngBounds bounds = builder.build();
-            int padding = 250; // offset from edges of the map in pixels
+            int padding = 150; // offset from edges of the map in pixels
             CameraUpdate cu = CameraUpdateFactory.newLatLngBounds(bounds, padding);
             if (!polygons.isEmpty()) {
                 mMap.animateCamera(cu);
             }
+            */
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -683,7 +688,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             ArrayList<LatLng> points = null;
             PolylineOptions lineOptions = null;
             MarkerOptions markerOptions = new MarkerOptions();
-            LatLngBounds.Builder builder = new LatLngBounds.Builder();
 
             // Traversing through all the routes
             for (int i = 0; i < result.size(); i++) {
@@ -732,20 +736,20 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
             // If no clusters are found
             if (polygons.isEmpty()) {
-                // Include start and end points within map bounds
-                builder.include(new LatLng(startLat, startLng));
-                builder.include(new LatLng(endLat, endLng));
-
                 // Display message that no clusters were found
                 Toast.makeText(MapsActivity.this, "No collision data found!",
                         Toast.LENGTH_SHORT).show();
-
-                // Determine map bounds around map, adjust and move camera
-                LatLngBounds bounds = builder.build();
-                int padding = 250; // offset from edges of the map in pixels
-                CameraUpdate cu = CameraUpdateFactory.newLatLngBounds(bounds, padding);
-                mMap.animateCamera(cu);
             }
+
+            // Include start and end points within map bounds
+            builder.include(new LatLng(startLat, startLng));
+            builder.include(new LatLng(endLat, endLng));
+
+            // Determine map bounds around map, adjust and move camera
+            LatLngBounds bounds = builder.build();
+            int padding = 250; // offset from edges of the map in pixels
+            CameraUpdate cu = CameraUpdateFactory.newLatLngBounds(bounds, padding);
+            mMap.animateCamera(cu);
         }
     }
 }
