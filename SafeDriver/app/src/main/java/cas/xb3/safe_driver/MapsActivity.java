@@ -111,6 +111,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         startEditText = findViewById(R.id.startEditText);
         endEditText = findViewById(R.id.endEditText);
         navigateButton = findViewById(R.id.navigateButton);
+
+        info(findViewById(R.id.infoButton));
     }
 
     // Define and adjust UI elements upon display
