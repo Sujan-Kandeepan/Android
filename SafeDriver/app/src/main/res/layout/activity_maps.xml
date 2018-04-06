@@ -76,4 +76,13 @@
             android:textColor="@color/colorAccent" />
     </LinearLayout>
 
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:background="@drawable/info"
+        android:onClick="info" />
+
 </RelativeLayout>

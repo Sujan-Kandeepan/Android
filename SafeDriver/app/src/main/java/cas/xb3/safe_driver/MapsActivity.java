@@ -3,6 +3,7 @@ package cas.xb3.safe_driver;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
@@ -237,6 +238,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         builder.setView(container);
 
         builder.show();
+    }
+
+    public void info(View view) {
+        Intent intent = new Intent(getApplicationContext(), InfoActivity.class);
+        startActivity(intent);
     }
 
     // Random start and end locations quickly entered
@@ -545,6 +551,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         //String url = "http://" + ip + ":" + port + "/api/v1/route";
         //String url = "https://emilyhorsman.com/safe-driver/api/v1/route.json";
         String url = "http://" + subdomain + ".ngrok.io/api/v1/route";
+
+        if (Math.abs(startLat - endLat) > 10 || Math.abs(startLng - endLng) > 10) {
+            Toast.makeText(this, "Route distance too far!", Toast.LENGTH_SHORT).show();
+            return;
+        }
 
         // Send POST request to server, receive a response
         JsonObjectRequest postRequest = new JsonObjectRequest(Request.Method.POST, url, mapBounds,
