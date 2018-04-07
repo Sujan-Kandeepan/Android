@@ -58,6 +58,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -631,6 +632,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
                         NetworkResponse response = error.networkResponse;
                         if(response != null && response.data != null){
+                            try {
+                                Log.i("Error body", new String(error.networkResponse.data,
+                                        "UTF-8"));
+                            } catch (UnsupportedEncodingException e) {
+                                e.printStackTrace();
+                            }
                             switch(response.statusCode){
                                 case 404:
                                     Toast.makeText(MapsActivity.this,
