@@ -638,6 +638,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                                             Toast.LENGTH_SHORT).show();
                                     setSubdomain();
                                     break;
+                                case 400:
+                                    Toast.makeText(MapsActivity.this, "Server error!",
+                                            Toast.LENGTH_SHORT).show();
                             }
                         }
 
@@ -820,7 +823,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             LatLngBounds bounds = builder.build();
             int padding = 250; // offset from edges of the map in pixels
             CameraUpdate cu = CameraUpdateFactory.newLatLngBounds(bounds, padding);
-            if (!result.isEmpty() && !polygons.isEmpty()) {
+            if (!result.isEmpty()) {
                 mMap.animateCamera(cu);
             }
         }
