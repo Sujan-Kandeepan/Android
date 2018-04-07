@@ -183,6 +183,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     }
 
     public void setSubdomain() {
+        // Initialize dialog box
         AlertDialog.Builder builder = new AlertDialog.Builder(this,
                 AlertDialog.THEME_DEVICE_DEFAULT_DARK);
         builder.setTitle("Enter the server subdomain name: \nCancel to use previous.");
@@ -197,7 +198,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         final SharedPreferences sharedPreferences = this.getSharedPreferences(
                 "cas.xb3.safe_driver", Context.MODE_PRIVATE);
 
-        // Set up the buttons
+        // Set up confirmation button
         builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -210,6 +211,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 }
             }
         });
+
+        // Set up cancel button
         builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -230,6 +233,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             }
         });
 
+        // Tweak margins and better fitting
         FrameLayout container = new FrameLayout(this);
         FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
@@ -239,7 +243,15 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         container.addView(input);
         builder.setView(container);
 
-        builder.show();
+        // Show dialog
+        AlertDialog dialog = builder.create();
+        dialog.show();
+
+        // Change button colours
+        Button positiveButton = dialog.getButton(AlertDialog.BUTTON_POSITIVE);
+        Button negativeButton = dialog.getButton(AlertDialog.BUTTON_NEGATIVE);
+        positiveButton.setTextColor(getResources().getColor(R.color.colorAccent));
+        negativeButton.setTextColor(getResources().getColor(R.color.colorAccent));
     }
 
     public void info(View view) {
