@@ -541,16 +541,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             // Include start and end points within map bounds
             builder.include(new LatLng(startLat, startLng));
             builder.include(new LatLng(endLat, endLng));
-
-            /*
-            // Determine map bounds around map, adjust and move camera
-            LatLngBounds bounds = builder.build();
-            int padding = 150; // offset from edges of the map in pixels
-            CameraUpdate cu = CameraUpdateFactory.newLatLngBounds(bounds, padding);
-            if (!polygons.isEmpty()) {
-                mMap.animateCamera(cu);
-            }
-            */
         } catch (JSONException e) {
             e.printStackTrace();
         }
