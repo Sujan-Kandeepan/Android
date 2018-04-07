@@ -757,17 +757,15 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 routeLine.setEndCap(new CustomCap(BitmapDescriptorFactory.fromBitmap(arrow)));
             }
 
-            // If no clusters are found
-            if (polygons.isEmpty()) {
-                // Display message that no clusters were found
-                Toast.makeText(MapsActivity.this, "No collision data found!",
+            // Display message if no route was found
+            if (result.isEmpty()) {
+                Toast.makeText(MapsActivity.this, "Route could not be generated!",
                         Toast.LENGTH_SHORT).show();
             }
 
-            // If no route was found
-            if (result.isEmpty()) {
-                builder = new LatLngBounds.Builder();
-                Toast.makeText(MapsActivity.this, "Route could not be generated!",
+            // Display message if no clusters were found
+            else if (polygons.isEmpty()) {
+                Toast.makeText(MapsActivity.this, "No collision data found!",
                         Toast.LENGTH_SHORT).show();
             }
 
