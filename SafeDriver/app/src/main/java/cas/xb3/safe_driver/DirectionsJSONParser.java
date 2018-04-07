@@ -10,6 +10,9 @@ import org.json.JSONObject;
 
 import com.google.android.gms.maps.model.LatLng;
 
+/**
+ * Helper class as found in a suggested implementation online.
+ */
 public class DirectionsJSONParser {
 
     /** Receives a JSONObject and returns a list of lists containing latitude and longitude */

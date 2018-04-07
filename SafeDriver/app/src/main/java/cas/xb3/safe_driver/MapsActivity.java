@@ -64,6 +64,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * Class which defines the behaviour of the main map interface of the application,
+ * handling requests for both route line and collision clusters, and controlling
+ * what is displayed to the user as they interact with the service.
+ */
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
     // Define UI elements
@@ -88,13 +93,15 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     ArrayList<Polygon> polygons = new ArrayList<>();
     Polyline routeLine;
 
-    //Map bounds JSON object
+    // Map bounds JSON object
     JSONObject mapBounds;
 
     // Builder for camera boundaries
     LatLngBounds.Builder builder = new LatLngBounds.Builder();
 
-    // Define behaviour on app startup
+    /**
+     * Define behaviour on app startup.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         // Initialize app, set view
@@ -115,7 +122,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         info(findViewById(R.id.infoButton));
     }
 
-    // Define and adjust UI elements upon display
+    /**
+     * Define and adjust UI elements upon display.
+     * @param hasFocus State of whether app is running in foreground.
+     */
     @Override
     public void onWindowFocusChanged(boolean hasFocus) {
         // Resize UI elements in header
@@ -165,7 +175,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         });
     }
 
-    // Define behaviour once map is fetched and ready
+    /**
+     * Define behaviour once map is fetched and ready.
+     * @param googleMap Map on which to overlay data.
+     */
     @Override
     public void onMapReady(GoogleMap googleMap) {
         // Fetch and initialize map
@@ -182,6 +195,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         setSubdomain();
     }
 
+    /**
+     * Display dialog box for entering ngrok URL subdomain.
+     */
     public void setSubdomain() {
         // Initialize dialog box
         AlertDialog.Builder builder = new AlertDialog.Builder(this,
@@ -254,12 +270,18 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         negativeButton.setTextColor(getResources().getColor(R.color.colorAccent));
     }
 
+    /**
+     * Start intent for displaying user guide.
+     * @param view UI element which starts the intent.
+     */
     public void info(View view) {
         Intent intent = new Intent(getApplicationContext(), InfoActivity.class);
         startActivity(intent);
     }
 
-    // Random start and end locations quickly entered
+    /**
+     * Random start and end locations quickly entered.
+     */
     public void mockText() {
         startEditText.setText("40.61,-74.18");
         endEditText.setText("40.63,-74.12");
@@ -267,7 +289,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         //endEditText.setText("40.32,-75.96");
     }
 
-    // Random display of shapes, shows colours and appearance
+    /**
+     * Random display of shapes, shows colours and appearance.
+     * @param newyork Location of New York as specified earlier.
+     */
     public void mockShapes(LatLng newyork) {
         // Plot nine sample shapes
         for (int i = -1; i <= 1; i++) {
@@ -289,7 +314,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         }
     }
 
-    // Generate cluster using mock response
+    /**
+     * Generate cluster using mock response.
+     */
     public void mockCluster() {
         try {
             // Initialize JSON object from response received in terminal
@@ -307,7 +334,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         }
     }
 
-    // Draw collision cluster polygon, given perimeter points and intensity
+    /**
+     * Draw collision cluster polygon, given perimeter points and intensity.
+     * @param shape Perimeter points of shape to be drawn.
+     * @param intensity Number of collision points within shape.
+     */
     public void drawPolygon(ArrayList<LatLng> shape, int intensity) {
         // Set colour by intensity, more red given higher value
         final int alphaAdjustment = 0x77000000;
@@ -334,7 +365,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         }
     }
 
-    // Generate URL from which to obtain route line
+    /**
+     * Generate URL from which to obtain route line.
+     * @param origin Start point of route.
+     * @param dest End point of route.
+     * @return Generated Google Maps URL used to make request.
+     */
     private String getDirectionsUrl(LatLng origin, LatLng dest) {
 
 
@@ -359,7 +395,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         return url;
     }
 
-    // Button pressed, start navigation
+    /**
+     * Button pressed, start navigation.
+     * @param view UI element with which triggers the function.
+     */
     public void navigate(View view) {
         // Extract coordinate information from text fields
         String startPoint = startEditText.getText().toString();
@@ -431,7 +470,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         }
     }
 
-    // Create JSON object with map bounds surrounding given route
+    /**
+     * Create JSON object with map bounds surrounding given route.
+     */
     public void generateJSON() {
         // List of four corner labels
         String[] cornerlabels = new String[]{"TL", "TR", "BL", "BR"};
@@ -472,7 +513,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         }
     }
 
-    // Draw route as the crow flies
+    /**
+     * Draw route as the crow flies.
+     */
     public void drawDottedRoute() {
         // Determine location and appearance of route line
         LatLng startPoint = new LatLng(startLat, startLng);
@@ -499,7 +542,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         routeLine.setEndCap(new CustomCap(BitmapDescriptorFactory.fromBitmap(finish)));
     }
 
-    // Receive JSON data and output as shapes on map
+    /**
+     * Draw collision clusters on map surrounding route as calculated.
+     * @param response JSON response specifying cluster information.
+     */
     public void drawClusters(JSONObject response) {
         // Clear old polygons
         for (int j = 0; j < polygons.size(); j++) {
@@ -546,9 +592,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         }
     }
 
-    // Make POST request to server for clusters
+    /**
+     * Make POST request to server for clusters.
+     */
     public void getClusters() {
-
         // Instantiate the RequestQueue.
         RequestQueue queue = Volley.newRequestQueue(this);
         String ip = "10.0.2.2", port = "8000";
@@ -568,7 +615,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
-                        // Interpreting base64 as bitmap image
+                        // Draw clusters and start retrieving route
                         Log.d("Cluster JSON", response.toString());
                         drawClusters(response);
                         getRoute();
@@ -617,7 +664,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         queue.add(postRequest);
     }
 
-    // Make POST request to server for route line
+    /**
+     * Make POST request to server for route line.
+     */
     public void getRoute() {
 
         // Instantiate the RequestQueue.
@@ -631,7 +680,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
-                        // Interpreting base64 as bitmap image
+                        // Process response and generate route lines
                         Log.d("Route JSON", response.toString());
                         ParserTask parserTask = new ParserTask();
                         parserTask.execute(response.toString());
@@ -673,12 +722,17 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     }
 
     /**
-     * A class to parse the Google Places in JSON format
+     * A class to parse the Google Places in JSON format.
      */
     private class ParserTask extends AsyncTask<String, Integer,
             List<List<HashMap<String, String>>>> {
 
-        // Parsing the data in non-ui thread
+        /**
+         * Parse data and organize before drawing to map.
+         * @param jsonData Received JSON data.
+         * @return Data to be converted and displayed as route lines on map.
+         */
+        //
         @Override
         protected List<List<HashMap<String, String>>> doInBackground(String... jsonData) {
 
@@ -697,7 +751,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             return routes;
         }
 
-        // Executes in UI thread, after the parsing process
+        /**
+         * Generate route lines once parsed and display on map.
+         * @param result
+         */
         @Override
         protected void onPostExecute(List<List<HashMap<String, String>>> result) {
             ArrayList<LatLng> points = null;
