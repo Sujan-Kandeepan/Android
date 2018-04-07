@@ -754,15 +754,15 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 routeLine.setPattern(Arrays.<PatternItem>asList(new Gap(25), new Dash(50)));
                 routeLine.setStartCap(new RoundCap());
                 routeLine.setEndCap(new CustomCap(BitmapDescriptorFactory.fromBitmap(arrow)));
+
+                // If no clusters are found
+                if (polygons.isEmpty()) {
+                    // Display message that no clusters were found
+                    Toast.makeText(MapsActivity.this, "No collision data found!",
+                            Toast.LENGTH_SHORT).show();
+                }
             } catch (NullPointerException e) {
                 Toast.makeText(MapsActivity.this, "Route could not be generated!",
-                        Toast.LENGTH_SHORT).show();
-            }
-
-            // If no clusters are found
-            if (polygons.isEmpty()) {
-                // Display message that no clusters were found
-                Toast.makeText(MapsActivity.this, "No collision data found!",
                         Toast.LENGTH_SHORT).show();
             }
 
@@ -774,7 +774,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             LatLngBounds bounds = builder.build();
             int padding = 250; // offset from edges of the map in pixels
             CameraUpdate cu = CameraUpdateFactory.newLatLngBounds(bounds, padding);
-            mMap.animateCamera(cu);
+            if (!result.isEmpty()) {
+                mMap.animateCamera(cu);
+            }
         }
     }
 }
