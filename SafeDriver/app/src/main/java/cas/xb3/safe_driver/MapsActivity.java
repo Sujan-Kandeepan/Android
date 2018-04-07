@@ -714,17 +714,17 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             PolylineOptions lineOptions = null;
             MarkerOptions markerOptions = new MarkerOptions();
 
-            // Traversing through all the routes
-            for (int i = 0; i < result.size(); i++) {
-                points = new ArrayList<LatLng>();
-                lineOptions = new PolylineOptions();
+            // Initialize points and options
+            points = new ArrayList<LatLng>();
+            lineOptions = new PolylineOptions();
 
-                // Fetching i-th route
-                List<HashMap<String, String>> path = result.get(i);
+            // Fetching first route if found
+            if (!result.isEmpty()) {
+                List<HashMap<String, String>> path = result.get(0);
 
-                // Fetching all the points in i-th route
-                for (int j = 0; j < path.size(); j++) {
-                    HashMap<String, String> point = path.get(j);
+                // Fetching all the points in first route
+                for (int i = 0; i < path.size(); i++) {
+                    HashMap<String, String> point = path.get(i);
 
                     double lat = Double.parseDouble(point.get("lat"));
                     double lng = Double.parseDouble(point.get("lng"));
@@ -733,42 +733,43 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     points.add(position);
                     builder.include(position);
                 }
-
-                // Adding all the points in the route to LineOptions
-                lineOptions.addAll(points);
-                lineOptions.width(15);
-                lineOptions.color(Color.DKGRAY);
             }
 
+            // Adding all the points in the route to LineOptions
+            lineOptions.addAll(points);
+            lineOptions.width(15);
+            lineOptions.color(Color.DKGRAY);
+
             // Drawing polyline in the Google Map for the i-th route
-            try {
-                if (routeLine != null) routeLine.remove();
+            if (routeLine != null) routeLine.remove();
+            if (!result.isEmpty()) {
                 routeLine = mMap.addPolyline(lineOptions);
 
-                // Getting imagea at start and end
+                // Putting arrowhead at end of line
                 Bitmap arrow = Bitmap.createScaledBitmap(BitmapFactory.
                                 decodeResource(getResources(), R.drawable.arrow),
                         40, 40, false);
 
                 // Draw dotted route line on map from start to end
-                routeLine.setPattern(Arrays.<PatternItem>asList(new Gap(25), new Dash(50)));
+                routeLine.setPattern(Arrays.<PatternItem>asList(
+                        new Gap(25), new Dash(50)));
                 routeLine.setStartCap(new RoundCap());
                 routeLine.setEndCap(new CustomCap(BitmapDescriptorFactory.fromBitmap(arrow)));
+            }
 
-                // If no clusters are found
-                if (polygons.isEmpty()) {
-                    // Display message that no clusters were found
-                    Toast.makeText(MapsActivity.this, "No collision data found!",
-                            Toast.LENGTH_SHORT).show();
-                }
-            } catch (NullPointerException e) {
-                Toast.makeText(MapsActivity.this, "Route could not be generated!",
+            // If no clusters are found
+            if (polygons.isEmpty()) {
+                // Display message that no clusters were found
+                Toast.makeText(MapsActivity.this, "No collision data found!",
                         Toast.LENGTH_SHORT).show();
             }
 
-            // Include start and end points within map bounds
-            builder.include(new LatLng(startLat, startLng));
-            builder.include(new LatLng(endLat, endLng));
+            // If no route was found
+            if (result.isEmpty()) {
+                builder = new LatLngBounds.Builder();
+                Toast.makeText(MapsActivity.this, "Route could not be generated!",
+                        Toast.LENGTH_SHORT).show();
+            }
 
             // Determine map bounds around map, adjust and move camera
             LatLngBounds bounds = builder.build();
