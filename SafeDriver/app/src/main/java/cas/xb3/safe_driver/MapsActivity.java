@@ -763,7 +763,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             LatLngBounds bounds = builder.build();
             int padding = 250; // offset from edges of the map in pixels
             CameraUpdate cu = CameraUpdateFactory.newLatLngBounds(bounds, padding);
-            if (!result.isEmpty()) {
+            if (!result.isEmpty() && polygons.isEmpty()) {
                 mMap.animateCamera(cu);
             }
         }
