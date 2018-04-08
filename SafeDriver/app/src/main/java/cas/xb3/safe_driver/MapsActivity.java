@@ -549,6 +549,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
      */
     public void drawClusters(JSONObject response) {
         // Clear old polygons
+        mMap.clear();
         for (int j = 0; j < polygons.size(); j++) {
             polygons.get(j).remove();
         }
