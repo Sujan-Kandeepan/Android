@@ -433,7 +433,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 generateJSON();
                 getClusters();
 
-                //mockCluster();
+                Toast.makeText(this, "Loading...", Toast.LENGTH_LONG).show();
 
                 String directionsURL = getDirectionsUrl(new LatLng(startLat, startLng),
                         new LatLng(endLat, endLng));
