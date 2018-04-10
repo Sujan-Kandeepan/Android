@@ -12,6 +12,7 @@ import com.google.android.gms.maps.model.LatLng;
 
 /**
  * Helper class as found in a suggested implementation online.
+ * Source: <a href="https://github.com/gripsack/android/blob/master/app/src/main/java/com/github/gripsack/android/data/model/DirectionsJSONParser.java">DirectionsJSONParser.java</a>
  */
 public class DirectionsJSONParser {
 

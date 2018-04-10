@@ -287,8 +287,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public void mockText() {
         startEditText.setText("40.61,-74.18");
         endEditText.setText("40.63,-74.12");
-        //startEditText.setText("40.36,-73.57");
-        //endEditText.setText("40.32,-75.96");
     }
 
     /**
@@ -525,6 +523,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         LatLng endPoint = new LatLng(endLat, endLng);
         Matrix m = new Matrix();
         m.postRotate(90);
+
+        // Set images for start and end cap
         Bitmap car = Bitmap.createScaledBitmap(BitmapFactory
                         .decodeResource(getResources(), R.drawable.car),
                 150, 150, false);
@@ -604,11 +604,17 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public void getClusters() {
         // Instantiate the RequestQueue.
         RequestQueue queue = Volley.newRequestQueue(this);
+
+        /* Generate URLs for preliminary testing with emulator and static file
         String ip = "10.0.2.2", port = "8000";
-        //String url = "http://" + ip + ":" + port + "/api/v1/route";
-        //String url = "https://emilyhorsman.com/safe-driver/api/v1/route.json";
+        String url = "http://" + ip + ":" + port + "/api/v1/route";
+        String url = "https://emilyhorsman.com/safe-driver/api/v1/route.json";
+        */
+
+        // URL to connect with backend server, requires ngrok subdomain name to be specified
         String url = "http://" + subdomain + ".ngrok.io/api/v1/route";
 
+        // Display message if user enters route which is too long
         if (Math.abs(startLat - endLat) > 10 || Math.abs(startLng - endLng) > 10) {
             Toast.makeText(this, "Route distance too far!", Toast.LENGTH_SHORT).show();
             return;
@@ -632,9 +638,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        // Handle Error
+                        // Display error in logs
                         Log.i("Error response", error.toString());
 
+                        // Get detailed network error response info
                         NetworkResponse response = error.networkResponse;
                         if(response != null && response.data != null){
                             try {
@@ -643,6 +650,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                             } catch (UnsupportedEncodingException e) {
                                 e.printStackTrace();
                             }
+
+                            // Generate more detailed log info for errors
                             switch(response.statusCode){
                                 case 404:
                                     Toast.makeText(MapsActivity.this,
@@ -656,6 +665,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                             }
                         }
 
+                        // Nothing could be displayed, clear map
                         polygons.clear();
                     }
                 }) {
@@ -751,11 +761,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         //
         @Override
         protected List<List<HashMap<String, String>>> doInBackground(String... jsonData) {
-
+            // Initialize variables
             JSONObject jObject;
             List<List<HashMap<String, String>>> routes = null;
 
             try {
+                // Get data and set up parser
                 jObject = new JSONObject(jsonData[0]);
                 DirectionsJSONParser parser = new DirectionsJSONParser();
 
@@ -774,6 +785,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
          */
         @Override
         protected void onPostExecute(List<List<HashMap<String, String>>> result) {
+            // Declare points and options
             ArrayList<LatLng> points = null;
             PolylineOptions lineOptions = null;
             MarkerOptions markerOptions = new MarkerOptions();
