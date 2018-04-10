@@ -102,6 +102,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     /**
      * Define behaviour on app startup.
+     * Requirements traceback: FRF2, FRF3.
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -398,6 +399,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     /**
      * Button pressed, start navigation.
+     * Requirements traceback: FRF4, FRF5, FRF9.
      * @param view UI element with which triggers the function.
      */
     public void navigate(View view) {
@@ -545,6 +547,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     /**
      * Draw collision clusters on map surrounding route as calculated.
+     * Requirements traceback: FRF8.
      * @param response JSON response specifying cluster information.
      */
     public void drawClusters(JSONObject response) {
@@ -596,6 +599,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     /**
      * Make POST request to server for clusters.
+     * Requirements traceback: FRF1.
      */
     public void getClusters() {
         // Instantiate the RequestQueue.
@@ -677,6 +681,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     /**
      * Make POST request to server for route line.
+     * Requirements traceback: FRF6.
      */
     public void getRoute() {
 
@@ -764,6 +769,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         /**
          * Generate route lines once parsed and display on map.
+         * Requirements traceback: FRF7.
          * @param result
          */
         @Override
