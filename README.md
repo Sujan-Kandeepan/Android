@@ -3,6 +3,7 @@ This repository contains a full set of Android Studio projects from the followin
   - Delivered by Rob Percival and Nick Walter on udemy.com
   - Includes course material from chapters 1-7, to be updated periodically
 - SafeDriver project from COMPSCI 2XB3 @ McMaster University
+  - Overview of full project can be found at https://emilyhorsman.github.io/safe-driver/
   - Done in collaboration with Emily Horsman, Maryyam Niazi, Sophia Choi and Dipinjit Hanspal
 - SafetyFirst project from DeltaHacks IV @ McMaster University
   - Top 6 finalist, winner of ArcelorMittal Dofasco's award for Best "Workplace Safety" Hack
