@@ -1,0 +1,88 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relativeLayoutFragment"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent" >
+    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/map"
+    android:name="com.google.android.gms.maps.SupportMapFragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="cas.xb3.safe_driver.MapsActivity" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:orientation="horizontal">
+
+        <EditText
+            android:digits="0123456789.,-"
+            android:id="@+id/startEditText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_marginLeft="2pt"
+            android:layout_marginRight="2pt"
+            android:layout_row="0"
+            android:layout_weight="1"
+            android:hint="Start location"
+            android:inputType="numberDecimal"
+            android:textColor="@android:color/background_light"
+            android:textColorHint="@android:color/darker_gray"
+            android:textSize="18sp" />
+
+        <EditText
+            android:digits="0123456789.,-"
+            android:id="@+id/endEditText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:layout_marginLeft="2pt"
+            android:layout_marginRight="2pt"
+            android:layout_row="0"
+            android:layout_weight="1"
+            android:hint="End location"
+            android:inputType="numberDecimal"
+            android:textColor="@android:color/background_light"
+            android:textColorHint="@android:color/darker_gray"
+            android:textSize="18sp"
+            tools:layout_editor_absoluteY="511dp" />
+
+        <Button
+            android:id="@+id/navigateButton"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_column="2"
+            android:layout_row="0"
+            android:layout_toEndOf="@+id/gridLayout"
+            android:layout_toRightOf="@+id/gridLayout"
+            android:layout_weight="1"
+            android:gravity="right|fill_vertical"
+            android:includeFontPadding="true"
+            android:minWidth="0pt"
+            android:onClick="navigate"
+            android:paddingHorizontal="0pt"
+            android:paddingVertical="0pt"
+            android:text="Navigate"
+            android:textAlignment="center"
+            android:textColor="@color/colorAccent" />
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/infoButton"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:background="@drawable/info"
+        android:onClick="info" />
+
+</RelativeLayout>
