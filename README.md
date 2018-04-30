@@ -1,12 +1,5 @@
-This repository contains a full set of Android Studio projects from the following sources:
-- The Complete Android Oreo Developer Course - Build 23 Apps
-  - Delivered by Rob Percival and Nick Walter on udemy.com
-  - Includes course material from chapters 1-7, to be updated periodically
-- SafeDriver project from COMPSCI 2XB3 @ McMaster University
-  - Overview of full project can be found at https://emilyhorsman.github.io/safe-driver/
-  - Done in collaboration with Emily Horsman, Maryyam Niazi, Sophia Choi and Dipinjit Hanspal
-- SafetyFirst project from DeltaHacks IV @ McMaster University
-  - Top 6 finalist, winner of ArcelorMittal Dofasco's award for Best "Workplace Safety" Hack
-  - Done in collaboration with Nishanth Merwin and Ryan Nourbaran
-- Tweddit project from Hack the Valley II @ University of Toronto Scarborough
-  - Done in collaboration with Ethan Johnston and Jennifer Cheng
+This repository contains a full set of Android Studio projects from **The
+Complete Android Oreo Developer Course - Build 23 Apps**, delivered by Rob
+Percival and Nick Walter.
+
+Course link: https://www.udemy.com/the-complete-android-oreo-developer-course/learn/v4/overview
