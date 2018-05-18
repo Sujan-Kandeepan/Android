@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/tmp/tmp-deduplicated2024522587944169504/java/com/google/android/gmscore/integ/client/cast/framework/res/values-v19/cast_dimens.xml -->
+    <eat-comment/>
+    <dimen name="cast_expanded_controller_control_button_margin">0dp</dimen>
+</resources>

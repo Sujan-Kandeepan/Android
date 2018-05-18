@@ -1,0 +1,653 @@
+-- Merging decision tree log ---
+manifest
+ADDED from C:\Users\sujan\GitHub\PercivalProjects\PercivalProjects\Parse-Server-Starter-Project\ParseStarterProject\src\main\AndroidManifest.xml:9:1-36:12
+INJECTED from C:\Users\sujan\GitHub\PercivalProjects\PercivalProjects\Parse-Server-Starter-Project\ParseStarterProject\src\main\AndroidManifest.xml:9:1-36:12
+INJECTED from C:\Users\sujan\GitHub\PercivalProjects\PercivalProjects\Parse-Server-Starter-Project\ParseStarterProject\src\main\AndroidManifest.xml:9:1-36:12
+INJECTED from C:\Users\sujan\GitHub\PercivalProjects\PercivalProjects\Parse-Server-Starter-Project\ParseStarterProject\src\main\AndroidManifest.xml:9:1-36:12
+MERGED from [com.google.android.gms:play-services:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-9.4.0.aar\b8514134c1fb683783728a6ffe7875be\AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.android.gms:play-services-cast-framework:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-cast-framework-9.4.0.aar\83ee2e61be6d9d8b243191d35e67b58c\AndroidManifest.xml:2:1-10:12
+MERGED from [com.google.android.gms:play-services-cast:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-cast-9.4.0.aar\d8b0b4b85cfa5be18d2a5e94fecd7c2a\AndroidManifest.xml:16:1-20:12
+MERGED from [com.android.support:mediarouter-v7:23.0.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\mediarouter-v7-23.0.0.aar\c61285124d778bf03e356296782164da\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:appcompat-v7:23.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\appcompat-v7-23.4.0.aar\f357462a94460c5ecb9925fb89e56487\AndroidManifest.xml:17:1-27:12
+MERGED from [com.android.support:multidex:1.0.2] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\multidex-1.0.2.aar\d1a257d1fe578f39c5946c589728e8d7\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support.constraint:constraint-layout:1.1.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0.aar\4b5a3adcb4f53a3a30fe382aed6d06ce\AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:animated-vector-drawable:23.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-23.4.0.aar\acda8896869c79f29faf1a8a8f2e400c\AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-ads:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-ads-9.4.0.aar\1076bef4a1499fc22a0c6060b2061879\AndroidManifest.xml:16:1-20:12
+MERGED from [com.google.android.gms:play-services-ads-lite:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-ads-lite-9.4.0.aar\17d6249284cdbb731e897de68e8eaf07\AndroidManifest.xml:16:1-33:12
+MERGED from [com.google.android.gms:play-services-analytics:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-analytics-9.4.0.aar\25013495890555bf471cb5b911f705f5\AndroidManifest.xml:16:1-28:12
+MERGED from [com.google.android.gms:play-services-tagmanager:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-tagmanager-9.4.0.aar\aedfef16493925ad59a23d49ab8ccf84\AndroidManifest.xml:16:1-19:12
+MERGED from [com.google.android.gms:play-services-analytics-impl:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-analytics-impl-9.4.0.aar\5fdba961c2c098aaf3692e16b94e0bf9\AndroidManifest.xml:16:1-28:12
+MERGED from [com.google.android.gms:play-services-appinvite:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-appinvite-9.4.0.aar\9d846673d4b1cafbd112389e09297e6a\AndroidManifest.xml:16:1-31:12
+MERGED from [com.google.android.gms:play-services-auth:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-auth-9.4.0.aar\93d22d0afcced0004b589ed260d6e833\AndroidManifest.xml:16:1-33:12
+MERGED from [com.google.android.gms:play-services-auth-base:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-auth-base-9.4.0.aar\a6e48086fb5895f496a8b309be313068\AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.android.gms:play-services-clearcut:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-clearcut-9.4.0.aar\f57e5c7fcd90f3004ee68d6fe94e4662\AndroidManifest.xml:16:1-20:12
+MERGED from [com.google.firebase:firebase-config:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-config-9.4.0.aar\2ebd1cee0e9867f9c49f360248207ce9\AndroidManifest.xml:16:1-20:12
+MERGED from [com.google.android.gms:play-services-contextmanager:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-contextmanager-9.4.0.aar\1807dbe9ad01a55640383d88ab3eabcd\AndroidManifest.xml:16:1-20:12
+MERGED from [com.google.firebase:firebase-crash:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-crash-9.4.0.aar\8e922cb0e4d86dbc31882cdcd1d176c3\AndroidManifest.xml:16:1-34:12
+MERGED from [com.google.android.gms:play-services-games:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-games-9.4.0.aar\0775a69f1c714db551c9c6f5b1a79ff2\AndroidManifest.xml:16:1-20:12
+MERGED from [com.google.android.gms:play-services-drive:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-drive-9.4.0.aar\876e2060ad1c17a13c74aa64b0c77bf2\AndroidManifest.xml:16:1-20:12
+MERGED from [com.google.firebase:firebase-auth:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-auth-9.4.0.aar\22ddfcbe4e33a459b36a5dcc2ea23ee6\AndroidManifest.xml:16:1-22:12
+MERGED from [com.google.firebase:firebase-auth-common:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-auth-common-9.4.0.aar\cc1fe34434abb7377c8dbab26e48436c\AndroidManifest.xml:16:1-22:12
+MERGED from [com.google.firebase:firebase-auth-module:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-auth-module-9.4.0.aar\139f7b062ed78cb364e5b37644e890ff\AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.firebase:firebase-database:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-database-9.4.0.aar\e2852034f6141adbd66dd54e2aa99b8c\AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.firebase:firebase-database-connection:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-database-connection-9.4.0.aar\defaccb008d275c65f2c2e6bfc508620\AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.firebase:firebase-storage:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-storage-9.4.0.aar\5f4d56ae70d2aedd51896ec79507f541\AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.firebase:firebase-storage-common:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-storage-common-9.4.0.aar\a750529b96281c737effb496fbed1e37\AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.android.gms:play-services-fitness:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-fitness-9.4.0.aar\c0b603696e52bb2884409c88e1ab7716\AndroidManifest.xml:16:1-20:12
+MERGED from [com.google.android.gms:play-services-gcm:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-gcm-9.4.0.aar\200fba7106f682386bb8e64b5a78a900\AndroidManifest.xml:16:1-25:12
+MERGED from [com.google.android.gms:play-services-appindexing:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-appindexing-9.4.0.aar\f0b6ebeb1f4ff06fa1b4db919666d74f\AndroidManifest.xml:16:1-20:12
+MERGED from [com.google.android.gms:play-services-wallet:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-wallet-9.4.0.aar\6d15dbc3eb62f550b0a01de8fba17da4\AndroidManifest.xml:16:1-21:12
+MERGED from [com.google.android.gms:play-services-identity:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-identity-9.4.0.aar\503a773f7d478672b79ac2c88cc072e0\AndroidManifest.xml:16:1-20:12
+MERGED from [com.google.android.gms:play-services-iid:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-iid-9.4.0.aar\a8bb70cb9dd3fca8b06f7fd146cafeff\AndroidManifest.xml:16:1-25:12
+MERGED from [com.google.android.gms:play-services-location:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-location-9.4.0.aar\ceaa69dc293a57e9386b43e39b3d7f3d\AndroidManifest.xml:16:1-20:12
+MERGED from [com.google.android.gms:play-services-places:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-places-9.4.0.aar\a3fc808d0e2a103d76736b6671cee5a7\AndroidManifest.xml:16:1-20:12
+MERGED from [com.google.android.gms:play-services-maps:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-maps-9.4.0.aar\510196fa2b8af42a54955677d59088b7\AndroidManifest.xml:16:1-28:12
+MERGED from [com.google.android.gms:play-services-nearby:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-nearby-9.4.0.aar\c79687f2034342731a3b4112dd131a35\AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.android.gms:play-services-panorama:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-panorama-9.4.0.aar\27010753648c55fac62897e6c53f8c64\AndroidManifest.xml:16:1-20:12
+MERGED from [com.google.android.gms:play-services-plus:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-plus-9.4.0.aar\04d6d267aee0626b405354c803c5a5c4\AndroidManifest.xml:16:1-20:12
+MERGED from [com.google.android.gms:play-services-safetynet:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-safetynet-9.4.0.aar\508de2f3225bef97b35dc6525f563773\AndroidManifest.xml:16:1-20:12
+MERGED from [com.google.android.gms:play-services-vision:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-vision-9.4.0.aar\49561d1ac06f9a5c22359abd3f37b63f\AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.android.gms:play-services-wearable:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-wearable-9.4.0.aar\34b8dbc560ad57fdcf2fdc6f3031b669\AndroidManifest.xml:16:1-20:12
+MERGED from [com.google.android.gms:play-services-base:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-base-9.4.0.aar\a425836f483b7be2b2a6739962fd98aa\AndroidManifest.xml:16:1-24:12
+MERGED from [com.google.firebase:firebase-messaging:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-messaging-9.4.0.aar\0636e346ff3de0344e3deff5b3e65ab6\AndroidManifest.xml:16:1-33:12
+MERGED from [com.google.android.gms:play-services-tagmanager-api:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-tagmanager-api-9.4.0.aar\e216f00fbb46ab107009a0420656c861\AndroidManifest.xml:16:1-39:12
+MERGED from [com.google.firebase:firebase-analytics:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-analytics-9.4.0.aar\8891d80dfd5f4f73407f65b7362a568e\AndroidManifest.xml:16:1-42:12
+MERGED from [com.google.firebase:firebase-analytics-impl:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-9.4.0.aar\7eb073238ef37dfe59b42b5549eb63e2\AndroidManifest.xml:16:1-42:12
+MERGED from [com.google.firebase:firebase-iid:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-iid-9.4.0.aar\ed304a3f18e68827ca406a4d0028cfe1\AndroidManifest.xml:16:1-60:12
+MERGED from [com.google.firebase:firebase-common:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-common-9.4.0.aar\7c881057d9eb7fd9f41d164367b83ca5\AndroidManifest.xml:2:1-13:12
+MERGED from [com.google.android.gms:play-services-gass:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-gass-9.4.0.aar\063fbe007c59ac3dc40765d8d4432e42\AndroidManifest.xml:16:1-20:12
+MERGED from [com.google.android.gms:play-services-tasks:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-tasks-9.4.0.aar\94c4523bfc066a548add1b68012df449\AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.android.gms:play-services-basement:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-basement-9.4.0.aar\bf8e6917dc307db2f8b978b11cbe18f9\AndroidManifest.xml:16:1-26:12
+MERGED from [com.android.support:support-vector-drawable:23.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-23.4.0.aar\719219e1a66fd009ca38642924696d63\AndroidManifest.xml:2:1-9:12
+MERGED from [com.android.support:support-v4:23.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\support-v4-23.4.0.aar\f5b9cdbe89b21e531e1455af820dac72\AndroidManifest.xml:17:1-24:12
+INJECTED from C:\Users\sujan\GitHub\PercivalProjects\PercivalProjects\Parse-Server-Starter-Project\ParseStarterProject\src\main\AndroidManifest.xml:9:1-36:12
+INJECTED from C:\Users\sujan\GitHub\PercivalProjects\PercivalProjects\Parse-Server-Starter-Project\ParseStarterProject\src\main\AndroidManifest.xml:9:1-36:12
+INJECTED from C:\Users\sujan\GitHub\PercivalProjects\PercivalProjects\Parse-Server-Starter-Project\ParseStarterProject\src\main\AndroidManifest.xml:9:1-36:12
+	package
+		ADDED from C:\Users\sujan\GitHub\PercivalProjects\PercivalProjects\Parse-Server-Starter-Project\ParseStarterProject\src\main\AndroidManifest.xml:10:5-32
+		INJECTED from C:\Users\sujan\GitHub\PercivalProjects\PercivalProjects\Parse-Server-Starter-Project\ParseStarterProject\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\sujan\GitHub\PercivalProjects\PercivalProjects\Parse-Server-Starter-Project\ParseStarterProject\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from C:\Users\sujan\GitHub\PercivalProjects\PercivalProjects\Parse-Server-Starter-Project\ParseStarterProject\src\main\AndroidManifest.xml
+		ADDED from C:\Users\sujan\GitHub\PercivalProjects\PercivalProjects\Parse-Server-Starter-Project\ParseStarterProject\src\main\AndroidManifest.xml:9:1-36:12
+		INJECTED from C:\Users\sujan\GitHub\PercivalProjects\PercivalProjects\Parse-Server-Starter-Project\ParseStarterProject\src\main\AndroidManifest.xml
+	android:versionCode
+		INJECTED from C:\Users\sujan\GitHub\PercivalProjects\PercivalProjects\Parse-Server-Starter-Project\ParseStarterProject\src\main\AndroidManifest.xml
+		ADDED from C:\Users\sujan\GitHub\PercivalProjects\PercivalProjects\Parse-Server-Starter-Project\ParseStarterProject\src\main\AndroidManifest.xml:9:1-36:12
+		INJECTED from C:\Users\sujan\GitHub\PercivalProjects\PercivalProjects\Parse-Server-Starter-Project\ParseStarterProject\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from C:\Users\sujan\GitHub\PercivalProjects\PercivalProjects\Parse-Server-Starter-Project\ParseStarterProject\src\main\AndroidManifest.xml:9:11-69
+uses-permission#android.permission.INTERNET
+ADDED from C:\Users\sujan\GitHub\PercivalProjects\PercivalProjects\Parse-Server-Starter-Project\ParseStarterProject\src\main\AndroidManifest.xml:12:5-67
+MERGED from [com.google.android.gms:play-services-ads-lite:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-ads-lite-9.4.0.aar\17d6249284cdbb731e897de68e8eaf07\AndroidManifest.xml:20:5-66
+MERGED from [com.google.android.gms:play-services-ads-lite:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-ads-lite-9.4.0.aar\17d6249284cdbb731e897de68e8eaf07\AndroidManifest.xml:20:5-66
+MERGED from [com.google.android.gms:play-services-analytics:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-analytics-9.4.0.aar\25013495890555bf471cb5b911f705f5\AndroidManifest.xml:21:5-67
+MERGED from [com.google.android.gms:play-services-analytics:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-analytics-9.4.0.aar\25013495890555bf471cb5b911f705f5\AndroidManifest.xml:21:5-67
+MERGED from [com.google.android.gms:play-services-analytics-impl:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-analytics-impl-9.4.0.aar\5fdba961c2c098aaf3692e16b94e0bf9\AndroidManifest.xml:21:5-67
+MERGED from [com.google.android.gms:play-services-analytics-impl:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-analytics-impl-9.4.0.aar\5fdba961c2c098aaf3692e16b94e0bf9\AndroidManifest.xml:21:5-67
+MERGED from [com.google.android.gms:play-services-appinvite:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-appinvite-9.4.0.aar\9d846673d4b1cafbd112389e09297e6a\AndroidManifest.xml:19:5-67
+MERGED from [com.google.android.gms:play-services-appinvite:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-appinvite-9.4.0.aar\9d846673d4b1cafbd112389e09297e6a\AndroidManifest.xml:19:5-67
+MERGED from [com.google.firebase:firebase-crash:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-crash-9.4.0.aar\8e922cb0e4d86dbc31882cdcd1d176c3\AndroidManifest.xml:20:5-66
+MERGED from [com.google.firebase:firebase-crash:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-crash-9.4.0.aar\8e922cb0e4d86dbc31882cdcd1d176c3\AndroidManifest.xml:20:5-66
+MERGED from [com.google.android.gms:play-services-gcm:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-gcm-9.4.0.aar\200fba7106f682386bb8e64b5a78a900\AndroidManifest.xml:22:5-67
+MERGED from [com.google.android.gms:play-services-gcm:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-gcm-9.4.0.aar\200fba7106f682386bb8e64b5a78a900\AndroidManifest.xml:22:5-67
+MERGED from [com.google.android.gms:play-services-iid:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-iid-9.4.0.aar\a8bb70cb9dd3fca8b06f7fd146cafeff\AndroidManifest.xml:22:5-67
+MERGED from [com.google.android.gms:play-services-iid:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-iid-9.4.0.aar\a8bb70cb9dd3fca8b06f7fd146cafeff\AndroidManifest.xml:22:5-67
+MERGED from [com.google.android.gms:play-services-maps:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-maps-9.4.0.aar\510196fa2b8af42a54955677d59088b7\AndroidManifest.xml:21:5-66
+MERGED from [com.google.android.gms:play-services-maps:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-maps-9.4.0.aar\510196fa2b8af42a54955677d59088b7\AndroidManifest.xml:21:5-66
+MERGED from [com.google.android.gms:play-services-tagmanager-api:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-tagmanager-api-9.4.0.aar\e216f00fbb46ab107009a0420656c861\AndroidManifest.xml:21:5-67
+MERGED from [com.google.android.gms:play-services-tagmanager-api:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-tagmanager-api-9.4.0.aar\e216f00fbb46ab107009a0420656c861\AndroidManifest.xml:21:5-67
+MERGED from [com.google.firebase:firebase-analytics:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-analytics-9.4.0.aar\8891d80dfd5f4f73407f65b7362a568e\AndroidManifest.xml:21:5-67
+MERGED from [com.google.firebase:firebase-analytics:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-analytics-9.4.0.aar\8891d80dfd5f4f73407f65b7362a568e\AndroidManifest.xml:21:5-67
+MERGED from [com.google.firebase:firebase-analytics-impl:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-9.4.0.aar\7eb073238ef37dfe59b42b5549eb63e2\AndroidManifest.xml:21:5-67
+MERGED from [com.google.firebase:firebase-analytics-impl:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-9.4.0.aar\7eb073238ef37dfe59b42b5549eb63e2\AndroidManifest.xml:21:5-67
+MERGED from [com.google.firebase:firebase-iid:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-iid-9.4.0.aar\ed304a3f18e68827ca406a4d0028cfe1\AndroidManifest.xml:21:5-67
+MERGED from [com.google.firebase:firebase-iid:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-iid-9.4.0.aar\ed304a3f18e68827ca406a4d0028cfe1\AndroidManifest.xml:21:5-67
+	android:name
+		ADDED from C:\Users\sujan\GitHub\PercivalProjects\PercivalProjects\Parse-Server-Starter-Project\ParseStarterProject\src\main\AndroidManifest.xml:12:22-64
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from C:\Users\sujan\GitHub\PercivalProjects\PercivalProjects\Parse-Server-Starter-Project\ParseStarterProject\src\main\AndroidManifest.xml:13:5-79
+MERGED from [com.google.android.gms:play-services-ads-lite:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-ads-lite-9.4.0.aar\17d6249284cdbb731e897de68e8eaf07\AndroidManifest.xml:21:5-78
+MERGED from [com.google.android.gms:play-services-ads-lite:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-ads-lite-9.4.0.aar\17d6249284cdbb731e897de68e8eaf07\AndroidManifest.xml:21:5-78
+MERGED from [com.google.android.gms:play-services-analytics:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-analytics-9.4.0.aar\25013495890555bf471cb5b911f705f5\AndroidManifest.xml:22:5-79
+MERGED from [com.google.android.gms:play-services-analytics:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-analytics-9.4.0.aar\25013495890555bf471cb5b911f705f5\AndroidManifest.xml:22:5-79
+MERGED from [com.google.android.gms:play-services-analytics-impl:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-analytics-impl-9.4.0.aar\5fdba961c2c098aaf3692e16b94e0bf9\AndroidManifest.xml:22:5-79
+MERGED from [com.google.android.gms:play-services-analytics-impl:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-analytics-impl-9.4.0.aar\5fdba961c2c098aaf3692e16b94e0bf9\AndroidManifest.xml:22:5-79
+MERGED from [com.google.android.gms:play-services-maps:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-maps-9.4.0.aar\510196fa2b8af42a54955677d59088b7\AndroidManifest.xml:20:5-78
+MERGED from [com.google.android.gms:play-services-maps:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-maps-9.4.0.aar\510196fa2b8af42a54955677d59088b7\AndroidManifest.xml:20:5-78
+MERGED from [com.google.android.gms:play-services-nearby:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-nearby-9.4.0.aar\c79687f2034342731a3b4112dd131a35\AndroidManifest.xml:5:5-79
+MERGED from [com.google.android.gms:play-services-nearby:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-nearby-9.4.0.aar\c79687f2034342731a3b4112dd131a35\AndroidManifest.xml:5:5-79
+MERGED from [com.google.android.gms:play-services-tagmanager-api:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-tagmanager-api-9.4.0.aar\e216f00fbb46ab107009a0420656c861\AndroidManifest.xml:22:5-79
+MERGED from [com.google.android.gms:play-services-tagmanager-api:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-tagmanager-api-9.4.0.aar\e216f00fbb46ab107009a0420656c861\AndroidManifest.xml:22:5-79
+MERGED from [com.google.firebase:firebase-analytics:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-analytics-9.4.0.aar\8891d80dfd5f4f73407f65b7362a568e\AndroidManifest.xml:22:5-79
+MERGED from [com.google.firebase:firebase-analytics:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-analytics-9.4.0.aar\8891d80dfd5f4f73407f65b7362a568e\AndroidManifest.xml:22:5-79
+MERGED from [com.google.firebase:firebase-analytics-impl:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-9.4.0.aar\7eb073238ef37dfe59b42b5549eb63e2\AndroidManifest.xml:22:5-79
+MERGED from [com.google.firebase:firebase-analytics-impl:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-9.4.0.aar\7eb073238ef37dfe59b42b5549eb63e2\AndroidManifest.xml:22:5-79
+MERGED from [com.google.firebase:firebase-iid:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-iid-9.4.0.aar\ed304a3f18e68827ca406a4d0028cfe1\AndroidManifest.xml:20:5-79
+MERGED from [com.google.firebase:firebase-iid:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-iid-9.4.0.aar\ed304a3f18e68827ca406a4d0028cfe1\AndroidManifest.xml:20:5-79
+	android:name
+		ADDED from C:\Users\sujan\GitHub\PercivalProjects\PercivalProjects\Parse-Server-Starter-Project\ParseStarterProject\src\main\AndroidManifest.xml:13:22-76
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from C:\Users\sujan\GitHub\PercivalProjects\PercivalProjects\Parse-Server-Starter-Project\ParseStarterProject\src\main\AndroidManifest.xml:14:5-80
+	android:name
+		ADDED from C:\Users\sujan\GitHub\PercivalProjects\PercivalProjects\Parse-Server-Starter-Project\ParseStarterProject\src\main\AndroidManifest.xml:14:22-77
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from C:\Users\sujan\GitHub\PercivalProjects\PercivalProjects\Parse-Server-Starter-Project\ParseStarterProject\src\main\AndroidManifest.xml:15:5-79
+	android:name
+		ADDED from C:\Users\sujan\GitHub\PercivalProjects\PercivalProjects\Parse-Server-Starter-Project\ParseStarterProject\src\main\AndroidManifest.xml:15:22-76
+application
+ADDED from C:\Users\sujan\GitHub\PercivalProjects\PercivalProjects\Parse-Server-Starter-Project\ParseStarterProject\src\main\AndroidManifest.xml:17:5-34:19
+MERGED from [com.google.android.gms:play-services:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-9.4.0.aar\b8514134c1fb683783728a6ffe7875be\AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-9.4.0.aar\b8514134c1fb683783728a6ffe7875be\AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-cast-framework:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-cast-framework-9.4.0.aar\83ee2e61be6d9d8b243191d35e67b58c\AndroidManifest.xml:5:5-9:19
+MERGED from [com.google.android.gms:play-services-cast-framework:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-cast-framework-9.4.0.aar\83ee2e61be6d9d8b243191d35e67b58c\AndroidManifest.xml:5:5-9:19
+MERGED from [com.google.android.gms:play-services-cast:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-cast-9.4.0.aar\d8b0b4b85cfa5be18d2a5e94fecd7c2a\AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-cast:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-cast-9.4.0.aar\d8b0b4b85cfa5be18d2a5e94fecd7c2a\AndroidManifest.xml:19:5-20
+MERGED from [com.android.support:mediarouter-v7:23.0.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\mediarouter-v7-23.0.0.aar\c61285124d778bf03e356296782164da\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:mediarouter-v7:23.0.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\mediarouter-v7-23.0.0.aar\c61285124d778bf03e356296782164da\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:appcompat-v7:23.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\appcompat-v7-23.4.0.aar\f357462a94460c5ecb9925fb89e56487\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:appcompat-v7:23.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\appcompat-v7-23.4.0.aar\f357462a94460c5ecb9925fb89e56487\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.1.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0.aar\4b5a3adcb4f53a3a30fe382aed6d06ce\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.1.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0.aar\4b5a3adcb4f53a3a30fe382aed6d06ce\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support:animated-vector-drawable:23.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-23.4.0.aar\acda8896869c79f29faf1a8a8f2e400c\AndroidManifest.xml:7:5-20
+MERGED from [com.android.support:animated-vector-drawable:23.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-23.4.0.aar\acda8896869c79f29faf1a8a8f2e400c\AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-ads-lite:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-ads-lite-9.4.0.aar\17d6249284cdbb731e897de68e8eaf07\AndroidManifest.xml:24:5-32:19
+MERGED from [com.google.android.gms:play-services-ads-lite:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-ads-lite-9.4.0.aar\17d6249284cdbb731e897de68e8eaf07\AndroidManifest.xml:24:5-32:19
+MERGED from [com.google.android.gms:play-services-analytics:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-analytics-9.4.0.aar\25013495890555bf471cb5b911f705f5\AndroidManifest.xml:27:5-20
+MERGED from [com.google.android.gms:play-services-analytics:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-analytics-9.4.0.aar\25013495890555bf471cb5b911f705f5\AndroidManifest.xml:27:5-20
+MERGED from [com.google.android.gms:play-services-analytics-impl:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-analytics-impl-9.4.0.aar\5fdba961c2c098aaf3692e16b94e0bf9\AndroidManifest.xml:27:5-20
+MERGED from [com.google.android.gms:play-services-analytics-impl:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-analytics-impl-9.4.0.aar\5fdba961c2c098aaf3692e16b94e0bf9\AndroidManifest.xml:27:5-20
+MERGED from [com.google.android.gms:play-services-appinvite:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-appinvite-9.4.0.aar\9d846673d4b1cafbd112389e09297e6a\AndroidManifest.xml:20:5-30:19
+MERGED from [com.google.android.gms:play-services-appinvite:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-appinvite-9.4.0.aar\9d846673d4b1cafbd112389e09297e6a\AndroidManifest.xml:20:5-30:19
+MERGED from [com.google.android.gms:play-services-auth:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-auth-9.4.0.aar\93d22d0afcced0004b589ed260d6e833\AndroidManifest.xml:20:5-32:19
+MERGED from [com.google.android.gms:play-services-auth:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-auth-9.4.0.aar\93d22d0afcced0004b589ed260d6e833\AndroidManifest.xml:20:5-32:19
+MERGED from [com.google.android.gms:play-services-clearcut:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-clearcut-9.4.0.aar\f57e5c7fcd90f3004ee68d6fe94e4662\AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-clearcut:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-clearcut-9.4.0.aar\f57e5c7fcd90f3004ee68d6fe94e4662\AndroidManifest.xml:19:5-20
+MERGED from [com.google.firebase:firebase-config:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-config-9.4.0.aar\2ebd1cee0e9867f9c49f360248207ce9\AndroidManifest.xml:19:5-20
+MERGED from [com.google.firebase:firebase-config:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-config-9.4.0.aar\2ebd1cee0e9867f9c49f360248207ce9\AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-contextmanager:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-contextmanager-9.4.0.aar\1807dbe9ad01a55640383d88ab3eabcd\AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-contextmanager:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-contextmanager-9.4.0.aar\1807dbe9ad01a55640383d88ab3eabcd\AndroidManifest.xml:19:5-20
+MERGED from [com.google.firebase:firebase-crash:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-crash-9.4.0.aar\8e922cb0e4d86dbc31882cdcd1d176c3\AndroidManifest.xml:24:5-32:19
+MERGED from [com.google.firebase:firebase-crash:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-crash-9.4.0.aar\8e922cb0e4d86dbc31882cdcd1d176c3\AndroidManifest.xml:24:5-32:19
+MERGED from [com.google.android.gms:play-services-games:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-games-9.4.0.aar\0775a69f1c714db551c9c6f5b1a79ff2\AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-games:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-games-9.4.0.aar\0775a69f1c714db551c9c6f5b1a79ff2\AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-drive:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-drive-9.4.0.aar\876e2060ad1c17a13c74aa64b0c77bf2\AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-drive:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-drive-9.4.0.aar\876e2060ad1c17a13c74aa64b0c77bf2\AndroidManifest.xml:19:5-20
+MERGED from [com.google.firebase:firebase-auth:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-auth-9.4.0.aar\22ddfcbe4e33a459b36a5dcc2ea23ee6\AndroidManifest.xml:20:5-21:19
+MERGED from [com.google.firebase:firebase-auth:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-auth-9.4.0.aar\22ddfcbe4e33a459b36a5dcc2ea23ee6\AndroidManifest.xml:20:5-21:19
+MERGED from [com.google.firebase:firebase-auth-common:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-auth-common-9.4.0.aar\cc1fe34434abb7377c8dbab26e48436c\AndroidManifest.xml:20:5-21:19
+MERGED from [com.google.firebase:firebase-auth-common:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-auth-common-9.4.0.aar\cc1fe34434abb7377c8dbab26e48436c\AndroidManifest.xml:20:5-21:19
+MERGED from [com.google.android.gms:play-services-fitness:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-fitness-9.4.0.aar\c0b603696e52bb2884409c88e1ab7716\AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-fitness:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-fitness-9.4.0.aar\c0b603696e52bb2884409c88e1ab7716\AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-gcm:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-gcm-9.4.0.aar\200fba7106f682386bb8e64b5a78a900\AndroidManifest.xml:24:5-20
+MERGED from [com.google.android.gms:play-services-gcm:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-gcm-9.4.0.aar\200fba7106f682386bb8e64b5a78a900\AndroidManifest.xml:24:5-20
+MERGED from [com.google.android.gms:play-services-appindexing:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-appindexing-9.4.0.aar\f0b6ebeb1f4ff06fa1b4db919666d74f\AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-appindexing:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-appindexing-9.4.0.aar\f0b6ebeb1f4ff06fa1b4db919666d74f\AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-identity:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-identity-9.4.0.aar\503a773f7d478672b79ac2c88cc072e0\AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-identity:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-identity-9.4.0.aar\503a773f7d478672b79ac2c88cc072e0\AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-iid:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-iid-9.4.0.aar\a8bb70cb9dd3fca8b06f7fd146cafeff\AndroidManifest.xml:24:5-20
+MERGED from [com.google.android.gms:play-services-iid:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-iid-9.4.0.aar\a8bb70cb9dd3fca8b06f7fd146cafeff\AndroidManifest.xml:24:5-20
+MERGED from [com.google.android.gms:play-services-location:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-location-9.4.0.aar\ceaa69dc293a57e9386b43e39b3d7f3d\AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-location:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-location-9.4.0.aar\ceaa69dc293a57e9386b43e39b3d7f3d\AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-places:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-places-9.4.0.aar\a3fc808d0e2a103d76736b6671cee5a7\AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-places:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-places-9.4.0.aar\a3fc808d0e2a103d76736b6671cee5a7\AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-maps:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-maps-9.4.0.aar\510196fa2b8af42a54955677d59088b7\AndroidManifest.xml:27:5-20
+MERGED from [com.google.android.gms:play-services-maps:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-maps-9.4.0.aar\510196fa2b8af42a54955677d59088b7\AndroidManifest.xml:27:5-20
+MERGED from [com.google.android.gms:play-services-nearby:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-nearby-9.4.0.aar\c79687f2034342731a3b4112dd131a35\AndroidManifest.xml:6:5-20
+MERGED from [com.google.android.gms:play-services-nearby:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-nearby-9.4.0.aar\c79687f2034342731a3b4112dd131a35\AndroidManifest.xml:6:5-20
+MERGED from [com.google.android.gms:play-services-panorama:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-panorama-9.4.0.aar\27010753648c55fac62897e6c53f8c64\AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-panorama:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-panorama-9.4.0.aar\27010753648c55fac62897e6c53f8c64\AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-plus:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-plus-9.4.0.aar\04d6d267aee0626b405354c803c5a5c4\AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-plus:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-plus-9.4.0.aar\04d6d267aee0626b405354c803c5a5c4\AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-safetynet:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-safetynet-9.4.0.aar\508de2f3225bef97b35dc6525f563773\AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-safetynet:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-safetynet-9.4.0.aar\508de2f3225bef97b35dc6525f563773\AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-vision:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-vision-9.4.0.aar\49561d1ac06f9a5c22359abd3f37b63f\AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-vision:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-vision-9.4.0.aar\49561d1ac06f9a5c22359abd3f37b63f\AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-wearable:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-wearable-9.4.0.aar\34b8dbc560ad57fdcf2fdc6f3031b669\AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-wearable:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-wearable-9.4.0.aar\34b8dbc560ad57fdcf2fdc6f3031b669\AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-base:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-base-9.4.0.aar\a425836f483b7be2b2a6739962fd98aa\AndroidManifest.xml:19:5-23:19
+MERGED from [com.google.android.gms:play-services-base:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-base-9.4.0.aar\a425836f483b7be2b2a6739962fd98aa\AndroidManifest.xml:19:5-23:19
+MERGED from [com.google.firebase:firebase-messaging:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-messaging-9.4.0.aar\0636e346ff3de0344e3deff5b3e65ab6\AndroidManifest.xml:20:5-32:19
+MERGED from [com.google.firebase:firebase-messaging:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-messaging-9.4.0.aar\0636e346ff3de0344e3deff5b3e65ab6\AndroidManifest.xml:20:5-32:19
+MERGED from [com.google.android.gms:play-services-tagmanager-api:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-tagmanager-api-9.4.0.aar\e216f00fbb46ab107009a0420656c861\AndroidManifest.xml:24:5-38:19
+MERGED from [com.google.android.gms:play-services-tagmanager-api:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-tagmanager-api-9.4.0.aar\e216f00fbb46ab107009a0420656c861\AndroidManifest.xml:24:5-38:19
+MERGED from [com.google.firebase:firebase-analytics:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-analytics-9.4.0.aar\8891d80dfd5f4f73407f65b7362a568e\AndroidManifest.xml:26:5-41:19
+MERGED from [com.google.firebase:firebase-analytics:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-analytics-9.4.0.aar\8891d80dfd5f4f73407f65b7362a568e\AndroidManifest.xml:26:5-41:19
+MERGED from [com.google.firebase:firebase-analytics-impl:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-9.4.0.aar\7eb073238ef37dfe59b42b5549eb63e2\AndroidManifest.xml:26:5-41:19
+MERGED from [com.google.firebase:firebase-analytics-impl:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-9.4.0.aar\7eb073238ef37dfe59b42b5549eb63e2\AndroidManifest.xml:26:5-41:19
+MERGED from [com.google.firebase:firebase-iid:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-iid-9.4.0.aar\ed304a3f18e68827ca406a4d0028cfe1\AndroidManifest.xml:30:5-59:19
+MERGED from [com.google.firebase:firebase-iid:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-iid-9.4.0.aar\ed304a3f18e68827ca406a4d0028cfe1\AndroidManifest.xml:30:5-59:19
+MERGED from [com.google.firebase:firebase-common:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-common-9.4.0.aar\7c881057d9eb7fd9f41d164367b83ca5\AndroidManifest.xml:5:5-12:19
+MERGED from [com.google.firebase:firebase-common:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-common-9.4.0.aar\7c881057d9eb7fd9f41d164367b83ca5\AndroidManifest.xml:5:5-12:19
+MERGED from [com.google.android.gms:play-services-gass:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-gass-9.4.0.aar\063fbe007c59ac3dc40765d8d4432e42\AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-gass:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-gass-9.4.0.aar\063fbe007c59ac3dc40765d8d4432e42\AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-tasks:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-tasks-9.4.0.aar\94c4523bfc066a548add1b68012df449\AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-tasks:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-tasks-9.4.0.aar\94c4523bfc066a548add1b68012df449\AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-basement:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-basement-9.4.0.aar\bf8e6917dc307db2f8b978b11cbe18f9\AndroidManifest.xml:20:5-24:19
+MERGED from [com.google.android.gms:play-services-basement:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-basement-9.4.0.aar\bf8e6917dc307db2f8b978b11cbe18f9\AndroidManifest.xml:20:5-24:19
+MERGED from [com.android.support:support-vector-drawable:23.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-23.4.0.aar\719219e1a66fd009ca38642924696d63\AndroidManifest.xml:7:5-20
+MERGED from [com.android.support:support-vector-drawable:23.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-23.4.0.aar\719219e1a66fd009ca38642924696d63\AndroidManifest.xml:7:5-20
+MERGED from [com.android.support:support-v4:23.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\support-v4-23.4.0.aar\f5b9cdbe89b21e531e1455af820dac72\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:23.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\support-v4-23.4.0.aar\f5b9cdbe89b21e531e1455af820dac72\AndroidManifest.xml:22:5-20
+	android:label
+		ADDED from C:\Users\sujan\GitHub\PercivalProjects\PercivalProjects\Parse-Server-Starter-Project\ParseStarterProject\src\main\AndroidManifest.xml:21:9-41
+	android:icon
+		ADDED from C:\Users\sujan\GitHub\PercivalProjects\PercivalProjects\Parse-Server-Starter-Project\ParseStarterProject\src\main\AndroidManifest.xml:20:9-43
+	android:allowBackup
+		ADDED from C:\Users\sujan\GitHub\PercivalProjects\PercivalProjects\Parse-Server-Starter-Project\ParseStarterProject\src\main\AndroidManifest.xml:19:9-35
+	android:theme
+		ADDED from C:\Users\sujan\GitHub\PercivalProjects\PercivalProjects\Parse-Server-Starter-Project\ParseStarterProject\src\main\AndroidManifest.xml:22:9-40
+	android:name
+		ADDED from C:\Users\sujan\GitHub\PercivalProjects\PercivalProjects\Parse-Server-Starter-Project\ParseStarterProject\src\main\AndroidManifest.xml:18:9-43
+activity#com.parse.starter.MainActivity
+ADDED from C:\Users\sujan\GitHub\PercivalProjects\PercivalProjects\Parse-Server-Starter-Project\ParseStarterProject\src\main\AndroidManifest.xml:23:9-31:20
+	android:label
+		ADDED from C:\Users\sujan\GitHub\PercivalProjects\PercivalProjects\Parse-Server-Starter-Project\ParseStarterProject\src\main\AndroidManifest.xml:25:13-45
+	android:name
+		ADDED from C:\Users\sujan\GitHub\PercivalProjects\PercivalProjects\Parse-Server-Starter-Project\ParseStarterProject\src\main\AndroidManifest.xml:24:13-41
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from C:\Users\sujan\GitHub\PercivalProjects\PercivalProjects\Parse-Server-Starter-Project\ParseStarterProject\src\main\AndroidManifest.xml:26:13-30:29
+action#android.intent.action.MAIN
+ADDED from C:\Users\sujan\GitHub\PercivalProjects\PercivalProjects\Parse-Server-Starter-Project\ParseStarterProject\src\main\AndroidManifest.xml:27:17-69
+	android:name
+		ADDED from C:\Users\sujan\GitHub\PercivalProjects\PercivalProjects\Parse-Server-Starter-Project\ParseStarterProject\src\main\AndroidManifest.xml:27:25-66
+category#android.intent.category.LAUNCHER
+ADDED from C:\Users\sujan\GitHub\PercivalProjects\PercivalProjects\Parse-Server-Starter-Project\ParseStarterProject\src\main\AndroidManifest.xml:29:17-77
+	android:name
+		ADDED from C:\Users\sujan\GitHub\PercivalProjects\PercivalProjects\Parse-Server-Starter-Project\ParseStarterProject\src\main\AndroidManifest.xml:29:27-74
+activity#com.parse.starter.UserListActivity
+ADDED from C:\Users\sujan\GitHub\PercivalProjects\PercivalProjects\Parse-Server-Starter-Project\ParseStarterProject\src\main\AndroidManifest.xml:32:9-54
+	android:name
+		ADDED from C:\Users\sujan\GitHub\PercivalProjects\PercivalProjects\Parse-Server-Starter-Project\ParseStarterProject\src\main\AndroidManifest.xml:32:19-51
+activity#com.parse.starter.UserFeedActivity
+ADDED from C:\Users\sujan\GitHub\PercivalProjects\PercivalProjects\Parse-Server-Starter-Project\ParseStarterProject\src\main\AndroidManifest.xml:33:9-63
+	android:name
+		ADDED from C:\Users\sujan\GitHub\PercivalProjects\PercivalProjects\Parse-Server-Starter-Project\ParseStarterProject\src\main\AndroidManifest.xml:33:19-51
+uses-sdk
+INJECTED from C:\Users\sujan\GitHub\PercivalProjects\PercivalProjects\Parse-Server-Starter-Project\ParseStarterProject\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\sujan\GitHub\PercivalProjects\PercivalProjects\Parse-Server-Starter-Project\ParseStarterProject\src\main\AndroidManifest.xml
+INJECTED from C:\Users\sujan\GitHub\PercivalProjects\PercivalProjects\Parse-Server-Starter-Project\ParseStarterProject\src\main\AndroidManifest.xml
+MERGED from [com.google.android.gms:play-services:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-9.4.0.aar\b8514134c1fb683783728a6ffe7875be\AndroidManifest.xml:4:5-42
+MERGED from [com.google.android.gms:play-services:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-9.4.0.aar\b8514134c1fb683783728a6ffe7875be\AndroidManifest.xml:4:5-42
+MERGED from [com.google.android.gms:play-services-cast-framework:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-cast-framework-9.4.0.aar\83ee2e61be6d9d8b243191d35e67b58c\AndroidManifest.xml:4:5-42
+MERGED from [com.google.android.gms:play-services-cast-framework:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-cast-framework-9.4.0.aar\83ee2e61be6d9d8b243191d35e67b58c\AndroidManifest.xml:4:5-42
+MERGED from [com.google.android.gms:play-services-cast:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-cast-9.4.0.aar\d8b0b4b85cfa5be18d2a5e94fecd7c2a\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-cast:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-cast-9.4.0.aar\d8b0b4b85cfa5be18d2a5e94fecd7c2a\AndroidManifest.xml:18:5-42
+MERGED from [com.android.support:mediarouter-v7:23.0.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\mediarouter-v7-23.0.0.aar\c61285124d778bf03e356296782164da\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:mediarouter-v7:23.0.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\mediarouter-v7-23.0.0.aar\c61285124d778bf03e356296782164da\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:appcompat-v7:23.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\appcompat-v7-23.4.0.aar\f357462a94460c5ecb9925fb89e56487\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:appcompat-v7:23.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\appcompat-v7-23.4.0.aar\f357462a94460c5ecb9925fb89e56487\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:multidex:1.0.2] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\multidex-1.0.2.aar\d1a257d1fe578f39c5946c589728e8d7\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:multidex:1.0.2] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\multidex-1.0.2.aar\d1a257d1fe578f39c5946c589728e8d7\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support.constraint:constraint-layout:1.1.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0.aar\4b5a3adcb4f53a3a30fe382aed6d06ce\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.1.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0.aar\4b5a3adcb4f53a3a30fe382aed6d06ce\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:animated-vector-drawable:23.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-23.4.0.aar\acda8896869c79f29faf1a8a8f2e400c\AndroidManifest.xml:5:5-44
+MERGED from [com.android.support:animated-vector-drawable:23.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-23.4.0.aar\acda8896869c79f29faf1a8a8f2e400c\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-ads:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-ads-9.4.0.aar\1076bef4a1499fc22a0c6060b2061879\AndroidManifest.xml:19:5-42
+MERGED from [com.google.android.gms:play-services-ads:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-ads-9.4.0.aar\1076bef4a1499fc22a0c6060b2061879\AndroidManifest.xml:19:5-42
+MERGED from [com.google.android.gms:play-services-ads-lite:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-ads-lite-9.4.0.aar\17d6249284cdbb731e897de68e8eaf07\AndroidManifest.xml:23:5-42
+MERGED from [com.google.android.gms:play-services-ads-lite:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-ads-lite-9.4.0.aar\17d6249284cdbb731e897de68e8eaf07\AndroidManifest.xml:23:5-42
+MERGED from [com.google.android.gms:play-services-analytics:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-analytics-9.4.0.aar\25013495890555bf471cb5b911f705f5\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-analytics:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-analytics-9.4.0.aar\25013495890555bf471cb5b911f705f5\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-tagmanager:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-tagmanager-9.4.0.aar\aedfef16493925ad59a23d49ab8ccf84\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-tagmanager:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-tagmanager-9.4.0.aar\aedfef16493925ad59a23d49ab8ccf84\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-analytics-impl:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-analytics-impl-9.4.0.aar\5fdba961c2c098aaf3692e16b94e0bf9\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-analytics-impl:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-analytics-impl-9.4.0.aar\5fdba961c2c098aaf3692e16b94e0bf9\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-appinvite:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-appinvite-9.4.0.aar\9d846673d4b1cafbd112389e09297e6a\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-appinvite:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-appinvite-9.4.0.aar\9d846673d4b1cafbd112389e09297e6a\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-auth:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-auth-9.4.0.aar\93d22d0afcced0004b589ed260d6e833\AndroidManifest.xml:18:5-43
+MERGED from [com.google.android.gms:play-services-auth:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-auth-9.4.0.aar\93d22d0afcced0004b589ed260d6e833\AndroidManifest.xml:18:5-43
+MERGED from [com.google.android.gms:play-services-auth-base:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-auth-base-9.4.0.aar\a6e48086fb5895f496a8b309be313068\AndroidManifest.xml:5:5-43
+MERGED from [com.google.android.gms:play-services-auth-base:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-auth-base-9.4.0.aar\a6e48086fb5895f496a8b309be313068\AndroidManifest.xml:5:5-43
+MERGED from [com.google.android.gms:play-services-clearcut:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-clearcut-9.4.0.aar\f57e5c7fcd90f3004ee68d6fe94e4662\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-clearcut:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-clearcut-9.4.0.aar\f57e5c7fcd90f3004ee68d6fe94e4662\AndroidManifest.xml:18:5-42
+MERGED from [com.google.firebase:firebase-config:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-config-9.4.0.aar\2ebd1cee0e9867f9c49f360248207ce9\AndroidManifest.xml:18:5-42
+MERGED from [com.google.firebase:firebase-config:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-config-9.4.0.aar\2ebd1cee0e9867f9c49f360248207ce9\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-contextmanager:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-contextmanager-9.4.0.aar\1807dbe9ad01a55640383d88ab3eabcd\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-contextmanager:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-contextmanager-9.4.0.aar\1807dbe9ad01a55640383d88ab3eabcd\AndroidManifest.xml:18:5-42
+MERGED from [com.google.firebase:firebase-crash:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-crash-9.4.0.aar\8e922cb0e4d86dbc31882cdcd1d176c3\AndroidManifest.xml:22:5-42
+MERGED from [com.google.firebase:firebase-crash:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-crash-9.4.0.aar\8e922cb0e4d86dbc31882cdcd1d176c3\AndroidManifest.xml:22:5-42
+MERGED from [com.google.android.gms:play-services-games:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-games-9.4.0.aar\0775a69f1c714db551c9c6f5b1a79ff2\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-games:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-games-9.4.0.aar\0775a69f1c714db551c9c6f5b1a79ff2\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-drive:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-drive-9.4.0.aar\876e2060ad1c17a13c74aa64b0c77bf2\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-drive:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-drive-9.4.0.aar\876e2060ad1c17a13c74aa64b0c77bf2\AndroidManifest.xml:18:5-42
+MERGED from [com.google.firebase:firebase-auth:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-auth-9.4.0.aar\22ddfcbe4e33a459b36a5dcc2ea23ee6\AndroidManifest.xml:18:5-43
+MERGED from [com.google.firebase:firebase-auth:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-auth-9.4.0.aar\22ddfcbe4e33a459b36a5dcc2ea23ee6\AndroidManifest.xml:18:5-43
+MERGED from [com.google.firebase:firebase-auth-common:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-auth-common-9.4.0.aar\cc1fe34434abb7377c8dbab26e48436c\AndroidManifest.xml:18:5-43
+MERGED from [com.google.firebase:firebase-auth-common:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-auth-common-9.4.0.aar\cc1fe34434abb7377c8dbab26e48436c\AndroidManifest.xml:18:5-43
+MERGED from [com.google.firebase:firebase-auth-module:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-auth-module-9.4.0.aar\139f7b062ed78cb364e5b37644e890ff\AndroidManifest.xml:4:5-43
+MERGED from [com.google.firebase:firebase-auth-module:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-auth-module-9.4.0.aar\139f7b062ed78cb364e5b37644e890ff\AndroidManifest.xml:4:5-43
+MERGED from [com.google.firebase:firebase-database:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-database-9.4.0.aar\e2852034f6141adbd66dd54e2aa99b8c\AndroidManifest.xml:5:5-43
+MERGED from [com.google.firebase:firebase-database:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-database-9.4.0.aar\e2852034f6141adbd66dd54e2aa99b8c\AndroidManifest.xml:5:5-43
+MERGED from [com.google.firebase:firebase-database-connection:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-database-connection-9.4.0.aar\defaccb008d275c65f2c2e6bfc508620\AndroidManifest.xml:5:5-43
+MERGED from [com.google.firebase:firebase-database-connection:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-database-connection-9.4.0.aar\defaccb008d275c65f2c2e6bfc508620\AndroidManifest.xml:5:5-43
+MERGED from [com.google.firebase:firebase-storage:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-storage-9.4.0.aar\5f4d56ae70d2aedd51896ec79507f541\AndroidManifest.xml:5:5-43
+MERGED from [com.google.firebase:firebase-storage:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-storage-9.4.0.aar\5f4d56ae70d2aedd51896ec79507f541\AndroidManifest.xml:5:5-43
+MERGED from [com.google.firebase:firebase-storage-common:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-storage-common-9.4.0.aar\a750529b96281c737effb496fbed1e37\AndroidManifest.xml:5:5-43
+MERGED from [com.google.firebase:firebase-storage-common:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-storage-common-9.4.0.aar\a750529b96281c737effb496fbed1e37\AndroidManifest.xml:5:5-43
+MERGED from [com.google.android.gms:play-services-fitness:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-fitness-9.4.0.aar\c0b603696e52bb2884409c88e1ab7716\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-fitness:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-fitness-9.4.0.aar\c0b603696e52bb2884409c88e1ab7716\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-gcm:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-gcm-9.4.0.aar\200fba7106f682386bb8e64b5a78a900\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-gcm:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-gcm-9.4.0.aar\200fba7106f682386bb8e64b5a78a900\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-appindexing:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-appindexing-9.4.0.aar\f0b6ebeb1f4ff06fa1b4db919666d74f\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-appindexing:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-appindexing-9.4.0.aar\f0b6ebeb1f4ff06fa1b4db919666d74f\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-wallet:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-wallet-9.4.0.aar\6d15dbc3eb62f550b0a01de8fba17da4\AndroidManifest.xml:19:5-42
+MERGED from [com.google.android.gms:play-services-wallet:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-wallet-9.4.0.aar\6d15dbc3eb62f550b0a01de8fba17da4\AndroidManifest.xml:19:5-42
+MERGED from [com.google.android.gms:play-services-identity:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-identity-9.4.0.aar\503a773f7d478672b79ac2c88cc072e0\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-identity:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-identity-9.4.0.aar\503a773f7d478672b79ac2c88cc072e0\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-iid:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-iid-9.4.0.aar\a8bb70cb9dd3fca8b06f7fd146cafeff\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-iid:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-iid-9.4.0.aar\a8bb70cb9dd3fca8b06f7fd146cafeff\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-location:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-location-9.4.0.aar\ceaa69dc293a57e9386b43e39b3d7f3d\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-location:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-location-9.4.0.aar\ceaa69dc293a57e9386b43e39b3d7f3d\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-places:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-places-9.4.0.aar\a3fc808d0e2a103d76736b6671cee5a7\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-places:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-places-9.4.0.aar\a3fc808d0e2a103d76736b6671cee5a7\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-maps:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-maps-9.4.0.aar\510196fa2b8af42a54955677d59088b7\AndroidManifest.xml:26:5-42
+MERGED from [com.google.android.gms:play-services-maps:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-maps-9.4.0.aar\510196fa2b8af42a54955677d59088b7\AndroidManifest.xml:26:5-42
+MERGED from [com.google.android.gms:play-services-nearby:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-nearby-9.4.0.aar\c79687f2034342731a3b4112dd131a35\AndroidManifest.xml:4:5-42
+MERGED from [com.google.android.gms:play-services-nearby:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-nearby-9.4.0.aar\c79687f2034342731a3b4112dd131a35\AndroidManifest.xml:4:5-42
+MERGED from [com.google.android.gms:play-services-panorama:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-panorama-9.4.0.aar\27010753648c55fac62897e6c53f8c64\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-panorama:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-panorama-9.4.0.aar\27010753648c55fac62897e6c53f8c64\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-plus:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-plus-9.4.0.aar\04d6d267aee0626b405354c803c5a5c4\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-plus:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-plus-9.4.0.aar\04d6d267aee0626b405354c803c5a5c4\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-safetynet:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-safetynet-9.4.0.aar\508de2f3225bef97b35dc6525f563773\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-safetynet:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-safetynet-9.4.0.aar\508de2f3225bef97b35dc6525f563773\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-vision:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-vision-9.4.0.aar\49561d1ac06f9a5c22359abd3f37b63f\AndroidManifest.xml:4:5-42
+MERGED from [com.google.android.gms:play-services-vision:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-vision-9.4.0.aar\49561d1ac06f9a5c22359abd3f37b63f\AndroidManifest.xml:4:5-42
+MERGED from [com.google.android.gms:play-services-wearable:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-wearable-9.4.0.aar\34b8dbc560ad57fdcf2fdc6f3031b669\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-wearable:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-wearable-9.4.0.aar\34b8dbc560ad57fdcf2fdc6f3031b669\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-base:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-base-9.4.0.aar\a425836f483b7be2b2a6739962fd98aa\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-base:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-base-9.4.0.aar\a425836f483b7be2b2a6739962fd98aa\AndroidManifest.xml:18:5-42
+MERGED from [com.google.firebase:firebase-messaging:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-messaging-9.4.0.aar\0636e346ff3de0344e3deff5b3e65ab6\AndroidManifest.xml:18:5-42
+MERGED from [com.google.firebase:firebase-messaging:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-messaging-9.4.0.aar\0636e346ff3de0344e3deff5b3e65ab6\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-tagmanager-api:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-tagmanager-api-9.4.0.aar\e216f00fbb46ab107009a0420656c861\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-tagmanager-api:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-tagmanager-api-9.4.0.aar\e216f00fbb46ab107009a0420656c861\AndroidManifest.xml:18:5-42
+MERGED from [com.google.firebase:firebase-analytics:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-analytics-9.4.0.aar\8891d80dfd5f4f73407f65b7362a568e\AndroidManifest.xml:18:5-42
+MERGED from [com.google.firebase:firebase-analytics:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-analytics-9.4.0.aar\8891d80dfd5f4f73407f65b7362a568e\AndroidManifest.xml:18:5-42
+MERGED from [com.google.firebase:firebase-analytics-impl:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-9.4.0.aar\7eb073238ef37dfe59b42b5549eb63e2\AndroidManifest.xml:18:5-42
+MERGED from [com.google.firebase:firebase-analytics-impl:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-9.4.0.aar\7eb073238ef37dfe59b42b5549eb63e2\AndroidManifest.xml:18:5-42
+MERGED from [com.google.firebase:firebase-iid:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-iid-9.4.0.aar\ed304a3f18e68827ca406a4d0028cfe1\AndroidManifest.xml:18:5-42
+MERGED from [com.google.firebase:firebase-iid:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-iid-9.4.0.aar\ed304a3f18e68827ca406a4d0028cfe1\AndroidManifest.xml:18:5-42
+MERGED from [com.google.firebase:firebase-common:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-common-9.4.0.aar\7c881057d9eb7fd9f41d164367b83ca5\AndroidManifest.xml:4:5-43
+MERGED from [com.google.firebase:firebase-common:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-common-9.4.0.aar\7c881057d9eb7fd9f41d164367b83ca5\AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-gass:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-gass-9.4.0.aar\063fbe007c59ac3dc40765d8d4432e42\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-gass:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-gass-9.4.0.aar\063fbe007c59ac3dc40765d8d4432e42\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-tasks:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-tasks-9.4.0.aar\94c4523bfc066a548add1b68012df449\AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-tasks:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-tasks-9.4.0.aar\94c4523bfc066a548add1b68012df449\AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-basement:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-basement-9.4.0.aar\bf8e6917dc307db2f8b978b11cbe18f9\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-basement:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-basement-9.4.0.aar\bf8e6917dc307db2f8b978b11cbe18f9\AndroidManifest.xml:18:5-42
+MERGED from [com.android.support:support-vector-drawable:23.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-23.4.0.aar\719219e1a66fd009ca38642924696d63\AndroidManifest.xml:5:5-43
+MERGED from [com.android.support:support-vector-drawable:23.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-23.4.0.aar\719219e1a66fd009ca38642924696d63\AndroidManifest.xml:5:5-43
+MERGED from [com.android.support:support-v4:23.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\support-v4-23.4.0.aar\f5b9cdbe89b21e531e1455af820dac72\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-v4:23.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\support-v4-23.4.0.aar\f5b9cdbe89b21e531e1455af820dac72\AndroidManifest.xml:20:5-43
+INJECTED from C:\Users\sujan\GitHub\PercivalProjects\PercivalProjects\Parse-Server-Starter-Project\ParseStarterProject\src\main\AndroidManifest.xml
+INJECTED from C:\Users\sujan\GitHub\PercivalProjects\PercivalProjects\Parse-Server-Starter-Project\ParseStarterProject\src\main\AndroidManifest.xml
+	tools:overrideLibrary
+		ADDED from [com.android.support:appcompat-v7:23.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\appcompat-v7-23.4.0.aar\f357462a94460c5ecb9925fb89e56487\AndroidManifest.xml:23:9-75
+	android:targetSdkVersion
+		INJECTED from C:\Users\sujan\GitHub\PercivalProjects\PercivalProjects\Parse-Server-Starter-Project\ParseStarterProject\src\main\AndroidManifest.xml
+		ADDED from C:\Users\sujan\GitHub\PercivalProjects\PercivalProjects\Parse-Server-Starter-Project\ParseStarterProject\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\sujan\GitHub\PercivalProjects\PercivalProjects\Parse-Server-Starter-Project\ParseStarterProject\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from C:\Users\sujan\GitHub\PercivalProjects\PercivalProjects\Parse-Server-Starter-Project\ParseStarterProject\src\main\AndroidManifest.xml
+		ADDED from C:\Users\sujan\GitHub\PercivalProjects\PercivalProjects\Parse-Server-Starter-Project\ParseStarterProject\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\sujan\GitHub\PercivalProjects\PercivalProjects\Parse-Server-Starter-Project\ParseStarterProject\src\main\AndroidManifest.xml
+receiver#com.google.android.gms.cast.framework.media.MediaIntentReceiver
+ADDED from [com.google.android.gms:play-services-cast-framework:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-cast-framework-9.4.0.aar\83ee2e61be6d9d8b243191d35e67b58c\AndroidManifest.xml:6:9-100
+	android:name
+		ADDED from [com.google.android.gms:play-services-cast-framework:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-cast-framework-9.4.0.aar\83ee2e61be6d9d8b243191d35e67b58c\AndroidManifest.xml:6:19-97
+service#com.google.android.gms.cast.framework.media.MediaNotificationService
+ADDED from [com.google.android.gms:play-services-cast-framework:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-cast-framework-9.4.0.aar\83ee2e61be6d9d8b243191d35e67b58c\AndroidManifest.xml:7:9-104
+	android:name
+		ADDED from [com.google.android.gms:play-services-cast-framework:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-cast-framework-9.4.0.aar\83ee2e61be6d9d8b243191d35e67b58c\AndroidManifest.xml:7:18-101
+service#com.google.android.gms.cast.framework.ReconnectionService
+ADDED from [com.google.android.gms:play-services-cast-framework:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-cast-framework-9.4.0.aar\83ee2e61be6d9d8b243191d35e67b58c\AndroidManifest.xml:8:9-92
+	android:name
+		ADDED from [com.google.android.gms:play-services-cast-framework:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-cast-framework-9.4.0.aar\83ee2e61be6d9d8b243191d35e67b58c\AndroidManifest.xml:8:18-90
+activity#com.google.android.gms.ads.AdActivity
+ADDED from [com.google.android.gms:play-services-ads-lite:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-ads-lite-9.4.0.aar\17d6249284cdbb731e897de68e8eaf07\AndroidManifest.xml:26:9-29:64
+	android:configChanges
+		ADDED from [com.google.android.gms:play-services-ads-lite:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-ads-lite-9.4.0.aar\17d6249284cdbb731e897de68e8eaf07\AndroidManifest.xml:28:13-122
+	android:theme
+		ADDED from [com.google.android.gms:play-services-ads-lite:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-ads-lite-9.4.0.aar\17d6249284cdbb731e897de68e8eaf07\AndroidManifest.xml:29:13-61
+	android:name
+		ADDED from [com.google.android.gms:play-services-ads-lite:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-ads-lite-9.4.0.aar\17d6249284cdbb731e897de68e8eaf07\AndroidManifest.xml:27:13-65
+activity#com.google.android.gms.ads.purchase.InAppPurchaseActivity
+ADDED from [com.google.android.gms:play-services-ads-lite:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-ads-lite-9.4.0.aar\17d6249284cdbb731e897de68e8eaf07\AndroidManifest.xml:30:9-31:52
+	android:theme
+		ADDED from [com.google.android.gms:play-services-ads-lite:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-ads-lite-9.4.0.aar\17d6249284cdbb731e897de68e8eaf07\AndroidManifest.xml:31:13-50
+	android:name
+		ADDED from [com.google.android.gms:play-services-ads-lite:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-ads-lite-9.4.0.aar\17d6249284cdbb731e897de68e8eaf07\AndroidManifest.xml:30:19-91
+uses-permission#android.permission.WAKE_LOCK
+ADDED from [com.google.android.gms:play-services-analytics:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-analytics-9.4.0.aar\25013495890555bf471cb5b911f705f5\AndroidManifest.xml:25:5-67
+MERGED from [com.google.android.gms:play-services-analytics-impl:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-analytics-impl-9.4.0.aar\5fdba961c2c098aaf3692e16b94e0bf9\AndroidManifest.xml:25:5-67
+MERGED from [com.google.android.gms:play-services-analytics-impl:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-analytics-impl-9.4.0.aar\5fdba961c2c098aaf3692e16b94e0bf9\AndroidManifest.xml:25:5-67
+MERGED from [com.google.firebase:firebase-analytics:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-analytics-9.4.0.aar\8891d80dfd5f4f73407f65b7362a568e\AndroidManifest.xml:24:5-67
+MERGED from [com.google.firebase:firebase-analytics:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-analytics-9.4.0.aar\8891d80dfd5f4f73407f65b7362a568e\AndroidManifest.xml:24:5-67
+MERGED from [com.google.firebase:firebase-analytics-impl:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-9.4.0.aar\7eb073238ef37dfe59b42b5549eb63e2\AndroidManifest.xml:24:5-67
+MERGED from [com.google.firebase:firebase-analytics-impl:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-9.4.0.aar\7eb073238ef37dfe59b42b5549eb63e2\AndroidManifest.xml:24:5-67
+MERGED from [com.google.firebase:firebase-iid:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-iid-9.4.0.aar\ed304a3f18e68827ca406a4d0028cfe1\AndroidManifest.xml:22:5-68
+MERGED from [com.google.firebase:firebase-iid:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-iid-9.4.0.aar\ed304a3f18e68827ca406a4d0028cfe1\AndroidManifest.xml:22:5-68
+	android:name
+		ADDED from [com.google.android.gms:play-services-analytics:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-analytics-9.4.0.aar\25013495890555bf471cb5b911f705f5\AndroidManifest.xml:25:22-65
+activity#com.google.android.gms.appinvite.PreviewActivity
+ADDED from [com.google.android.gms:play-services-appinvite:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-appinvite-9.4.0.aar\9d846673d4b1cafbd112389e09297e6a\AndroidManifest.xml:21:9-29:20
+	android:exported
+		ADDED from [com.google.android.gms:play-services-appinvite:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-appinvite-9.4.0.aar\9d846673d4b1cafbd112389e09297e6a\AndroidManifest.xml:23:17-40
+	android:theme
+		ADDED from [com.google.android.gms:play-services-appinvite:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-appinvite-9.4.0.aar\9d846673d4b1cafbd112389e09297e6a\AndroidManifest.xml:24:17-63
+	android:name
+		ADDED from [com.google.android.gms:play-services-appinvite:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-appinvite-9.4.0.aar\9d846673d4b1cafbd112389e09297e6a\AndroidManifest.xml:22:17-48
+intent-filter#action:name:com.google.android.gms.appinvite.ACTION_PREVIEW+category:name:android.intent.category.DEFAULT
+ADDED from [com.google.android.gms:play-services-appinvite:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-appinvite-9.4.0.aar\9d846673d4b1cafbd112389e09297e6a\AndroidManifest.xml:25:13-28:29
+action#com.google.android.gms.appinvite.ACTION_PREVIEW
+ADDED from [com.google.android.gms:play-services-appinvite:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-appinvite-9.4.0.aar\9d846673d4b1cafbd112389e09297e6a\AndroidManifest.xml:26:17-89
+	android:name
+		ADDED from [com.google.android.gms:play-services-appinvite:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-appinvite-9.4.0.aar\9d846673d4b1cafbd112389e09297e6a\AndroidManifest.xml:26:25-87
+category#android.intent.category.DEFAULT
+ADDED from [com.google.android.gms:play-services-appinvite:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-appinvite-9.4.0.aar\9d846673d4b1cafbd112389e09297e6a\AndroidManifest.xml:27:17-75
+	android:name
+		ADDED from [com.google.android.gms:play-services-appinvite:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-appinvite-9.4.0.aar\9d846673d4b1cafbd112389e09297e6a\AndroidManifest.xml:27:27-73
+activity#com.google.android.gms.auth.api.signin.internal.SignInHubActivity
+ADDED from [com.google.android.gms:play-services-auth:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-auth-9.4.0.aar\93d22d0afcced0004b589ed260d6e833\AndroidManifest.xml:21:9-24:46
+	android:excludeFromRecents
+		ADDED from [com.google.android.gms:play-services-auth:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-auth-9.4.0.aar\93d22d0afcced0004b589ed260d6e833\AndroidManifest.xml:23:19-52
+	android:exported
+		ADDED from [com.google.android.gms:play-services-auth:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-auth-9.4.0.aar\93d22d0afcced0004b589ed260d6e833\AndroidManifest.xml:24:19-43
+	android:theme
+		ADDED from [com.google.android.gms:play-services-auth:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-auth-9.4.0.aar\93d22d0afcced0004b589ed260d6e833\AndroidManifest.xml:22:19-78
+	android:name
+		ADDED from [com.google.android.gms:play-services-auth:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-auth-9.4.0.aar\93d22d0afcced0004b589ed260d6e833\AndroidManifest.xml:21:19-68
+service#com.google.android.gms.auth.api.signin.RevocationBoundService
+ADDED from [com.google.android.gms:play-services-auth:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-auth-9.4.0.aar\93d22d0afcced0004b589ed260d6e833\AndroidManifest.xml:28:9-31:110
+	android:exported
+		ADDED from [com.google.android.gms:play-services-auth:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-auth-9.4.0.aar\93d22d0afcced0004b589ed260d6e833\AndroidManifest.xml:30:13-36
+	android:permission
+		ADDED from [com.google.android.gms:play-services-auth:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-auth-9.4.0.aar\93d22d0afcced0004b589ed260d6e833\AndroidManifest.xml:31:13-107
+	android:name
+		ADDED from [com.google.android.gms:play-services-auth:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-auth-9.4.0.aar\93d22d0afcced0004b589ed260d6e833\AndroidManifest.xml:29:13-58
+service#com.google.firebase.crash.internal.service.FirebaseCrashReceiverService
+ADDED from [com.google.firebase:firebase-crash:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-crash-9.4.0.aar\8e922cb0e4d86dbc31882cdcd1d176c3\AndroidManifest.xml:26:9-27:50
+	android:process
+		ADDED from [com.google.firebase:firebase-crash:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-crash-9.4.0.aar\8e922cb0e4d86dbc31882cdcd1d176c3\AndroidManifest.xml:27:13-48
+	android:name
+		ADDED from [com.google.firebase:firebase-crash:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-crash-9.4.0.aar\8e922cb0e4d86dbc31882cdcd1d176c3\AndroidManifest.xml:26:18-79
+service#com.google.firebase.crash.internal.service.FirebaseCrashSenderService
+ADDED from [com.google.firebase:firebase-crash:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-crash-9.4.0.aar\8e922cb0e4d86dbc31882cdcd1d176c3\AndroidManifest.xml:29:9-30:50
+	android:process
+		ADDED from [com.google.firebase:firebase-crash:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-crash-9.4.0.aar\8e922cb0e4d86dbc31882cdcd1d176c3\AndroidManifest.xml:30:13-48
+	android:name
+		ADDED from [com.google.firebase:firebase-crash:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-crash-9.4.0.aar\8e922cb0e4d86dbc31882cdcd1d176c3\AndroidManifest.xml:29:18-77
+uses-permission#com.google.android.c2dm.permission.RECEIVE
+ADDED from [com.google.android.gms:play-services-gcm:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-gcm-9.4.0.aar\200fba7106f682386bb8e64b5a78a900\AndroidManifest.xml:21:5-82
+MERGED from [com.google.android.gms:play-services-iid:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-iid-9.4.0.aar\a8bb70cb9dd3fca8b06f7fd146cafeff\AndroidManifest.xml:21:5-82
+MERGED from [com.google.android.gms:play-services-iid:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-iid-9.4.0.aar\a8bb70cb9dd3fca8b06f7fd146cafeff\AndroidManifest.xml:21:5-82
+MERGED from [com.google.firebase:firebase-iid:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-iid-9.4.0.aar\ed304a3f18e68827ca406a4d0028cfe1\AndroidManifest.xml:23:5-82
+MERGED from [com.google.firebase:firebase-iid:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-iid-9.4.0.aar\ed304a3f18e68827ca406a4d0028cfe1\AndroidManifest.xml:23:5-82
+	android:name
+		ADDED from [com.google.android.gms:play-services-gcm:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-gcm-9.4.0.aar\200fba7106f682386bb8e64b5a78a900\AndroidManifest.xml:21:22-79
+uses-feature#0x00020000
+ADDED from [com.google.android.gms:play-services-maps:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-maps-9.4.0.aar\510196fa2b8af42a54955677d59088b7\AndroidManifest.xml:22:5-24:33
+	android:glEsVersion
+		ADDED from [com.google.android.gms:play-services-maps:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-maps-9.4.0.aar\510196fa2b8af42a54955677d59088b7\AndroidManifest.xml:23:8-40
+	android:required
+		ADDED from [com.google.android.gms:play-services-maps:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-maps-9.4.0.aar\510196fa2b8af42a54955677d59088b7\AndroidManifest.xml:24:8-31
+activity#com.google.android.gms.common.api.GoogleApiActivity
+ADDED from [com.google.android.gms:play-services-base:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-base-9.4.0.aar\a425836f483b7be2b2a6739962fd98aa\AndroidManifest.xml:20:9-22:45
+	android:exported
+		ADDED from [com.google.android.gms:play-services-base:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-base-9.4.0.aar\a425836f483b7be2b2a6739962fd98aa\AndroidManifest.xml:22:19-43
+	android:theme
+		ADDED from [com.google.android.gms:play-services-base:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-base-9.4.0.aar\a425836f483b7be2b2a6739962fd98aa\AndroidManifest.xml:21:19-78
+	android:name
+		ADDED from [com.google.android.gms:play-services-base:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-base-9.4.0.aar\a425836f483b7be2b2a6739962fd98aa\AndroidManifest.xml:20:19-85
+service#com.google.firebase.messaging.FirebaseMessagingService
+ADDED from [com.google.firebase:firebase-messaging:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-messaging-9.4.0.aar\0636e346ff3de0344e3deff5b3e65ab6\AndroidManifest.xml:24:9-30:19
+	android:exported
+		ADDED from [com.google.firebase:firebase-messaging:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-messaging-9.4.0.aar\0636e346ff3de0344e3deff5b3e65ab6\AndroidManifest.xml:26:13-36
+	android:name
+		ADDED from [com.google.firebase:firebase-messaging:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-messaging-9.4.0.aar\0636e346ff3de0344e3deff5b3e65ab6\AndroidManifest.xml:25:13-82
+intent-filter#action:name:com.google.firebase.MESSAGING_EVENT
+ADDED from [com.google.firebase:firebase-messaging:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-messaging-9.4.0.aar\0636e346ff3de0344e3deff5b3e65ab6\AndroidManifest.xml:27:13-29:29
+	android:priority
+		ADDED from [com.google.firebase:firebase-messaging:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-messaging-9.4.0.aar\0636e346ff3de0344e3deff5b3e65ab6\AndroidManifest.xml:27:28-51
+action#com.google.firebase.MESSAGING_EVENT
+ADDED from [com.google.firebase:firebase-messaging:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-messaging-9.4.0.aar\0636e346ff3de0344e3deff5b3e65ab6\AndroidManifest.xml:28:17-78
+	android:name
+		ADDED from [com.google.firebase:firebase-messaging:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-messaging-9.4.0.aar\0636e346ff3de0344e3deff5b3e65ab6\AndroidManifest.xml:28:25-75
+service#com.google.android.gms.tagmanager.TagManagerService
+ADDED from [com.google.android.gms:play-services-tagmanager-api:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-tagmanager-api-9.4.0.aar\e216f00fbb46ab107009a0420656c861\AndroidManifest.xml:25:9-27:42
+	android:enabled
+		ADDED from [com.google.android.gms:play-services-tagmanager-api:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-tagmanager-api-9.4.0.aar\e216f00fbb46ab107009a0420656c861\AndroidManifest.xml:27:17-39
+	android:exported
+		ADDED from [com.google.android.gms:play-services-tagmanager-api:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-tagmanager-api-9.4.0.aar\e216f00fbb46ab107009a0420656c861\AndroidManifest.xml:26:17-41
+	android:name
+		ADDED from [com.google.android.gms:play-services-tagmanager-api:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-tagmanager-api-9.4.0.aar\e216f00fbb46ab107009a0420656c861\AndroidManifest.xml:25:18-84
+activity#com.google.android.gms.tagmanager.TagManagerPreviewActivity
+ADDED from [com.google.android.gms:play-services-tagmanager-api:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-tagmanager-api-9.4.0.aar\e216f00fbb46ab107009a0420656c861\AndroidManifest.xml:28:9-37:20
+	android:noHistory
+		ADDED from [com.google.android.gms:play-services-tagmanager-api:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-tagmanager-api-9.4.0.aar\e216f00fbb46ab107009a0420656c861\AndroidManifest.xml:30:13-37
+	android:name
+		ADDED from [com.google.android.gms:play-services-tagmanager-api:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-tagmanager-api-9.4.0.aar\e216f00fbb46ab107009a0420656c861\AndroidManifest.xml:29:13-87
+intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+data:scheme:tagmanager.c.${applicationId}
+ADDED from [com.google.android.gms:play-services-tagmanager-api:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-tagmanager-api-9.4.0.aar\e216f00fbb46ab107009a0420656c861\AndroidManifest.xml:31:13-36:29
+intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+data:scheme:tagmanager.c.com.parse.starter
+ADDED from [com.google.android.gms:play-services-tagmanager-api:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-tagmanager-api-9.4.0.aar\e216f00fbb46ab107009a0420656c861\AndroidManifest.xml:31:13-36:29
+data
+ADDED from [com.google.android.gms:play-services-tagmanager-api:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-tagmanager-api-9.4.0.aar\e216f00fbb46ab107009a0420656c861\AndroidManifest.xml:32:17-72
+	android:scheme
+		ADDED from [com.google.android.gms:play-services-tagmanager-api:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-tagmanager-api-9.4.0.aar\e216f00fbb46ab107009a0420656c861\AndroidManifest.xml:32:23-69
+action#android.intent.action.VIEW
+ADDED from [com.google.android.gms:play-services-tagmanager-api:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-tagmanager-api-9.4.0.aar\e216f00fbb46ab107009a0420656c861\AndroidManifest.xml:33:17-69
+	android:name
+		ADDED from [com.google.android.gms:play-services-tagmanager-api:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-tagmanager-api-9.4.0.aar\e216f00fbb46ab107009a0420656c861\AndroidManifest.xml:33:25-66
+category#android.intent.category.BROWSABLE
+ADDED from [com.google.android.gms:play-services-tagmanager-api:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-tagmanager-api-9.4.0.aar\e216f00fbb46ab107009a0420656c861\AndroidManifest.xml:35:17-77
+	android:name
+		ADDED from [com.google.android.gms:play-services-tagmanager-api:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-tagmanager-api-9.4.0.aar\e216f00fbb46ab107009a0420656c861\AndroidManifest.xml:35:27-75
+receiver#com.google.android.gms.measurement.AppMeasurementReceiver
+ADDED from [com.google.firebase:firebase-analytics:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-analytics-9.4.0.aar\8891d80dfd5f4f73407f65b7362a568e\AndroidManifest.xml:28:7-34:18
+MERGED from [com.google.firebase:firebase-analytics-impl:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-9.4.0.aar\7eb073238ef37dfe59b42b5549eb63e2\AndroidManifest.xml:28:7-34:18
+MERGED from [com.google.firebase:firebase-analytics-impl:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-9.4.0.aar\7eb073238ef37dfe59b42b5549eb63e2\AndroidManifest.xml:28:7-34:18
+	android:enabled
+		ADDED from [com.google.firebase:firebase-analytics:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-analytics-9.4.0.aar\8891d80dfd5f4f73407f65b7362a568e\AndroidManifest.xml:30:11-33
+	android:name
+		ADDED from [com.google.firebase:firebase-analytics:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-analytics-9.4.0.aar\8891d80dfd5f4f73407f65b7362a568e\AndroidManifest.xml:29:11-83
+intent-filter#action:name:com.google.android.gms.measurement.UPLOAD
+ADDED from [com.google.firebase:firebase-analytics:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-analytics-9.4.0.aar\8891d80dfd5f4f73407f65b7362a568e\AndroidManifest.xml:31:9-33:25
+action#com.google.android.gms.measurement.UPLOAD
+ADDED from [com.google.firebase:firebase-analytics:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-analytics-9.4.0.aar\8891d80dfd5f4f73407f65b7362a568e\AndroidManifest.xml:32:11-77
+	android:name
+		ADDED from [com.google.firebase:firebase-analytics:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-analytics-9.4.0.aar\8891d80dfd5f4f73407f65b7362a568e\AndroidManifest.xml:32:19-75
+service#com.google.android.gms.measurement.AppMeasurementService
+ADDED from [com.google.firebase:firebase-analytics:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-analytics-9.4.0.aar\8891d80dfd5f4f73407f65b7362a568e\AndroidManifest.xml:36:7-39:37
+MERGED from [com.google.firebase:firebase-analytics-impl:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-9.4.0.aar\7eb073238ef37dfe59b42b5549eb63e2\AndroidManifest.xml:36:7-39:37
+MERGED from [com.google.firebase:firebase-analytics-impl:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-9.4.0.aar\7eb073238ef37dfe59b42b5549eb63e2\AndroidManifest.xml:36:7-39:37
+	android:enabled
+		ADDED from [com.google.firebase:firebase-analytics:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-analytics-9.4.0.aar\8891d80dfd5f4f73407f65b7362a568e\AndroidManifest.xml:38:11-33
+	android:exported
+		ADDED from [com.google.firebase:firebase-analytics:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-analytics-9.4.0.aar\8891d80dfd5f4f73407f65b7362a568e\AndroidManifest.xml:39:11-35
+	android:name
+		ADDED from [com.google.firebase:firebase-analytics:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-analytics-9.4.0.aar\8891d80dfd5f4f73407f65b7362a568e\AndroidManifest.xml:37:11-82
+permission#${applicationId}.permission.C2D_MESSAGE
+ADDED from [com.google.firebase:firebase-iid:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-iid-9.4.0.aar\ed304a3f18e68827ca406a4d0028cfe1\AndroidManifest.xml:25:5-26:47
+	android:protectionLevel
+		ADDED from [com.google.firebase:firebase-iid:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-iid-9.4.0.aar\ed304a3f18e68827ca406a4d0028cfe1\AndroidManifest.xml:26:9-44
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-iid-9.4.0.aar\ed304a3f18e68827ca406a4d0028cfe1\AndroidManifest.xml:25:17-71
+permission#com.parse.starter.permission.C2D_MESSAGE
+ADDED from [com.google.firebase:firebase-iid:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-iid-9.4.0.aar\ed304a3f18e68827ca406a4d0028cfe1\AndroidManifest.xml:25:5-26:47
+	android:protectionLevel
+		ADDED from [com.google.firebase:firebase-iid:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-iid-9.4.0.aar\ed304a3f18e68827ca406a4d0028cfe1\AndroidManifest.xml:26:9-44
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-iid-9.4.0.aar\ed304a3f18e68827ca406a4d0028cfe1\AndroidManifest.xml:25:17-71
+uses-permission#${applicationId}.permission.C2D_MESSAGE
+ADDED from [com.google.firebase:firebase-iid:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-iid-9.4.0.aar\ed304a3f18e68827ca406a4d0028cfe1\AndroidManifest.xml:28:5-79
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-iid-9.4.0.aar\ed304a3f18e68827ca406a4d0028cfe1\AndroidManifest.xml:28:22-76
+uses-permission#com.parse.starter.permission.C2D_MESSAGE
+ADDED from [com.google.firebase:firebase-iid:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-iid-9.4.0.aar\ed304a3f18e68827ca406a4d0028cfe1\AndroidManifest.xml:28:5-79
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-iid-9.4.0.aar\ed304a3f18e68827ca406a4d0028cfe1\AndroidManifest.xml:28:22-76
+receiver#com.google.firebase.iid.FirebaseInstanceIdReceiver
+ADDED from [com.google.firebase:firebase-iid:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-iid-9.4.0.aar\ed304a3f18e68827ca406a4d0028cfe1\AndroidManifest.xml:32:9-41:20
+	android:exported
+		ADDED from [com.google.firebase:firebase-iid:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-iid-9.4.0.aar\ed304a3f18e68827ca406a4d0028cfe1\AndroidManifest.xml:34:13-36
+	android:permission
+		ADDED from [com.google.firebase:firebase-iid:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-iid-9.4.0.aar\ed304a3f18e68827ca406a4d0028cfe1\AndroidManifest.xml:35:13-73
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-iid-9.4.0.aar\ed304a3f18e68827ca406a4d0028cfe1\AndroidManifest.xml:33:13-78
+intent-filter#action:name:com.google.android.c2dm.intent.RECEIVE+action:name:com.google.android.c2dm.intent.REGISTRATION+category:name:${applicationId}
+ADDED from [com.google.firebase:firebase-iid:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-iid-9.4.0.aar\ed304a3f18e68827ca406a4d0028cfe1\AndroidManifest.xml:36:13-40:29
+intent-filter#action:name:com.google.android.c2dm.intent.RECEIVE+action:name:com.google.android.c2dm.intent.REGISTRATION+category:name:com.parse.starter
+ADDED from [com.google.firebase:firebase-iid:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-iid-9.4.0.aar\ed304a3f18e68827ca406a4d0028cfe1\AndroidManifest.xml:36:13-40:29
+action#com.google.android.c2dm.intent.RECEIVE
+ADDED from [com.google.firebase:firebase-iid:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-iid-9.4.0.aar\ed304a3f18e68827ca406a4d0028cfe1\AndroidManifest.xml:37:17-81
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-iid-9.4.0.aar\ed304a3f18e68827ca406a4d0028cfe1\AndroidManifest.xml:37:25-78
+action#com.google.android.c2dm.intent.REGISTRATION
+ADDED from [com.google.firebase:firebase-iid:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-iid-9.4.0.aar\ed304a3f18e68827ca406a4d0028cfe1\AndroidManifest.xml:38:17-86
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-iid-9.4.0.aar\ed304a3f18e68827ca406a4d0028cfe1\AndroidManifest.xml:38:25-83
+category#${applicationId}
+ADDED from [com.google.firebase:firebase-iid:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-iid-9.4.0.aar\ed304a3f18e68827ca406a4d0028cfe1\AndroidManifest.xml:39:17-61
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-iid-9.4.0.aar\ed304a3f18e68827ca406a4d0028cfe1\AndroidManifest.xml:39:27-58
+category#com.parse.starter
+ADDED from [com.google.firebase:firebase-iid:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-iid-9.4.0.aar\ed304a3f18e68827ca406a4d0028cfe1\AndroidManifest.xml:39:17-61
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-iid-9.4.0.aar\ed304a3f18e68827ca406a4d0028cfe1\AndroidManifest.xml:39:27-58
+receiver#com.google.firebase.iid.FirebaseInstanceIdInternalReceiver
+ADDED from [com.google.firebase:firebase-iid:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-iid-9.4.0.aar\ed304a3f18e68827ca406a4d0028cfe1\AndroidManifest.xml:45:9-47:40
+	android:exported
+		ADDED from [com.google.firebase:firebase-iid:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-iid-9.4.0.aar\ed304a3f18e68827ca406a4d0028cfe1\AndroidManifest.xml:47:13-37
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-iid-9.4.0.aar\ed304a3f18e68827ca406a4d0028cfe1\AndroidManifest.xml:46:13-86
+service#com.google.firebase.iid.FirebaseInstanceIdService
+ADDED from [com.google.firebase:firebase-iid:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-iid-9.4.0.aar\ed304a3f18e68827ca406a4d0028cfe1\AndroidManifest.xml:51:9-57:19
+	android:exported
+		ADDED from [com.google.firebase:firebase-iid:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-iid-9.4.0.aar\ed304a3f18e68827ca406a4d0028cfe1\AndroidManifest.xml:53:13-36
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-iid-9.4.0.aar\ed304a3f18e68827ca406a4d0028cfe1\AndroidManifest.xml:52:13-77
+intent-filter#action:name:com.google.firebase.INSTANCE_ID_EVENT
+ADDED from [com.google.firebase:firebase-iid:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-iid-9.4.0.aar\ed304a3f18e68827ca406a4d0028cfe1\AndroidManifest.xml:54:13-56:29
+	android:priority
+		ADDED from [com.google.firebase:firebase-iid:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-iid-9.4.0.aar\ed304a3f18e68827ca406a4d0028cfe1\AndroidManifest.xml:54:28-51
+action#com.google.firebase.INSTANCE_ID_EVENT
+ADDED from [com.google.firebase:firebase-iid:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-iid-9.4.0.aar\ed304a3f18e68827ca406a4d0028cfe1\AndroidManifest.xml:55:17-80
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-iid-9.4.0.aar\ed304a3f18e68827ca406a4d0028cfe1\AndroidManifest.xml:55:25-77
+provider#com.google.firebase.provider.FirebaseInitProvider
+ADDED from [com.google.firebase:firebase-common:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-common-9.4.0.aar\7c881057d9eb7fd9f41d164367b83ca5\AndroidManifest.xml:7:9-11:39
+	android:authorities
+		ADDED from [com.google.firebase:firebase-common:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-common-9.4.0.aar\7c881057d9eb7fd9f41d164367b83ca5\AndroidManifest.xml:8:13-72
+	android:exported
+		ADDED from [com.google.firebase:firebase-common:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-common-9.4.0.aar\7c881057d9eb7fd9f41d164367b83ca5\AndroidManifest.xml:10:13-37
+	android:initOrder
+		ADDED from [com.google.firebase:firebase-common:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-common-9.4.0.aar\7c881057d9eb7fd9f41d164367b83ca5\AndroidManifest.xml:11:13-36
+	android:name
+		ADDED from [com.google.firebase:firebase-common:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\firebase-common-9.4.0.aar\7c881057d9eb7fd9f41d164367b83ca5\AndroidManifest.xml:9:13-58
+meta-data#com.google.android.gms.version
+ADDED from [com.google.android.gms:play-services-basement:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-basement-9.4.0.aar\bf8e6917dc307db2f8b978b11cbe18f9\AndroidManifest.xml:21:9-23:69
+	android:value
+		ADDED from [com.google.android.gms:play-services-basement:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-basement-9.4.0.aar\bf8e6917dc307db2f8b978b11cbe18f9\AndroidManifest.xml:23:13-66
+	android:name
+		ADDED from [com.google.android.gms:play-services-basement:9.4.0] C:\Users\sujan\.gradle\caches\transforms-1\files-1.1\play-services-basement-9.4.0.aar\bf8e6917dc307db2f8b978b11cbe18f9\AndroidManifest.xml:22:13-58
