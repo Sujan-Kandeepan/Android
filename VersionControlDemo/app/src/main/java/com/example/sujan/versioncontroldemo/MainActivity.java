@@ -13,5 +13,6 @@ public class MainActivity extends AppCompatActivity {
         String name = "Sujan";
 
         // We love Facebook
+        // Login now works
     }
 }
