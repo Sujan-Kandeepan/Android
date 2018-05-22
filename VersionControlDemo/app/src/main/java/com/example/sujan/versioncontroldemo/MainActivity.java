@@ -11,5 +11,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         String name = "Sujan";
+
+        // We love Facebook
     }
 }
