@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\sujan\\GitHub\\PercivalProjects\\PercivalProjects\\Parse-Server-Starter-Project\\ParseStarterProject\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-kn\\values-kn.xml",
+            "outputFile": "C:\\Users\\sujan\\GitHub\\PercivalProjects\\Parse-Server-Starter-Project\\ParseStarterProject\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-kn\\values-kn.xml",
             "map": [
                 {
                     "source": "C:\\Users\\sujan\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-cast-9.4.0.aar\\d8b0b4b85cfa5be18d2a5e94fecd7c2a\\res\\values-kn\\values.xml",

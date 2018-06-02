@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\sujan\\GitHub\\PercivalProjects\\PercivalProjects\\Parse-Server-Starter-Project\\ParseStarterProject\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-fr\\values-fr.xml",
+            "outputFile": "C:\\Users\\sujan\\GitHub\\PercivalProjects\\Parse-Server-Starter-Project\\ParseStarterProject\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-fr\\values-fr.xml",
             "map": [
                 {
                     "source": "C:\\Users\\sujan\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-wallet-9.4.0.aar\\6d15dbc3eb62f550b0a01de8fba17da4\\res\\values-fr\\values.xml",

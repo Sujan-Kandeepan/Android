@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\sujan\\GitHub\\PercivalProjects\\PercivalProjects\\Parse-Server-Starter-Project\\ParseStarterProject\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
+            "outputFile": "C:\\Users\\sujan\\GitHub\\PercivalProjects\\Parse-Server-Starter-Project\\ParseStarterProject\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
             "map": [
                 {
                     "source": "C:\\Users\\sujan\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-23.4.0.aar\\f357462a94460c5ecb9925fb89e56487\\res\\values\\values.xml",
@@ -39,6 +39,23 @@
                         "endLines": "246,247,248,249,250,251,252,253,254,255,256,257,258,560,1841,1844,1852,1865",
                         "endColumns": "80,70,71,76,65,84,73,69,70,66,67,58,56,74,12,12,12,12",
                         "endOffsets": "14304,14375,14447,14524,14590,14675,14749,14819,14890,14957,15025,15084,15141,64835,149706,149890,150419,151423"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\sujan\\GitHub\\PercivalProjects\\Parse-Server-Starter-Project\\ParseStarterProject\\src\\main\\res\\values\\strings.xml",
+                    "from": {
+                        "startLines": "15,12,14,9,10,17,16",
+                        "startColumns": "4,4,4,4,4,4,4",
+                        "startOffsets": "605,492,552,369,430,711,658",
+                        "endColumns": "52,58,52,60,60,62,52",
+                        "endOffsets": "653,546,600,425,486,769,706"
+                    },
+                    "to": {
+                        "startLines": "475,476,536,548,549,558,559",
+                        "startColumns": "4,4,4,4,4,4,4",
+                        "startOffsets": "57439,57492,63070,63940,64001,64649,64712",
+                        "endColumns": "52,58,52,60,60,62,52",
+                        "endOffsets": "57487,57546,63118,63996,64057,64707,64760"
                     }
                 },
                 {
@@ -133,25 +150,6 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\sujan\\GitHub\\PercivalProjects\\PercivalProjects\\Parse-Server-Starter-Project\\ParseStarterProject\\src\\main\\res\\values\\styles.xml",
-                    "from": {
-                        "startLines": "11",
-                        "startColumns": "4",
-                        "startOffsets": "369",
-                        "endLines": "13",
-                        "endColumns": "12",
-                        "endOffsets": "494"
-                    },
-                    "to": {
-                        "startLines": "565",
-                        "startColumns": "4",
-                        "startOffsets": "65192",
-                        "endLines": "567",
-                        "endColumns": "12",
-                        "endOffsets": "65317"
-                    }
-                },
-                {
                     "source": "C:\\Users\\sujan\\.gradle\\caches\\transforms-1\\files-1.1\\constraint-layout-1.1.0.aar\\4b5a3adcb4f53a3a30fe382aed6d06ce\\res\\values\\values.xml",
                     "from": {
                         "startLines": "2,3,11,12,13,14,15,19,20,21,22,25,26,29,32,33,34,35,36,39,42,43,44,45,50,53,56,57,58,63,64,65,68,71,72,75,78,81,84,85,88,91,92,97,98,103,106,109,110,111,112,113,114,115,116,117,118",
@@ -224,6 +222,23 @@
                     }
                 },
                 {
+                    "source": "C:\\Users\\sujan\\GitHub\\PercivalProjects\\Parse-Server-Starter-Project\\ParseStarterProject\\src\\main\\res\\values\\dimens.xml",
+                    "from": {
+                        "startLines": "10,11",
+                        "startColumns": "4,4",
+                        "startOffsets": "403,461",
+                        "endColumns": "57,55",
+                        "endOffsets": "456,512"
+                    },
+                    "to": {
+                        "startLines": "380,381",
+                        "startColumns": "4,4",
+                        "startOffsets": "50921,50979",
+                        "endColumns": "57,55",
+                        "endOffsets": "50974,51030"
+                    }
+                },
+                {
                     "source": "C:\\Users\\sujan\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-cast-9.4.0.aar\\d8b0b4b85cfa5be18d2a5e94fecd7c2a\\res\\values\\values.xml",
                     "from": {
                         "startLines": "4,7,8,9",
@@ -258,23 +273,6 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\sujan\\GitHub\\PercivalProjects\\PercivalProjects\\Parse-Server-Starter-Project\\ParseStarterProject\\src\\main\\res\\values\\strings.xml",
-                    "from": {
-                        "startLines": "15,12,14,9,10,17,16",
-                        "startColumns": "4,4,4,4,4,4,4",
-                        "startOffsets": "605,492,552,369,430,711,658",
-                        "endColumns": "52,58,52,60,60,62,52",
-                        "endOffsets": "653,546,600,425,486,769,706"
-                    },
-                    "to": {
-                        "startLines": "475,476,536,548,549,558,559",
-                        "startColumns": "4,4,4,4,4,4,4",
-                        "startOffsets": "57439,57492,63070,63940,64001,64649,64712",
-                        "endColumns": "52,58,52,60,60,62,52",
-                        "endOffsets": "57487,57546,63118,63996,64057,64707,64760"
-                    }
-                },
-                {
                     "source": "C:\\Users\\sujan\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-tagmanager-9.4.0.aar\\aedfef16493925ad59a23d49ab8ccf84\\res\\values\\values.xml",
                     "from": {
                         "startLines": "4,5,6",
@@ -292,20 +290,22 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\sujan\\GitHub\\PercivalProjects\\PercivalProjects\\Parse-Server-Starter-Project\\ParseStarterProject\\src\\main\\res\\values\\dimens.xml",
+                    "source": "C:\\Users\\sujan\\GitHub\\PercivalProjects\\Parse-Server-Starter-Project\\ParseStarterProject\\src\\main\\res\\values\\styles.xml",
                     "from": {
-                        "startLines": "10,11",
-                        "startColumns": "4,4",
-                        "startOffsets": "403,461",
-                        "endColumns": "57,55",
-                        "endOffsets": "456,512"
+                        "startLines": "11",
+                        "startColumns": "4",
+                        "startOffsets": "369",
+                        "endLines": "13",
+                        "endColumns": "12",
+                        "endOffsets": "494"
                     },
                     "to": {
-                        "startLines": "380,381",
-                        "startColumns": "4,4",
-                        "startOffsets": "50921,50979",
-                        "endColumns": "57,55",
-                        "endOffsets": "50974,51030"
+                        "startLines": "565",
+                        "startColumns": "4",
+                        "startOffsets": "65192",
+                        "endLines": "567",
+                        "endColumns": "12",
+                        "endOffsets": "65317"
                     }
                 }
             ]

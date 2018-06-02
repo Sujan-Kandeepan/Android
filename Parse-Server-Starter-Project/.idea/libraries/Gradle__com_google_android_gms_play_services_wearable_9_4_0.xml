@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="Gradle: com.google.android.gms:play-services-wearable-9.4.0">
     <CLASSES>
-      <root url="file://$PROJECT_DIR$/ParseStarterProject/build/intermediates/exploded-aar/com.google.android.gms/play-services-wearable/9.4.0/res" />
-      <root url="jar://$PROJECT_DIR$/ParseStarterProject/build/intermediates/exploded-aar/com.google.android.gms/play-services-wearable/9.4.0/jars/classes.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/play-services-wearable-9.4.0.aar/34b8dbc560ad57fdcf2fdc6f3031b669/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/play-services-wearable-9.4.0.aar/34b8dbc560ad57fdcf2fdc6f3031b669/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
