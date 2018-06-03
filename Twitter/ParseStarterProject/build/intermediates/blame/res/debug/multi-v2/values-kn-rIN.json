@@ -1,0 +1,26 @@
+{
+    "logs": [
+        {
+            "outputFile": "C:\\Users\\sujan\\GitHub\\PercivalProjects\\Twitter\\ParseStarterProject\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-kn-rIN\\values-kn-rIN.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\sujan\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-23.0.0.aar\\c61285124d778bf03e356296782164da\\res\\values-kn-rIN\\values-kn-rIN.xml",
+                    "from": {
+                        "startLines": "4,5,6,7,8,9,10,11,12,13,14",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "282,388,507,615,727,853,949,1048,1172,1284,1370",
+                        "endColumns": "105,118,107,111,125,95,98,123,111,85,93",
+                        "endOffsets": "383,502,610,722,848,944,1043,1167,1279,1365,1459"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,161,280,388,500,626,722,821,945,1057,1143",
+                        "endColumns": "105,118,107,111,125,95,98,123,111,85,93",
+                        "endOffsets": "156,275,383,495,621,717,816,940,1052,1138,1232"
+                    }
+                }
+            ]
+        }
+    ]
+}

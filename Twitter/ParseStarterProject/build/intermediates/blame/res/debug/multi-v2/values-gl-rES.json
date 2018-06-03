@@ -1,0 +1,26 @@
+{
+    "logs": [
+        {
+            "outputFile": "C:\\Users\\sujan\\GitHub\\PercivalProjects\\Twitter\\ParseStarterProject\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-gl-rES\\values-gl-rES.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\sujan\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-23.0.0.aar\\c61285124d778bf03e356296782164da\\res\\values-gl-rES\\values-gl-rES.xml",
+                    "from": {
+                        "startLines": "4,5,6,7,8,9,10,11,12,13,14",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "282,389,503,614,720,853,949,1048,1174,1279,1366",
+                        "endColumns": "106,113,110,105,132,95,98,125,104,86,98",
+                        "endOffsets": "384,498,609,715,848,944,1043,1169,1274,1361,1460"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,162,276,387,493,626,722,821,947,1052,1139",
+                        "endColumns": "106,113,110,105,132,95,98,125,104,86,98",
+                        "endOffsets": "157,271,382,488,621,717,816,942,1047,1134,1233"
+                    }
+                }
+            ]
+        }
+    ]
+}

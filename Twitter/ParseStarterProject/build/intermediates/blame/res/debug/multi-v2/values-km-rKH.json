@@ -1,0 +1,26 @@
+{
+    "logs": [
+        {
+            "outputFile": "C:\\Users\\sujan\\GitHub\\PercivalProjects\\Twitter\\ParseStarterProject\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-km-rKH\\values-km-rKH.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\sujan\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-23.0.0.aar\\c61285124d778bf03e356296782164da\\res\\values-km-rKH\\values-km-rKH.xml",
+                    "from": {
+                        "startLines": "4,5,6,7,8,9,10,11,12,13,14",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "282,389,504,605,706,824,920,1014,1132,1234,1322",
+                        "endColumns": "106,114,100,100,117,95,93,117,101,87,92",
+                        "endOffsets": "384,499,600,701,819,915,1009,1127,1229,1317,1410"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,162,277,378,479,597,693,787,905,1007,1095",
+                        "endColumns": "106,114,100,100,117,95,93,117,101,87,92",
+                        "endOffsets": "157,272,373,474,592,688,782,900,1002,1090,1183"
+                    }
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,4 @@
+#Sun Jun 03 14:05:08 EDT 2018
+base.0=C\:\\Users\\sujan\\GitHub\\PercivalProjects\\Twitter\\ParseStarterProject\\build\\intermediates\\transforms\\dexMerger\\debug\\9
+path.0=classes.dex
+renamed.0=classes.dex

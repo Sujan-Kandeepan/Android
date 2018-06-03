@@ -1,0 +1,26 @@
+{
+    "logs": [
+        {
+            "outputFile": "C:\\Users\\sujan\\GitHub\\PercivalProjects\\Twitter\\ParseStarterProject\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-et-rEE\\values-et-rEE.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\sujan\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-23.0.0.aar\\c61285124d778bf03e356296782164da\\res\\values-et-rEE\\values-et-rEE.xml",
+                    "from": {
+                        "startLines": "4,5,6,7,8,9,10,11,12,13,14",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "282,394,505,612,723,845,945,1044,1165,1270,1357",
+                        "endColumns": "111,110,106,110,121,99,98,120,104,86,93",
+                        "endOffsets": "389,500,607,718,840,940,1039,1160,1265,1352,1446"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,167,278,385,496,618,718,817,938,1043,1130",
+                        "endColumns": "111,110,106,110,121,99,98,120,104,86,93",
+                        "endOffsets": "162,273,380,491,613,713,812,933,1038,1125,1219"
+                    }
+                }
+            ]
+        }
+    ]
+}

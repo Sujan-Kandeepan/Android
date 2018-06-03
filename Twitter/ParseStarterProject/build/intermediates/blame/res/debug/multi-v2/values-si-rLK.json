@@ -1,0 +1,26 @@
+{
+    "logs": [
+        {
+            "outputFile": "C:\\Users\\sujan\\GitHub\\PercivalProjects\\Twitter\\ParseStarterProject\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-si-rLK\\values-si-rLK.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\sujan\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-23.0.0.aar\\c61285124d778bf03e356296782164da\\res\\values-si-rLK\\values-si-rLK.xml",
+                    "from": {
+                        "startLines": "4,5,6,7,8,9,10,11,12,13,14",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "282,387,498,606,714,842,939,1040,1161,1272,1359",
+                        "endColumns": "104,110,107,107,127,96,100,120,110,86,91",
+                        "endOffsets": "382,493,601,709,837,934,1035,1156,1267,1354,1446"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,160,271,379,487,615,712,813,934,1045,1132",
+                        "endColumns": "104,110,107,107,127,96,100,120,110,86,91",
+                        "endOffsets": "155,266,374,482,610,707,808,929,1040,1127,1219"
+                    }
+                }
+            ]
+        }
+    ]
+}

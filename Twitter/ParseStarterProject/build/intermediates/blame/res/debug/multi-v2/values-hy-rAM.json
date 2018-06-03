@@ -1,0 +1,26 @@
+{
+    "logs": [
+        {
+            "outputFile": "C:\\Users\\sujan\\GitHub\\PercivalProjects\\Twitter\\ParseStarterProject\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-hy-rAM\\values-hy-rAM.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\sujan\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-23.0.0.aar\\c61285124d778bf03e356296782164da\\res\\values-hy-rAM\\values-hy-rAM.xml",
+                    "from": {
+                        "startLines": "4,5,6,7,8,9,10,11,12,13,14",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "282,394,507,608,710,842,938,1037,1174,1287,1375",
+                        "endColumns": "111,112,100,101,131,95,98,136,112,87,92",
+                        "endOffsets": "389,502,603,705,837,933,1032,1169,1282,1370,1463"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,167,280,381,483,615,711,810,947,1060,1148",
+                        "endColumns": "111,112,100,101,131,95,98,136,112,87,92",
+                        "endOffsets": "162,275,376,478,610,706,805,942,1055,1143,1236"
+                    }
+                }
+            ]
+        }
+    ]
+}

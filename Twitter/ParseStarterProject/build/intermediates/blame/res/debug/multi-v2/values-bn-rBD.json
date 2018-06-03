@@ -1,0 +1,26 @@
+{
+    "logs": [
+        {
+            "outputFile": "C:\\Users\\sujan\\GitHub\\PercivalProjects\\Twitter\\ParseStarterProject\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-bn-rBD\\values-bn-rBD.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\sujan\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-23.0.0.aar\\c61285124d778bf03e356296782164da\\res\\values-bn-rBD\\values-bn-rBD.xml",
+                    "from": {
+                        "startLines": "4,5,6,7,8,9,10,11,12,13,14",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "282,393,516,622,737,860,960,1055,1175,1284,1371",
+                        "endColumns": "110,122,105,114,122,99,94,119,108,86,96",
+                        "endOffsets": "388,511,617,732,855,955,1050,1170,1279,1366,1463"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,166,289,395,510,633,733,828,948,1057,1144",
+                        "endColumns": "110,122,105,114,122,99,94,119,108,86,96",
+                        "endOffsets": "161,284,390,505,628,728,823,943,1052,1139,1236"
+                    }
+                }
+            ]
+        }
+    ]
+}

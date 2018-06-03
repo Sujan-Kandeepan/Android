@@ -1,0 +1,26 @@
+{
+    "logs": [
+        {
+            "outputFile": "C:\\Users\\sujan\\GitHub\\PercivalProjects\\Twitter\\ParseStarterProject\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-sq-rAL\\values-sq-rAL.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\sujan\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-23.0.0.aar\\c61285124d778bf03e356296782164da\\res\\values-sq-rAL\\values-sq-rAL.xml",
+                    "from": {
+                        "startLines": "4,5,6,7,8,9,10,11,12,13,14",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "282,392,506,611,714,844,940,1034,1157,1265,1352",
+                        "endColumns": "109,113,104,102,129,95,93,122,107,86,94",
+                        "endOffsets": "387,501,606,709,839,935,1029,1152,1260,1347,1442"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,165,279,384,487,617,713,807,930,1038,1125",
+                        "endColumns": "109,113,104,102,129,95,93,122,107,86,94",
+                        "endOffsets": "160,274,379,482,612,708,802,925,1033,1120,1215"
+                    }
+                }
+            ]
+        }
+    ]
+}

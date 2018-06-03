@@ -1,0 +1,26 @@
+{
+    "logs": [
+        {
+            "outputFile": "C:\\Users\\sujan\\GitHub\\PercivalProjects\\Twitter\\ParseStarterProject\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-ka-rGE\\values-ka-rGE.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\sujan\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-23.0.0.aar\\c61285124d778bf03e356296782164da\\res\\values-ka-rGE\\values-ka-rGE.xml",
+                    "from": {
+                        "startLines": "4,5,6,7,8,9,10,11,12,13,14",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "282,393,506,621,733,868,964,1060,1186,1296,1383",
+                        "endColumns": "110,112,114,111,134,95,95,125,109,86,99",
+                        "endOffsets": "388,501,616,728,863,959,1055,1181,1291,1378,1478"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,166,279,394,506,641,737,833,959,1069,1156",
+                        "endColumns": "110,112,114,111,134,95,95,125,109,86,99",
+                        "endOffsets": "161,274,389,501,636,732,828,954,1064,1151,1251"
+                    }
+                }
+            ]
+        }
+    ]
+}

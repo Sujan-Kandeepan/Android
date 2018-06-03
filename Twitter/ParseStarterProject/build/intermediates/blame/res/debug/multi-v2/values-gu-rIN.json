@@ -1,0 +1,26 @@
+{
+    "logs": [
+        {
+            "outputFile": "C:\\Users\\sujan\\GitHub\\PercivalProjects\\Twitter\\ParseStarterProject\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-gu-rIN\\values-gu-rIN.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\sujan\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-23.0.0.aar\\c61285124d778bf03e356296782164da\\res\\values-gu-rIN\\values-gu-rIN.xml",
+                    "from": {
+                        "startLines": "4,5,6,7,8,9,10,11,12,13,14",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "282,392,511,620,729,853,948,1043,1160,1268,1354",
+                        "endColumns": "109,118,108,108,123,94,94,116,107,85,92",
+                        "endOffsets": "387,506,615,724,848,943,1038,1155,1263,1349,1442"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,165,284,393,502,626,721,816,933,1041,1127",
+                        "endColumns": "109,118,108,108,123,94,94,116,107,85,92",
+                        "endOffsets": "160,279,388,497,621,716,811,928,1036,1122,1215"
+                    }
+                }
+            ]
+        }
+    ]
+}

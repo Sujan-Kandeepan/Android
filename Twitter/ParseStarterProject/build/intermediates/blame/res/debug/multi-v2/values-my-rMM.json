@@ -1,0 +1,26 @@
+{
+    "logs": [
+        {
+            "outputFile": "C:\\Users\\sujan\\GitHub\\PercivalProjects\\Twitter\\ParseStarterProject\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-my-rMM\\values-my-rMM.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\sujan\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-23.0.0.aar\\c61285124d778bf03e356296782164da\\res\\values-my-rMM\\values-my-rMM.xml",
+                    "from": {
+                        "startLines": "4,5,6,7,8,9,10,11,12,13,14",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "282,398,521,631,749,874,973,1071,1201,1311,1395",
+                        "endColumns": "115,122,109,117,124,98,97,129,109,83,100",
+                        "endOffsets": "393,516,626,744,869,968,1066,1196,1306,1390,1491"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,171,294,404,522,647,746,844,974,1084,1168",
+                        "endColumns": "115,122,109,117,124,98,97,129,109,83,100",
+                        "endOffsets": "166,289,399,517,642,741,839,969,1079,1163,1264"
+                    }
+                }
+            ]
+        }
+    ]
+}

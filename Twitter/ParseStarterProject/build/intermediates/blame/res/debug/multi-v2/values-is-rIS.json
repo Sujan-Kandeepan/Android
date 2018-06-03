@@ -1,0 +1,26 @@
+{
+    "logs": [
+        {
+            "outputFile": "C:\\Users\\sujan\\GitHub\\PercivalProjects\\Twitter\\ParseStarterProject\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-is-rIS\\values-is-rIS.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\sujan\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-23.0.0.aar\\c61285124d778bf03e356296782164da\\res\\values-is-rIS\\values-is-rIS.xml",
+                    "from": {
+                        "startLines": "4,5,6,7,8,9,10,11,12,13,14",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "282,391,500,601,704,831,925,1020,1141,1248,1333",
+                        "endColumns": "108,108,100,102,126,93,94,120,106,84,90",
+                        "endOffsets": "386,495,596,699,826,920,1015,1136,1243,1328,1419"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,164,273,374,477,604,698,793,914,1021,1106",
+                        "endColumns": "108,108,100,102,126,93,94,120,106,84,90",
+                        "endOffsets": "159,268,369,472,599,693,788,909,1016,1101,1192"
+                    }
+                }
+            ]
+        }
+    ]
+}

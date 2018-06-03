@@ -1,0 +1,26 @@
+{
+    "logs": [
+        {
+            "outputFile": "C:\\Users\\sujan\\GitHub\\PercivalProjects\\Twitter\\ParseStarterProject\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-uz-rUZ\\values-uz-rUZ.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\sujan\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-23.0.0.aar\\c61285124d778bf03e356296782164da\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
+                    "from": {
+                        "startLines": "4,5,6,7,8,9,10,11,12,13,14",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "282,402,516,621,721,849,956,1057,1186,1301,1386",
+                        "endColumns": "119,113,104,99,127,106,100,128,114,84,96",
+                        "endOffsets": "397,511,616,716,844,951,1052,1181,1296,1381,1478"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,175,289,394,494,622,729,830,959,1074,1159",
+                        "endColumns": "119,113,104,99,127,106,100,128,114,84,96",
+                        "endOffsets": "170,284,389,489,617,724,825,954,1069,1154,1251"
+                    }
+                }
+            ]
+        }
+    ]
+}
