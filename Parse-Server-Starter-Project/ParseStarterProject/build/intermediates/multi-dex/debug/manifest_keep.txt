@@ -1,3 +1,0 @@
-# Referenced at C:\Users\sujan\GitHub\PercivalProjects\Parse-Server-Starter-Project\ParseStarterProject\build\intermediates\manifests\full\debug\AndroidManifest.xml:38
--keep class com.parse.starter.StarterApplication { <init>(...); }
-
