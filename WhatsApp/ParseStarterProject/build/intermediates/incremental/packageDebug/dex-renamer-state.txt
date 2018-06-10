@@ -1,0 +1,7 @@
+#Tue Sep 20 15:17:44 BST 2016
+base.0=/Users/robpercival/AndroidStudioProjects/Uber/ParseStarterProject/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_f8070dfab00b6d29aa35445a51d0e81f76849772
+renamed.1=classes.dex
+renamed.0=classes2.dex
+file.1=/Users/robpercival/AndroidStudioProjects/Uber/ParseStarterProject/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_c55b20e856753cc89184863f6307e06164f4a7b9/classes.dex
+base.1=/Users/robpercival/AndroidStudioProjects/Uber/ParseStarterProject/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_c55b20e856753cc89184863f6307e06164f4a7b9
+file.0=/Users/robpercival/AndroidStudioProjects/Uber/ParseStarterProject/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_f8070dfab00b6d29aa35445a51d0e81f76849772/classes.dex
