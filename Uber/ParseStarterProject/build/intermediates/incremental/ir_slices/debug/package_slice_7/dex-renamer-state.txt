@@ -1,0 +1,4 @@
+#Sat Jun 09 23:09:31 EDT 2018
+base.0=C\:\\Users\\sujan\\GitHub\\PercivalProjects\\Uber\\ParseStarterProject\\build\\intermediates\\transforms\\dexMerger\\debug\\7
+path.0=classes.dex
+renamed.0=classes.dex
